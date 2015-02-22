@@ -1,0 +1,65 @@
+@inproceedings{68109,
+author = {Ruigang Yang and David Gotz and Justin Hensley and Herman Towles and Michael S. Brown},
+title = {{PixelFlex: a reconfigurable multi-projector display system}},
+booktitle = {IEEE Visualization},
+year = {2001},
+pages = {167--174},
+doi = {10.1109/VISUAL.2001.964508},
+masid = {68109}
+}
+
+@inproceedings{240530,
+author = {Yuqun Chen and Douglas W. Clark and Adam Finkelstein and Timothy C. Housel and Kai Li},
+title = {{Automatic alignment of high-resolution multi-projector display using an un-calibrated camera}},
+booktitle = {Verläßliche Informationssysteme},
+year = {2000},
+pages = {125--130},
+doi = {10.1145/375213.375230},
+masid = {240530}
+}
+
+@inproceedings{4856637,
+author = {Tao Ni and Greg S. Schmidt and Oliver G. Staadt and Mark A. Livingston and Robert Ball and Richard A. May},
+title = {{A Survey of Large High-Resolution Display Technologies, Techniques, and Applications}},
+booktitle = {Virtual Reality, IEEE Annual International Symposium},
+year = {2006},
+pages = {223--236},
+doi = {10.1109/VR.2006.20},
+masid = {4856637}
+}
+
+@article{56912988,
+author = {Alex Endert and Lauren Bradel and Jessica Zeitz and Christopher Andrews and Chris North},
+title = {{Designing large high-resolution display workspaces}},
+year = {2012},
+pages = {58--65},
+doi = {10.1145/2254556.2254570},
+masid = {56912988}
+}
+
+@article{4580342,
+author = {Werner A. König and Hans-Joachim Bieg and Toni Schmidt and Harald Reiterer},
+title = {{POSITION-INDEPENDENT INTERACTION FOR LARGE HIGH-RESOLUTION DISPLAYS}},
+year = {2007},
+masid = {4580342}
+}
+
+@inproceedings{2432303,
+author = {Lauren Shupp and Robert Ball and Beth Yost and John Booker and Chris North},
+title = {{Evaluation of viewport size and curvature of large, high-resolution displays}},
+booktitle = {Graphics Interface},
+year = {2006},
+pages = {123--130},
+doi = {10.1145/1143079.1143100},
+masid = {2432303}
+}
+
+@inproceedings{2432300,
+author = {Tao Ni and Doug A. Bowman and Jian Chen},
+title = {{Increased display size and resolution improve task performance in Information-Rich Virtual Environments}},
+booktitle = {Graphics Interface},
+year = {2006},
+pages = {139--146},
+doi = {10.1145/1143079.1143102},
+masid = {2432300}
+}
