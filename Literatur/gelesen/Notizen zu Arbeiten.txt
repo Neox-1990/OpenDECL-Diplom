@@ -1,0 +1,37 @@
+A Survey of Large High Resolution Display Technologies, Techniques and Application 2006
+
+Guter Hardwareüberblick -> Cave (Brille,Headtrack,Controler,6 DOF), Multi-Monitor-Desktop (Brezel-Problem), LCD Kacheln / Tabletop (Array -> günstig, Farbkorrektur einfacher, weniger Platz, einfach Auszurichten), Projektor-Array (verschiedene Typen v. Projektoren -> verschieden Anforderungen, braucht Platz, Rahmenlos, Größe variabel), Stereo-Displays (2x soviel Pixel, Headtracking), Volumentrische Displays (exot)
+
+Render & Streaming -> Cluster mit Netzwerkanbindung (Videostream, Raytracing, Volumentrisch Rendern, ...), Unterscheidung Display Data Streaming + Distributed Rendering
+Datastreaming:
+a) Client-Server: Client kontaktiert nur Server, Server kommuniziert mit Cluster (transparent da wie eine Maschine aber großes Datenaufkommen im Netzwerk)
+b) Master-Slave: Auf allen Nodes läuft gleiche Anwendung -> kommunikation und synchronisierung werden von Master übernommen (geringe Bandbreite aber schwer vorhersagbar)
+
+Es werden verschiedene Softwarepakete angesprochen: Data Streaming Software, Distributed Render Software, Anwendungen
+
+==> Interesanter Einstieg, auf jeden Fall Quellen weiter verfolgen bezüglich Aufbau, Kallibrierung und weiteres
+
+======================
+
+Position-Independent Interaction for LHRD 2007
+
+Problemstellung: Maussteuerung für LHRD schwierig wenn man na dran ist -> flexibilität und bewegungsfreiheit, Maus und Tastatur brauchen Untergrund
+Idee: Laserpointer als Maus-Tracking-Device
+Umsetzung: Library für mehrere Kameras die sich selbst auf LHRD kalibrieren mit entsprechenden Kalibrierungsbilder. Kameras mit hohen FPS damit interaktionszeit-verzögerung nicht zu groß wird und Nutzer gutes Gefühl haben. Für R/G/B und IR Laser. IR Laser am besten, damit diskrepanz zwischen Laserpunkt und Maus nicht verwirrt. Aus Kameras Graustufenbild -> Punktgwicht -> auch mit geringerer Kameraauflösung gut machbar.
+Evaluierung: Bei geringer Distanz ähnlich gut, aber immer noch schlechter als Maus, bei größerer Distanz noch ein wenig mehr hinter Maus-Performance, da Zittern größere Auswirkung hat. Aber Bewegungsfreiheit könnte Argument dafür sein.
+
+==> Eher ein MCI-Paper, weniger für meine Aufgabe
+
+======================
+
+Designing LHRD Workspaces 2012
+
+Untersuchung wie man einen LHRD-Workspace für alltägliche Aufgaben einrichten muss, bzw auf was man achten muss. Geschah anhand Probanden die dies über 18 Monate probiert haben. See it all effekt vs physikalische Navigation.
+
+Faktoren: Höhe des Displays, Krümmung, Halterung, Tastatur und Mausposition, Nutzerposition.
+
+Empfehlung: Hufeisenkrümmung, variable Krümmung für Collaboration, Halterung auf Tisch, Kopfposition gleich weit von allen Bildschirmen entfernt, Normaler Bürostuhl mit mobilität, Maus und Tastatur an Armlehne
+
+==> Hatte gehofft mehr über die eigentliche Installation und Kalibrierung zu erfahren, aber mehr ein MCI bzw Ergonomie Paper
+
+======================
