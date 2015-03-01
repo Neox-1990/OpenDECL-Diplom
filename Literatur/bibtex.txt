@@ -63,3 +63,85 @@ pages = {139--146},
 doi = {10.1145/1143079.1143102},
 masid = {2432300}
 }
+
+@inproceedings{156748,
+author = {Han Chen and Douglas W. Clark and Zhiyan Liu and Grant Wallace and Kai Li and Yuqun Chen},
+title = {{Software Environments For Cluster-Based Display Systems}},
+booktitle = {Cluster Computing and the Grid},
+year = {2001},
+pages = {202--211},
+doi = {10.1109/CCGRID.2001.923194},
+masid = {156748}
+}
+
+@inproceedings{635716,
+author = {Carolina Cruz-Neira and Daniel J. Sandin and Thomas A. DeFanti},
+title = {{Surround-screen projection-based virtual reality: the design and implementation of the CAVE}},
+booktitle = {Annual Conference on Computer Graphics},
+year = {1993},
+pages = {135--142},
+doi = {10.1145/166117.166134},
+masid = {635716}
+}
+
+@article{3708338,
+author = {Byungil Jeong and Ratko Jagodic and Luc Renambot and Rajvikram Singh and Andrew Johnson and Jason Leigh},
+title = {{Scalable Graphics Architecture for High-Resolution Displays}},
+masid = {3708338}
+}
+
+@article{724345,
+author = {Maureen C. Stone},
+title = {{Color and Brightness Appearance Issues in Tiled Displays}},
+journal = {IEEE Computer Graphics and Applications},
+volume = {21},
+year = {2001},
+pages = {58--66},
+issue = {5},
+doi = {10.1109/38.946632},
+masid = {724345}
+}
+
+@book{1847038,
+author = {Jérémie Allard and Valérie Gouranton and Loïck Lecointre and Sébastien Limet and Bruno Raffin and Sophie Robert},
+title = {{FlowVR: A Middleware for Large Scale Virtual Reality Applications}},
+booktitle = {European Conference on Parallel Processing},
+year = {2004},
+pages = {497--505},
+doi = {10.1007/978-3-540-27866-5_65},
+masid = {1847038}
+}
+
+@book{2435429,
+author = {Zonghui Wang and Jiaoying Shi and Xiaohong Jiang},
+title = {{A Scalable HLA-Based Distributed Simulation Framework for VR Application}},
+booktitle = {International Conference on Artificial Reality and Telexistence},
+year = {2006},
+pages = {361--371},
+doi = {10.1007/11941354_37},
+masid = {2435429}
+}
+
+@article{422242,
+author = {Greg Humphreys and Mike Houston and Ren Ng and Randall J. Frank and Sean Ahern and Peter D. Kirchner and James T. Klosowski},
+title = {{Chromium: a stream-processing framework for interactive rendering on clusters}},
+journal = {ACM Transactions on Graphics},
+volume = {21},
+year = {2002},
+pages = {693--702},
+issue = {3},
+doi = {10.1145/566570.566639},
+masid = {422242}
+}
+
+@article{64779,
+author = {Steven Molnar and Michael Cox and David Ellsworth and Henry Fuchs},
+title = {{A sorting classification of parallel rendering}},
+journal = {IEEE Computer Graphics and Applications},
+volume = {14},
+year = {1994},
+pages = {23--32},
+issue = {4},
+doi = {10.1109/38.291528},
+masid = {64779}
+}

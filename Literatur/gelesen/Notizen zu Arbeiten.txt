@@ -35,3 +35,36 @@ Empfehlung: Hufeisenkrümmung, variable Krümmung für Collaboration, Halterung auf
 ==> Hatte gehofft mehr über die eigentliche Installation und Kalibrierung zu erfahren, aber mehr ein MCI bzw Ergonomie Paper
 
 ======================
+
+FlowVR: a middleware for large scale virtual realtity applications 2004
+
+VR-Middleware für Cluster
+
+Problem -> skalierung, verschiedene updateraten / Frequenzen
+
+FlowVR-> middleware, möglichst wenige Änderungen zu bestehenden Code, timing, synchronisierung, für komplexe Kommunikation im Cluster
+
+Applicationmodel: Nodes mit Input und Output-Ports -> Module die verschiedene Aufgaben übernehmen Bspw: Berechnungen/Simulationen, Visualisierung / Teilvisualisierung, Synchronisierung / Filterung
+Weiterer wichtiger Punkt -> Connection (FIFO-Channels): zwischen den Ports, stemps als ID und Iterations Parameter, routing-nodes zum verteilen und aufsplitten von Connection (Outputs)
+
+Besonders Interessant: XML-Description of the FlowVR Network -> Alle Komponenten auf Nodes
+
+==> Hat mein Verständniss von Distributed/Parallel Computing in Cluster erhöht. Leider kein Hardwarebezug bzgl. Displays, jedoch interessant bzgl. Netzwerkbeschreibung, sogar als XML
+
+======================
+
+Chromium: A Stream-processing Framework for Interactive Rendering on Clusters 2002
+
+Architektur: Auf Basis von WireGL -> ClusterNodes = Computer in Cluster, Kanten sind Netzwerkverbindungen/Traffic, jeder Node hat zwei Teile: 1. transformation->nimmt einen Stream(OpenGL-COmmands) und kann auf >0 Outputstreams verteilen/mappen. 2. Serialisierung -> >1 Inputs Stream und nur 1 Outputstream -> Servernode, wenn kein Input aber 1 Output -> Clientnode
+
+bzgl transforming: OpenGL Stream Processing Unit (SPU) mit verschiedenen Funktionen -> Jeder Node läd sich seine Lib für die SPU
+
+Tools: packing und unpacking von Streams, Netzwerkabstraktion (TCP/IP) -> möglicher Seitenkanal zu kommunikation zwischen SPUs, OpenGL-State-Tracker -> vergleicht zwei Grafik-Kontexte, + jede Menge weitere SPUs/Funktionen.
+
+Bsp. 3.6 (S.4)
+
+4.1 Beispiel Volumenrender
+4.2 Beispiel Darstellen auf einem (großen) Bildschirm mit SGE wo im Cluster gerendert wurde
+4.3 Beispiel stylized rendering mit Quake3 als Ausgang
+
+==> Weiterer Interessanter Einblick ins Cluster-Computing -> Cluster Stream Processing -> Middleware zum steuern von API-Commands, paralleles render, leider kein Hardwarebezug, semiinteressant aber mal gelesen weil sehr oft zitiert.
