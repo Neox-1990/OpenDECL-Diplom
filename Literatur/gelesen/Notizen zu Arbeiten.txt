@@ -68,3 +68,64 @@ Bsp. 3.6 (S.4)
 4.3 Beispiel stylized rendering mit Quake3 als Ausgang
 
 ==> Weiterer Interessanter Einblick ins Cluster-Computing -> Cluster Stream Processing -> Middleware zum steuern von API-Commands, paralleles render, leider kein Hardwarebezug, semiinteressant aber mal gelesen weil sehr oft zitiert.
+
+======================
+
+Surround-Screen Projection-Based Virtual Reality: The Design ans Implementation of the Cave 1993
+
+Projektion: Würfelförmig als (zeit-/resourcensparende) Annäherung an Kugel -> statt Kamera-Paradigma wird Fensterparadigma genutzt -> Objekt wird auf Wand = Fenster projeziert => Off-Axis Stereoprojektion anhängig von Betrachterposition => Koordinatiensystem-Ursprung in CAVE-Mitte
+-> Objekte in der Szene sind auch im Koordinatensystem
+mit Brillen-Tracking werden Augenposition berechnet für Stereo -> Stereosicht mit einer Projektion pro Auge (Shutterbrille) für interlaced Bilder (Problem mit Grünen Phosphor Nachglühen in Projektor)
+-> 120 halbbilder = 60 Hz, Verzerrung wird rausgerechnet, Rückwandprojektion damit keine Schatten, Frame-Synchronität schwierig
+
+==> Interssanter Einblick wie CAVE funktioniert, Punkt 5 fehlte?, habe jetzt bessere Vorstellung wie CAVE funktioniert und aufgebaut ist
+
+======================
+
+PixelFlex: A reconfigurable Multi-Projektor Display System 2001
+
+PixelFlex -> an der Decke montierte Projektoren mit Neige&Schwenk, Zoom&Fokussier funktion für Flache Projektion und eine Kamera zur Kalibrierung
+
+Besteht aus: einem Config-PC, eine Kamera, 8 Projektoren mit Spiegeln zum Schwenken und Neigen -> 2 4er Reihen -> von PC gesteuert
+
+Kalibrierung: mit Kamera zum finden des mapping v. projektor Bild koordinaten un Welt Display Koordinaten -> Overlappin -> Alpha maske für Render damit Nahtlos auch für Helligkeit
+
+1. Kamera auf Fläche kalibrierung -> mapping v Kamera in Weltkoordinaten
+2. Projektoreinstellung mit strukturierten Licht -> mapping v. Projektor Bildkoordinaten in Weltkoordinaten (Über Kamerabildkoordinaten)
+3. Postprocessing für Renderalgorithmen
+-> wenn Rechteckig erwünscht dann muss noch maximales Rechteck bestimmt werden -> Effective Display Area
+
+Photometrische Kalibrierung -> Helligkeit u. Alphamasken bei Überlappung
+
+==> Interessanter Einblick v.a. was die einstellung und Kalibrierung von Multiprojektor-Installation angeht
+
+======================
+
+Scaleable Graphics Architecture for High Resolution Display 2005
+
+Vorstellung von SAGE
+
+-> System das mehrere (unabhängige) Inputs nimmt und auf LHRD verteilt, mit GUI was man zeigen will, auch multiuser betrieb
+
+==> kleine Vorstellung von SAGE, leider wenig Display-Hardwarebezug
+
+======================
+
+Software Enviroments for Cluster-Based Display Systems 2001
+
+Beschäftigt sich damit wie man Software auf Cluster-Based Displays betreibt
+
+-> 2 Ansätze
+1. Master-Slave: Netwerkswitch verteilt App-Output auf Rendernodes -> hohe Netzwerklast
+2. Synchrone Program Ausführung: App läuft auf mehreren Rendernodes gleichzeitig und synchron -> synchronisierung schwierig
+
+Master-Slave:
+1. Virtueller Display Treiber -> abfangen der primitive die an Grafikkarte geschickt werden und auf Rendernodes Verteilen mit entsprechenden Treiber
+2. DLL-Ersetzen -> die OpenGL32.dll bearbeiten und umschreiben so dass Renderanweisungen und nötige Informationen an Rendernodes verteilt werden
+-> Frustum Clipping geschieht auf Rendernodes so das immer gesamte Szene übertragen werden muss
+
+Synchr. Program Ausführung:
+1. System-Level-Synchronisation -> System auf dem Applikation läuft muss synchronisiert werden, nodes müssen untereinander Status austauschen um synchron zu bleiben -> Problem bei Multithread
+2. App-Level-Programsynchronisation -> App tauscht sich mit anderern Apps aus um synchron zu bleiben -> Apps müssen modifiziert werden, Frustumclipping individiell auf Nodes
+
+==> interessantes Paper, v.a. noch mal gute Erläuterung der cluster-computing Ansätze und Probleme, leider wieder kein Display-Hardwarebezug
