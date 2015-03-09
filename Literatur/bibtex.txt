@@ -145,3 +145,61 @@ issue = {4},
 doi = {10.1109/38.291528},
 masid = {64779}
 }
+
+@article{15258004,
+author = {Behzad Sajadi and Aditi Majumder},
+title = {{Scalable Multi-view Registration for Multi-Projector Displays on Vertically Extruded Surfaces}},
+journal = {Computer Graphics Forum},
+volume = {29},
+year = {2010},
+pages = {1063--1072},
+issue = {3},
+doi = {10.1111/j.1467-8659.2009.01676.x},
+masid = {15258004}
+}
+
+@article{4485564,
+author = {Yong-Bin Kang and Ki-Joon Chae},
+title = {{XMegaWall: A Super High-Resolution Tiled Display using a PC Cluster}},
+year = {2007},
+masid = {4485564}
+}
+
+@article{4500130,
+author = {Glenn Bresnahan and Raymond Gasser and Augustinas Abaravichyus and Erik Brisson and Michael Walterman},
+title = {{Building a Large Scale, High Resolution, Tiled, Rear Projected, Passive Stereo Display System Based on Commodity Components}},
+year = {2003},
+masid = {4500130}
+}
+
+@article{39247052,
+author = {Sungwon Nam and Byungil Jeong and Luc Renambot and Andrew Johnson and Kelly Gaither and Jason Leigh},
+title = {{Remote visualization of large scale data for ultra-high resolution display environments}},
+year = {2009},
+pages = {42--44},
+doi = {10.1145/1838544.1838550},
+masid = {39247052}
+}
+
+@article{3549494,
+author = {J. Ahrens and B. Geveci and C. Law},
+title = {{ParaView: An End-User Tool for Large Data Visualization}},
+year = {2005},
+masid = {3549494}
+}
+
+@inproceedings{4545939,
+author = {Andy Cedilnik and Berk Geveci and Kenneth Moreland and James P. Ahrens and Jean-Marie Favre},
+title = {{Remote Large Data Visualization in the ParaView Framework}},
+booktitle = {Eurographics Workshop on Parallel Graphics and Visualization},
+year = {2006},
+pages = {163--170},
+doi = {10.2312/EGPGV/EGPGV06/163-170},
+masid = {4545939}
+}
+
+@article{11295870,
+author = {Kenneth Moreland and John Greenfield},
+title = {{Large Scale Visualization with ParaView 3}},
+masid = {11295870}
+}

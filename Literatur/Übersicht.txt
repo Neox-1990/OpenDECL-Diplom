@@ -1,0 +1,29 @@
+Arbeiten zu MCI von LHRD (2)
+
+Position-Independent Interaction for LHRD 2007
+Designing LHRD Workspaces 2012
+
+============================
+
+Arbeiten zu Cluster-Computing in Verbindung mit LHRD (4)
+
+FlowVR: a middleware for large scale virtual realtity applications 2004
+Chromium: A Stream-processing Framework for Interactive Rendering on Clusters 2002
+Scaleable Graphics Architecture for High Resolution Display 2005
+Software Enviroments for Cluster-Based Display Systems 2001
+
+============================
+
+Arbeiten zur Hardware und Kalibrierung (7)
+
+A Survey of Large High Resolution Display Technologies, Techniques and Application 2006
+Surround-Screen Projection-Based Virtual Reality: The Design ans Implementation of the Cave 1993
+PixelFlex: A reconfigurable Multi-Projektor Display System 2001
+Scalable Multiview Registration for Multiprojector Displays on Vertically Extruded Surfaces 2010
+Automatic Alignment of Highresolution Multiprojector Displays Using an uncalibrated Camera 2000
+Building a Largescale Highresolution Tiled, Rear Projevted, Passive Stereo Display Systembased on Commodity Components 2003
+XMegaWall: A Super High-Resolution Tiled Display using a PC Cluster 2007
+
+============================
+
+Arbeiten zum betrieb von Software auf LHRD (0)

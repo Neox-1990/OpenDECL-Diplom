@@ -129,3 +129,91 @@ Synchr. Program Ausführung:
 2. App-Level-Programsynchronisation -> App tauscht sich mit anderern Apps aus um synchron zu bleiben -> Apps müssen modifiziert werden, Frustumclipping individiell auf Nodes
 
 ==> interessantes Paper, v.a. noch mal gute Erläuterung der cluster-computing Ansätze und Probleme, leider wieder kein Display-Hardwarebezug
+
+======================
+
+Scalable Multiview Registration for Multiprojector Displays on Vertically Extruded Surfaces 2010
+
+Kalibrierung von Multiprojector Display mittels Kamera auf Tilt und Pan Einheit
+Display ist gebogen, Display (s,t), Kamera (x,y), Projektor (u,v), Display 3D -> X(s,t),Y(s,t),Z(s,t)
+Kamera wird in N verschiedene Stellungen gebracht, wobei Zoom immer gleich bleibt -> innere Parameter der Kamera immer gleich
+=> ausreichend überlappung, in jeder Stellung werden jeweils K Bildervon Blobs von den M Projektoren (mit nicht lineraren Verzerrungen) genommen
+-> Ziel funktion von (u,v) in (s,t) für Wallpaperregistration
+Vorgehensweise: 1. Parameter der N Kameraviews ermittlen mittels der Korespondenzen der Bilder
+a, innere Kameraparameter ermitteln (nichtlineare optimierung über die Views)
+b, äußere Kameraparameter relativ zur Referenzview mittels linearer Graphoptimierung -> Rotationsmatrix
+c, finden der Stellung und Orientierung der Referenzview zum Display -> dann für alle Viewsmöglich
+2. Rekonstruieren der 3D Displayform mittels ermittelten Parameter und damit die 2D Parametrisierung
+3. Definieren des Verhältnisses zwischen Projektorkoordinaten und Displaykoordinaten für geometrische Registrierung
+
+==> interessanter Einblick in Kalibrierung von Multiprojektor-Displays
+
+======================
+
+Automatic Alignment of Highresolution Multiprojector Displays Using an uncalibrated Camera 2000
+
+Ziel -> Multiprojektor kalibrieren ohne Kaliebrierung der Kamera => bedeutet Kamera nicht in Display-Koordinatensystem setzen
+
+Automatisches Alignment -> in Überlappung Punkte übereinstimmen für C0 und Linien für C1 stetigkeit
+
+Ausgangspunkt: Projektortransformation die aus Projektorbildpunkten (x,y) -> Displaybildpunkte macht => (u,v) = (Pu(x,y),Pv(x,y))
+P:
+x	m11 m12 m13
+y	m21 m22 m23
+1	m31 m32  1 
+
+Ablauf:
+1. Messen der Ausrichtung: für Punkte:
+a, nimm Punkt P von Projektor A und bestimme Position L in KameraK-system
+b, rate Punkt Q von Projektor B und bestimme Position L' in KameraK-system
+c, wenn Abstand ||L,L'||>epsilon, dann verschiebe Q=Q+p*(L-L') in Projektor B (p ist eine Konstante) bis Bedingung erfüllt ist
+d, gib (P,Q) zurück => Punkt P in Projektor A entspricht Punkt Q in Projektor B
+
+2. Ausrichtung ausrechnen: für Punkte Fehlermaß -> euklidische distanz Ep(p1,p2)=(u1-u2)^2+(v1-v2)^2  (indizes stehen für die projektoren); für Linien Ep der inneren Endpunkte und Winkel zwischen den Linien
+=> Für jeden Projektor i Pi -> Piu & Piv so bestimmenm dass Fehler möglichst gering -> globales Minimum -> Optimierung mit Simulated Annealing (verallgemeinerung von Monte Carlo Methode)
+
+3. Pi anwenden und Bilder entsprechend mappen
+
+==> spannender Einblick in Kalibrierung, insbesondere Algorithmus einigermaßen nachvollziehbar
+
+======================
+
+Building a Largescale Highresolution Tiled, Rear Projevted, Passive Stereo Display Systembased on Commodity Components 2003
+
+Beschreibt, wie sie ihre Wall gebaut haben, welche Überlegungen und Probleme sie hate und was es sonst zu beachten gab
+
+Tiling -> optimal wäre Rechteckige Stücken die auf Naht aneinander liegen, aber nicht möglich
+Probleme: Idealerweise nicht möglich, da Projektoren immer leichte Verzerrung, Artefakte am Rand, Horiontale u. Vertikale Linientreue
+
+Lösungen:
+1. Transformieren der Bilddaten damit es passt -> 4x4 Matrix nach OpenGL-Projektion einfügen -> Umschreiben der App, o. direkt in Projektor eingeben wenn möglich
+2. Markierung auf Display + 6DOF Einstellungen für Projektor -> mechanisch korigieren, aber sehr mühsam, vielleicht cpu-gesteuert über entprechend motorische Installationen
+-> zusätzliches Problem bei Stereo -> beide Projektoren müssen Identisch Platziertwerden -> lotrecht über Mittelpunkt des rechteckigen Stücks -> unmöglich, es gibt jedoch auch projektoren mit off-axis projektion die dies behebn -> Lens-shifting
+Umsetzung: Schrittweise, erst grob mechanisch, dann software -> Ecken der Projektion entsprechend in den Ecken der Stücken platzieren (mit tastatur) und daraus die Projektionsmatrix generiert und gespeichert.
+
+Edgeblending -> Übergang zwischen zwei Stücken -> Lücke oder Überlappung
+Lösung: Überlappung mit fading entweder Softwareseitig (Alphamaske) o. Hardwareseitig (Blenden)
+
+Colormatching -> Problem mit verschiedenen Lampen und Veränderung über Laufzeit
+Lösung:
+1. Lookuptable entsprechend für Projektor für Farbenmapping
+2. Transformation des Farbraums entsprechend (4x4 matrix)
+
+Dispersion am Rand -> Licht fällt am Rand nicht senkrecht auf und wirkt damit dunkler
+Lösung:
+1. Gutes Displaymaterial
+2. größere Distanz Display-Projektor
+3. über Headtracking entsprechend variieren auf Bilddaten
+
+Stereo? Aktiv (Shutterbrillen) oder Passiv (Farb- o. Polfilter)
+Umsetzung: Polfilter mit entsprechenden Displaymaterial, LCD Projektoren -> Polfilter zwischen Lampe und LCD Matrizen -> Problem grüne Matrix dreht polarisation um 90 grad -> Lösung: drehen der gesamten Polarisation um 45 grad.
+
+Infrastruktur -> 1 oder 2 Projektoren auf einen Rechner? -> bei 2 auf 1 etwas bessere ergebnisse da Netzwerklast geringer -> Flaschenhals Netzwerk
+
+==> schöner Überblick was alles zu beachten ist, insbesondere bezüglich Stereoprojektion
+
+======================
+
+XMegaWall: A Super High-Resolution Tiled Display using a PC Cluster 2007
+
+==> weitere Multiprojektorinstallation, wenig zu kalibrierung bis auf Projektor-Rag u. einstellbaren Mounts für einzelne Projektoren, sonst nicht viel neues.
