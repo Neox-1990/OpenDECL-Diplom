@@ -217,3 +217,141 @@ Infrastruktur -> 1 oder 2 Projektoren auf einen Rechner? -> bei 2 auf 1 etwas be
 XMegaWall: A Super High-Resolution Tiled Display using a PC Cluster 2007
 
 ==> weitere Multiprojektorinstallation, wenig zu kalibrierung bis auf Projektor-Rag u. einstellbaren Mounts für einzelne Projektoren, sonst nicht viel neues.
+
+======================
+
+Remote Visualization of Large Scale Data for Ultra High Resolution Display Enviroments 2009
+
+Paraviewframework mit SAGE verbinden
+
+Paraview: 
+- Client-Server Mode -> ein PC übernimmt Berechnung und Rendering und schickt Ergebnis an Desktop-Client -> Remote Visualisierung
+- Distributed Server Mode -> Cluster von Computern übernimmt parallel Berechung und Rendering und über Master-Node wird Ergebnis an Client geschickt
+- Tiled Display Mode -> Cluster von Computern übernimmt Berechnung und Rendering (parallel) -> jeder Node rendert Fragment des Bildes und gibt es auf entsprechenden Display aus -> keine Remot-Visualisierung unterstützt
+
+-> Ziel: Tiled Display Mode mit Remot Visualisierung
+
+Umsetzung mit SAIL (SAGE Application Interface Library) -> nimmt framebuffer von App und schickt an SAGE -> Baut dann Bild zusammen
+
+-> in Paraview Klasse vtkXOpenGLRenderWindow in Funktion Frame() -> übernimmt swapbuffer -> SAIL API wird in diese Funktion integriert und nimmt Pixel von Framebuffer und streamed diese an ein tiled Display (von SAGE betreiben)
+
+==> interessanter erster Einblick wie Paraview auf Cluster laufen kann
+
+======================
+
+Remote LArge Data Visualization in the ParaView Framework 2006
+
+Cluster -> Unterteilung in Data-Node -> übernimmt Datenverarbeitung u. Visualisierung (starke CPU)
+& Render-Node -> übernimmt Rendering der Geometrie -> starke GPU
+
+Problem: Menge an Data.Nodes größer als Rendernodes; übertragen von Bilddaten oder Geometriedaten
+
+Paraview Rendering Modes:
+- Local -> alles auf einer Maschine
+- Image Delivery -> Cluster Rechnet und Schickt Ergebnis an Client
+- Tiled Display -> Rendernode zeigt Bilder auf einen oder mehreren Displays an 
+- Cave
+
+Es gibt also Data Server, Render Server und Clients
+
+Client Server Streaming (CSS) -> Interprozess Kommunikation besonders bei heterogenen Systemen
+
+Server Manager Modul -> einfachen CLient und Script Interface, server-eigenschaften abrufbar u. Metadaten
+
+Kommunikation d. Geometrie von Data auf Renderserver -> M to N Prozess Mapping -> ausbalanzieren der Prozesse
+
+Render Modul -> von Paraview einigermaen weg gekapselt -> Display Objekt (handlet auch interaktion)
+
+==> kleiner Interessanter Einblick unter die Haube von Paraview
+
+======================
+
+HIVE: a Highly Scaleable Framework for DVE (Distributed Virtual Enviromment) 2004
+A scalable HLA-Based Distributed Simulation Framework for VR Application 2006
+
+HIVE -> Middleware Plattform für VR-Entwicklung
+
+Was ist wichtig für skalierbare Architektur:
+- viele Nodes (distributed Computing)
+- Effiziente Server
+- offene Plattform
+
+3-Schichtensystem im Backend
+
+Schicht 1: Global Tier mit Directory Manager (DM) und Group Agend (GA)
+Schicht 2: Group Tier mit Group Manager (GM)
+Schicht 3: Clienttier
+
+Organisation: Wurzel ist DM, Unterelemente sind GMs deren Unterelemente die Clients sind => Baumhierarchie Routing Tree
+DM: wartet und updatet Baum dynamisch, DMs und GMs können von jedem Client entsprechend GM finden u. Nachricht übermitteln
+
+DM -> erster Prozess, globale Services (Client/GM join, resource Monitor,...)
+GA -> deamon Prozess, der mit DM kommuniziert (heartbeat), startet GM auf Kommando von DM
+GM -> spezifiziert App, liste von Clients die von DM zugewiesen werden, weitere Services
+Client -> kann Teilnehmer, SZene Objekt o. passiver Zuschauer sein
+
+Zuweisung und Balancing von Clients auf GMs durch DM
+für Software Development -> HIVE SDK
+
+==> VR Middleware zur Entwicklung von VR Apps in DVE, leider wenig Displaybezug
+
+======================
+
+Coupling Virtual Reality Open Source Software Using Message Oriented Middleware 2003
+
+Ziel -> vereinfachung der Verknüpfung von mehreren Softwarepaketen zu einer App -> damit einfache Austauschbarkeit von einzelnen Paketen
+
+Umsetzung: Jede Software wird in Module gekapselt das entsprechende Funktionalität hat. Module tauschen Informationen  über Message Middleware aus -> verschiedene Message-Typen entsprechend der Modulfunktionalität
+
+Middleware Message Manager -> Eventbasierend
+
+erlaubt Kommunikation zwischen Modulen: in einem Prozess ++ in verschiedenen Prozessen auf gleicher Maschine ++ auf verschiedenen Maschinen
+
+Message: MessageType + Parameter (mit Namen und Typ) -> wird von Manager benutzt um an entsprechenden Module zu schicken
+
+Receiver -> Objekte die Messages eines bestimmten Types annehmen  (interface receiver + onMessage() )
+-> alle können Senden, nur subscribed receivers können empfangen
+
+Message Manager handelt kommunikation auch über Netzwerk (Packen, Entpacken)
+
+==> Middleware zur Entwicklung, wenig Displaybezug
+
+======================
+
+InTml: A Description Language for VR Application 2002
+
+-> XMK-Applikation die beschreibt Eingabegeräte, Ausgabegeräte, Interaktionstechniken und Anwendungen (Kombination der 3 ersteren + Geometrie in X3D)
+
+Konzept -> Dataflow Architekturen, einfache Elemente die miteinander Verbunden sind -> Input-/Output Ports
+
+Filter: Interaktionstechnik im Datendluss, typed events auf Input und Output, Bsp.: SelectedByTouching
+VR-Objekte: Content-Stücke in der Virtuellen Umgebung
+Object-Holder: besondere Filter zum Verändern von VR-Objekten
+Input-Device: Daten von Eingabegeräten
+Output-Device: zum Rendern auf Ausgabegeräten
+
+Application Verknüpfung der Elemente für Funktion
+
+Aufbau mit kurz und lang Beschreibung
+
+==> Middleware um VR zu Beschrieben, Output-Device n 3DML-Paper mal genauer anschauen, insgesamt ähnlich zu FlowVR, etwas mehr Software und Interaktionseitig
+
+======================
+
+VR Juggler: A Virtual Platform for Virtual Reality Application Development 2001
+
+Ziel -> Middleware Plattform für CR Apps, damit Entwickler sich voll auf VR konzentrieren können -> wegkapseln der Implementierungsprobleme bezüglich Peripherie
+
+Juggler -> besteht aus Kernel u. Draw Manager
+
+Kernel kapselt Hardware komplett weg, Apss können nur über Kernel auf Hardware zugreifen => Systemunabhängig
+
+Anwendungsentwicklung: Apps sind Objekte mit entsprechenden Interfaces zum Erstellen d. VR, Kernel hat volle Kontrolle und ruft entsprechend die Methoden d. App auf => keine main() in Objekten
+Interfaces müssen entsprechend implementiert werden, damit Kernel kommunizieren kann
+Ablauf mit Frame of Execution
+-> Insgesamt ermöglicht dies einen stabilieren Lauf, Austauschbarkeit während des Betriebs möglich
+
+In Kernel:
+Inputmanager -> kontrolliert Inputdevices, Proxys für verschiedene Inputs, Proxy verweist auf Device, Inputmanager hat zugriff auf Proxy, somit Austauschbarkeit des Devices in dem Proxy auf anderes Device verweist
+
+==> Plattform ähnlich zu JVM, aber nur für neu geschriebene Anwendungen, nichts für schon bestehende

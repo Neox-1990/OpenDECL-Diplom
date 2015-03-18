@@ -26,4 +26,17 @@ XMegaWall: A Super High-Resolution Tiled Display using a PC Cluster 2007
 
 ============================
 
-Arbeiten zum betrieb von Software auf LHRD (0)
+Arbeiten zum betrieb von Software auf LHRD (2)
+
+Remote Visualization of Large Scale Data for Ultra High Resolution Display Enviroments 2009
+Remote LArge Data Visualization in the ParaView Framework 2006
+
+============================
+
+Arbeiten zu VR Middleware (5)
+
+HIVE: a Highly Scaleable Framework for DVE (Distributed Virtual Enviromment) 2004
+A scalable HLA-Based Distributed Simulation Framework for VR Application 2006
+Coupling Virtual Reality Open Source Software Using Message Oriented Middleware 2003
+InTml: A Description Language for VR Application 2002
+VR Juggler: A Virtual Platform for Virtual Reality Application Development 2001

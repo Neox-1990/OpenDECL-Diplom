@@ -203,3 +203,45 @@ author = {Kenneth Moreland and John Greenfield},
 title = {{Large Scale Visualization with ParaView 3}},
 masid = {11295870}
 }
+
+@article{6143028,
+author = {Fábio Rodrigues and Rodrigo Ferraz and Márcio Cabral and Fernando Teubl and Olavo Belloc and Marcia Kondo and Marcelo Zuffo and Roseli Lopes},
+title = {{Coupling Virtual Reality Open Source Software Using Message Oriented Middleware}},
+masid = {6143028}
+}
+
+@inproceedings{581051,
+author = {Pablo Figueroa and Mark Green and H. James Hoover},
+title = {{InTml: a description language for VR applications}},
+booktitle = {Web3D / VRML Symposium},
+year = {2002},
+pages = {53--58},
+doi = {10.1145/504502.504511},
+masid = {581051}
+}
+
+@inproceedings{1766189,
+author = {Zonghui Wang and Xiaohong Jiang and Jiaoying Shi},
+title = {{HIVE: a Highly Scalable Framework for DVE}},
+booktitle = {Virtual Reality, IEEE Annual International Symposium},
+year = {2004},
+doi = {10.1109/VR.2004.41},
+masid = {1766189}
+}
+
+@inproceedings{4077770,
+author = {Allen Bierbaum and Christopher Just and Patrick Hartling and Kevin Meinert and Albert Baker and Carolina Cruz-neira},
+title = {{VR Juggler: A Virtual Platform for Virtual Reality Application Development}},
+booktitle = {Virtual Reality},
+year = {2001},
+pages = {89--96},
+doi = {10.1109/VR.2001.913774},
+masid = {4077770}
+}
+
+@article{2539687,
+author = {P. Figueroa and M. Green and H. J. Hoover},
+title = {{3dml: A language for 3d interaction techniques specification}},
+year = {2001},
+masid = {2539687}
+}
