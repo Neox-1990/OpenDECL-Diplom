@@ -1,0 +1,32 @@
+Für Paraview
+
+in pvx-datei für Server:
+<Machine Name="Ronald-PC"
+	Environment="DISPLAY=:0" //Anschluss
+	Geometry="640x720+1920+280" //Fenstergeometrie breite+höhe+Xoffset+Yoffset
+	FullScreen="0" 
+	ShowBorders="1"
+	LowerLeft="-0.96 -0.54 -1.0"
+	LowerRight="0.0 -0.54 -1.0" //definiert im Prinzip Displaymaße, aber in Datensatz-Koordinaten. Mit Z Wert für Kamerawinkel
+	UpperRight="0.0  0.54 -1.0">
+
+Bei Start des pvserver:
+Problem bei mpi und Pfad mit leerzeichen -> subst Verzeichnis in bin
+einfacher start: mpirun -np 2 pvserver.exe //-np parameter = anzahl der mpi prozesse, sollte anzahl der Fenster/Displays entsprechen
+start mit angeschlossenen Monitoren in tiles: mpirun -np 2 pvserver.exe -display localhost:0 -tdx=1 tdy=1 //-display parameter für directes Render auf Server, -tdx/-tdy Parameter für Aufbau des tiles display, leider probleme bei Laptop, vielleicht aufgrund integrierten displays
+starten mit pvx file für seperate Fensterbereiche: mpirun -np 2 pvserver.exe -display localhost:0 datei.pvx //letzter Parameter entsprechende Einviroment datei
+
+Stereo bei paraview bei starten des client mit parameter --stereo --stereo-type="Anaglyph", leider kein side by side stereo
+
+===============================================
+
+Für Megamol
+
+megamol.cfg:
+<set name="w1-window" value="x0y0w720h720nd" />
+<set name="w2-window" value="x720y0w720h720nd" />
+<set name="w1-tvtile" value="0;0;50;50" />
+<set name="w2-tvtile" value="50;0;50;50" />
+// ????
+
+<set name="*-window" value="w1024h640" /> Fenstergröße

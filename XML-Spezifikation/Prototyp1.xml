@@ -1,0 +1,172 @@
+<!-- 
+Desktop Setup für meinen Laptop + Bildschirm
+-->
+<openDECL>
+	<node name="Ronald-PC" address="127.0.0.1" purpose="render">
+		<display-port display-id="M1" device-information="ATi Radeon HD 3650 mobility, 512 MB VRAM" />
+		<display-port display-id="M2" device-information="ATi Radeon HD 3650 mobility, 512 MB VRAM" port="HDMI 1" />
+		<network-port network-id="e1" type="ethernet" />
+	</node>
+	<network id="e1" bandwidth="10 Gbit/s" subnet-mask="255.255.255.0" />
+	<display-setup name="flat">
+		<display 
+			id="M1" type="monitor" stereo="none" 
+			pixel-size-x="1280" pixel-size-y="800"
+			metric-size-x="0.32" metric-size-y="0.2"
+			upper-left-vector-x="-0.32" upper-left-vector-y="0.1" upper-left-vector-z="-0.5"
+			lower-left-vector-x="-0.32" lower-left-vector-y="-0.1" lower-left-vector-z="-0.5"
+			lower-right-vector-x="0.0" lower-right-vector-y="-0.1" lower-right-vector-z="-0.5"
+			upper-right-vector-x="0.0" upper-right-vector-y="0.1" upper-right-vector-z="-0.5"
+			virtual-upper-left-x="0" virtual-upper-left-y="0"
+			virtual-lower-left-x="0" virtual-lower-left-y="800"
+			virtual-lower-right-x="1280" virtual-lower-right-y="800"
+			virtual-upper-right-x="1280" virtual-upper-right-y="0"
+		/>
+		<display 
+			id="M2" type="monitor" stereo="none" 
+			pixel-size-x="1920" pixel-size-y="1080"
+			metric-size-x="0.464" metric-size-y="0.26"
+			upper-left-vector-x="0" upper-left-vector-y="0.13" upper-left-vector-z="-0.5"
+			lower-left-vector-x="0" lower-left-vector-y="-0.13" lower-left-vector-z="-0.5"
+			lower-right-vector-x="0.464" lower-right-vector-y="-0.13" lower-right-vector-z="-0.5"
+			upper-right-vector-x="0.464" upper-right-vector-y="0.13" upper-right-vector-z="-0.5"
+			virtual-upper-left-x="1280" virtual-upper-left-y="0"
+			virtual-lower-left-x="1280" virtual-lower-left-y="1080"
+			virtual-lower-right-x="3200" virtual-lower-right-y="1080"
+			virtual-upper-right-x="3200" virtual-upper-right-y="0"
+		/>
+	</display-setup>
+</openDECL>
+
+<!--
+CGV-Stereowall
+-->
+<openDECL>
+	<node name="CGV-Stereo" address="127.0.0.1" purpose="render">
+		<display-port display-id="P1" device-information="eine tolle Grafikkarte" port="HDMI 1" />
+		<display-port display-id="P2" device-information="eine tolle Grafikkarte" port="HDMI 2" />
+		<network-port network-id="e1" type="ethernet" />
+	</node>
+	<network id="e1" bandwidth="10 Gbit/s" subnet-mask="255.255.255.0" />
+	<display-setup name="Side-by-Side Stereo" eye-distance="0.06">
+		<display 
+			id="P1" type="projector" stereo="left-eye" 
+			pixel-size-x="1400" pixel-size-y="1050"
+			metric-size-x="2.72" metric-size-y="2.04"
+			upper-left-vector-x="-1.36" upper-left-vector-y="1.02" upper-left-vector-z="-2.0"
+			lower-left-vector-x="-1.36" lower-left-vector-y="-1.02" lower-left-vector-z="-2.0"
+			lower-right-vector-x="1.36" lower-right-vector-y="-1.02" lower-right-vector-z="-2.0"
+			upper-right-vector-x="1.36" upper-right-vector-y="1.02" upper-right-vector-z="-2.0"
+			virtual-upper-left-x="0" virtual-upper-left-y="0"
+			virtual-lower-left-x="0" virtual-lower-left-y="1050"
+			virtual-lower-right-x="1400" virtual-lower-right-y="1050"
+			virtual-upper-right-x="1400" virtual-upper-right-y="0"
+		/>
+		<display 
+			id="P2" type="projector" stereo="right-eye" 
+			pixel-size-x="1400" pixel-size-y="1050"
+			metric-size-x="0.32" metric-size-y="0.2"
+			upper-left-vector-x="-1.36" upper-left-vector-y="1.02" upper-left-vector-z="-2.0"
+			lower-left-vector-x="-1.36" lower-left-vector-y="-1.02" lower-left-vector-z="-2.0"
+			lower-right-vector-x="1.36" lower-right-vector-y="-1.02" lower-right-vector-z="-2.0"
+			upper-right-vector-x="1.36" upper-right-vector-y="1.02" upper-right-vector-z="-2.0"
+			virtual-upper-left-x="0" virtual-upper-left-y="0"
+			virtual-lower-left-x="0" virtual-lower-left-y="1050"
+			virtual-lower-right-x="1400" virtual-lower-right-y="1050"
+			virtual-upper-right-x="1400" virtual-upper-right-y="0"
+		/>
+	</display-setup>
+</openDECL>
+
+<!--
+Cave
+-->
+<openDECL>
+	<node name="Cave-Front-1" address="192.168.100.1" purpose="render">
+		<display-port display-id="P3-1" device-information="Nvidia quadro 4600" port="HDMI 1" />
+		<network-port network-id="e1" type="ethernet" />
+	</node>
+	<node name="Cave-Front-2" address="192.168.100.2" purpose="render">
+		<display-port display-id="P3-2" device-information="Nvidia quadro 4600" port="HDMI 1" />
+		<network-port network-id="e1" type="ethernet" />
+	</node>
+	<node name="Cave-Left-1" address="192.168.100.3" purpose="render">
+		<display-port display-id="P2-1" device-information="Nvidia quadro 4600" port="HDMI 1" />
+		<network-port network-id="e1" type="ethernet" />
+	</node>
+	<node name="Cave-Left-2" address="192.168.100.4" purpose="render">
+		<display-port display-id="P2-2" device-information="Nvidia quadro 4600" port="HDMI 1" />
+		<network-port network-id="e1" type="ethernet" />
+	</node>
+	<network id="e1" bandwidth="10 Gbit/s" subnet-mask="255.255.255.0" />
+	<display-setup name="2-Seiten-Cave">
+		<display 
+			id="P3-1" type="projector" stereo="none" 
+			pixel-size-x="1600" pixel-size-y="1200"
+			metric-size-x="3.6" metric-size-y="2.7"
+			upper-left-vector-x="-1.8" upper-left-vector-y="1.35" upper-left-vector-z="-1.8"
+			lower-left-vector-x="-1.8" lower-left-vector-y="-1.35" lower-left-vector-z="-1.8"
+			lower-right-vector-x="1.8" lower-right-vector-y="-1.35" lower-right-vector-z="-1.8"
+			virtual-upper-left-x="0" virtual-upper-left-y="0"
+			virtual-lower-left-x="0" virtual-lower-left-y="1200"
+			virtual-lower-right-x="1600" virtual-lower-right-y="1200"
+		/>
+		<display 
+			id="P2-1" type="projector" stereo="none" 
+			pixel-size-x="1600" pixel-size-y="1200"
+			metric-size-x="3.6" metric-size-y="2.7"
+			upper-left-vector-x="-1.8" upper-left-vector-y="1.35" upper-left-vector-z="1.8"
+			lower-left-vector-x="-1.8" lower-left-vector-y="-1.35" lower-left-vector-z="1.8"
+			lower-right-vector-x="-1.8" lower-right-vector-y="-1.35" lower-right-vector-z="-1.8"
+			virtual-upper-left-x="0" virtual-upper-left-y="0"
+			virtual-lower-left-x="0" virtual-lower-left-y="1200"
+			virtual-lower-right-x="1600" virtual-lower-right-y="1200"
+		/>
+	</display-setup>
+	<display-setup name="2-Seiten-Cave mit Stereo" eye-distance="0.06">
+		<display 
+			id="P3-1" type="projector" stereo="left-eye" 
+			pixel-size-x="1600" pixel-size-y="1200"
+			metric-size-x="3.6" metric-size-y="2.7"
+			upper-left-vector-x="-1.8" upper-left-vector-y="1.35" upper-left-vector-z="-1.8"
+			lower-left-vector-x="-1.8" lower-left-vector-y="-1.35" lower-left-vector-z="-1.8"
+			lower-right-vector-x="1.8" lower-right-vector-y="-1.35" lower-right-vector-z="-1.8"
+			virtual-upper-left-x="0" virtual-upper-left-y="0"
+			virtual-lower-left-x="0" virtual-lower-left-y="1200"
+			virtual-lower-right-x="1600" virtual-lower-right-y="1200"
+		/>
+		<display 
+			id="P3-2" type="projector" stereo="right-eye" 
+			pixel-size-x="1600" pixel-size-y="1200"
+			metric-size-x="3.6" metric-size-y="2.7"
+			upper-left-vector-x="-1.8" upper-left-vector-y="1.35" upper-left-vector-z="-1.8"
+			lower-left-vector-x="-1.8" lower-left-vector-y="-1.35" lower-left-vector-z="-1.8"
+			lower-right-vector-x="1.8" lower-right-vector-y="-1.35" lower-right-vector-z="-1.8"
+			virtual-upper-left-x="0" virtual-upper-left-y="0"
+			virtual-lower-left-x="0" virtual-lower-left-y="1200"
+			virtual-lower-right-x="1600" virtual-lower-right-y="1200"
+		/>
+		<display 
+			id="P2-1" type="projector" stereo="left-eye" 
+			pixel-size-x="1600" pixel-size-y="1200"
+			metric-size-x="3.6" metric-size-y="2.7"
+			upper-left-vector-x="-1.8" upper-left-vector-y="1.35" upper-left-vector-z="1.8"
+			lower-left-vector-x="-1.8" lower-left-vector-y="-1.35" lower-left-vector-z="1.8"
+			lower-right-vector-x="-1.8" lower-right-vector-y="-1.35" lower-right-vector-z="-1.8"
+			virtual-upper-left-x="0" virtual-upper-left-y="0"
+			virtual-lower-left-x="0" virtual-lower-left-y="1200"
+			virtual-lower-right-x="1600" virtual-lower-right-y="1200"
+		/>
+		<display 
+			id="P2-2" type="projector" stereo="right-eye" 
+			pixel-size-x="1600" pixel-size-y="1200"
+			metric-size-x="3.6" metric-size-y="2.7"
+			upper-left-vector-x="-1.8" upper-left-vector-y="1.35" upper-left-vector-z="1.8"
+			lower-left-vector-x="-1.8" lower-left-vector-y="-1.35" lower-left-vector-z="1.8"
+			lower-right-vector-x="-1.8" lower-right-vector-y="-1.35" lower-right-vector-z="-1.8"
+			virtual-upper-left-x="0" virtual-upper-left-y="0"
+			virtual-lower-left-x="0" virtual-lower-left-y="1200"
+			virtual-lower-right-x="1600" virtual-lower-right-y="1200"
+		/>
+	</display-setup>
+</openDECL>
