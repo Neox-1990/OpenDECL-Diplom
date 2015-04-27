@@ -29,4 +29,6 @@ megamol.cfg:
 <set name="w2-tvtile" value="50;0;50;50" />
 // ????
 
-<set name="*-window" value="w1024h640" /> Fenstergröße
+<set name="*-window" value="w1024h640" /> Fenstergröße -> *-> inst name(space)
+
+-p C:\Users\Ronald\Desktop\Megamol\MegaMolConf_v1_0\tutorial.mmprj -i Project_1 inst -i Project_1 inst2 --paramfile "C:/tut.txt"
