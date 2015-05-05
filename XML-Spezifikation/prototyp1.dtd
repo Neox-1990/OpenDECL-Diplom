@@ -1,0 +1,57 @@
+<!ELEMENT openDECL (node+,network*,display-setup+)>
+<!ELEMENT node (device+)>
+<!ELEMENT device (port+)>
+<!ELEMENT port EMPTY>
+<!ELEMENT network EMPTY>
+<!ELEMENT display-setup (display+)>
+<!ELEMENT display (physical,virtual)>
+<!ELEMENT physical (upper-left-vector,lower-left-vector,lower-right-vector,upper-right-vector)>
+<!ELEMENT virtual (upper-left-vector,lower-left-vector,lower-right-vector,upper-right-vector)>
+<!ELEMENT upper-left-vector EMPTY>
+<!ELEMENT lower-left-vector EMPTY>
+<!ELEMENT lower-right-vector EMPTY>
+<!ELEMENT upper-right-vector EMPTY>
+
+<!ATTLIST node name CDATA #REQUIRED>
+<!ATTLIST node address CDATA #REQUIRED>
+<!ATTLIST node purpose CDATA #IMPLIED>
+
+<!ATTLIST device type (graphics-card|network-card|other) "graphics-card">
+<!ATTLIST device gpu-count CDATA #IMPLIED>
+<!ATTLIST device vram CDATA #IMPLIED>
+<!ATTLIST device model-name CDATA #IMPLIED>
+
+<!ATTLIST port id ID #REQUIRED>
+<!ATTLIST port type CDATA #IMPLIED>
+<!ATTLIST port slot CDATA #IMPLIED>
+
+<!ATTLIST network id IDREFS #REQUIRED>
+<!ATTLIST network bandwidth CDATA #IMPLIED>
+<!ATTLIST network subnet-mask CDATA #IMPLIED>
+
+<!ATTLIST display-setup name ID #REQUIRED>
+<!ATTLIST display-setup eye-distance CDATA "0.0">
+
+<!ATTLIST display id IDREF #REQUIRED>
+<!ATTLIST display stereo (none|left-eye|right-eye) "none">
+<!ATTLIST display pixel-size-x CDATA #REQUIRED>
+<!ATTLIST display pixel-size-y CDATA #REQUIRED>
+<!ATTLIST display metric-size-x CDATA #REQUIRED>
+<!ATTLIST display metric-size-y CDATA #REQUIRED>
+<!ATTLIST display type CDATA #IMPLIED>
+
+<!ATTLIST upper-left-vector x CDATA #REQUIRED>
+<!ATTLIST upper-left-vector y CDATA #REQUIRED>
+<!ATTLIST upper-left-vector z CDATA "0s">
+
+<!ATTLIST lower-left-vector x CDATA #REQUIRED>
+<!ATTLIST lower-left-vector y CDATA #REQUIRED>
+<!ATTLIST lower-left-vector z CDATA "0">
+
+<!ATTLIST lower-right-vector x CDATA #REQUIRED>
+<!ATTLIST lower-right-vector y CDATA #REQUIRED>
+<!ATTLIST lower-right-vector z CDATA "0">
+
+<!ATTLIST upper-right-vector x CDATA #REQUIRED>
+<!ATTLIST upper-right-vector y CDATA #REQUIRED>
+<!ATTLIST upper-right-vector z CDATA "0">

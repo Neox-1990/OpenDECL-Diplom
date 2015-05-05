@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE openDECL SYSTEM "prototyp1.dtd">
+<openDECL>
+	<node name="Cave-Front-1" address="192.168.100.1" purpose="render">
+		<device type="graphics-card" gpu-count="1" vram="768" model-name="Nvidia quadro 4600">
+			<port type="display" id="P3-1" slot="DVI 1" />
+		</device>
+		<device type="network-card">
+			<port type="ethernet" id="e1" />
+		</device>
+	</node>
+	<node name="Cave-Front-2" address="192.168.100.2" purpose="render">
+		<device type="graphics-card" gpu-count="1" vram="768" model-name="Nvidia quadro 4600">
+			<port type="display" id="P3-2" slot="DVI 1" />
+		</device>
+		<device type="network-card">
+			<port type="ethernet" id="e2" />
+		</device>
+	</node>
+	<node name="Cave-Left-1" address="192.168.100.3" purpose="render">
+		<device type="graphics-card" gpu-count="1" vram="768" model-name="Nvidia quadro 4600">
+			<port type="display" id="P2-1" slot="DVI 1" />
+		</device>
+		<device type="network-card">
+			<port type="ethernet" id="e3" />
+		</device>
+	</node>
+	<node name="Cave-Left-2" address="192.168.100.4" purpose="render">
+		<device type="graphics-card" gpu-count="1" vram="768" model-name="Nvidia quadro 4600">
+			<port type="display" id="P2-2" slot="DVI 1" />
+		</device>
+		<device type="network-card">
+			<port type="ethernet" id="e4" />
+		</device>
+	</node>
+	<network id="e1 e2 e3 e4" bandwidth="10 Gbit/s" subnet-mask="255.255.255.0" />
+	<display-setup name="Zwei-Seiten-Cave">
+		<display id="P3-1" type="projector" stereo="none" pixel-size-x="1600" pixel-size-y="1200" metric-size-x="3.6" metric-size-y="2.7">
+			<physical>
+				<upper-left-vector x="-1.8" y="1.35" z="-1.8" />
+				<lower-left-vector x="-1.8" y="-1.35" z="-1.8" />
+				<lower-right-vector x="1.8" y="-1.35" z="-1.8" />
+				<upper-right-vector x="1.8" y="1.35" z="-1.8" />
+			</physical>
+			<virtual>
+				<upper-left-vector x="0" y="0" />
+				<lower-left-vector x="0" y="1200" />
+				<lower-right-vector x="1600" y="1200" />
+				<upper-right-vector x="1600" y="0" />
+			</virtual>
+		</display>
+		<display id="P2-1" type="projector" stereo="none" pixel-size-x="1600" pixel-size-y="1200" metric-size-x="3.6" metric-size-y="2.7">
+			<physical>
+				<upper-left-vector x="-1.8" y="1.35" z="1.8" />
+				<lower-left-vector x="-1.8" y="-1.35" z="1.8" />
+				<lower-right-vector x="-1.8" y="-1.35" z="-1.8" />
+				<upper-right-vector x="-1.8" y="1.35" z="-1.8" />
+			</physical>
+			<virtual>
+				<upper-left-vector x="0" y="0" />
+				<lower-left-vector x="0" y="1200" />
+				<lower-right-vector x="1600" y="1200" />
+				<upper-right-vector x="1600" y="0" />
+			</virtual>
+		</display>
+	</display-setup>
+</openDECL>

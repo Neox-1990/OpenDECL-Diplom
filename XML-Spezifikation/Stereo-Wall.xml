@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE openDECL SYSTEM "prototyp1.dtd">
+<openDECL>
+	<node name="Brigitte" address="127.0.0.1" purpose="render">
+		<device type="graphics-card" gpu-count="1" vram="512" model-name="eine tolle Grafikkarte">
+			<port type="display" id="P1" slot="HDMI 1" />
+			<port type="display" id="P2" slot="HDMI 2" />
+		</device>
+		<device type="network-card">
+			<port type="ethernet" id="e1" />
+		</device>
+	</node>
+	<network id="e1" bandwidth="10 Gbit/s" subnet-mask="255.255.255.0" />
+	<display-setup name="Side-by-Side-Stereo" eye-distance="0.06">
+		<display id="P1" type="projector" stereo="left-eye" pixel-size-x="1400" pixel-size-y="1050" metric-size-x="2.72" metric-size-y="2.04">
+			<physical>
+				<upper-left-vector x="-1.36" y="1.02" z="-2" />
+				<lower-left-vector x="-1.36" y="-1.02" z="-2" />
+				<lower-right-vector x="1.36" y="-1.02" z="-2" />
+				<upper-right-vector x="1.36" y="1.02" z="-2" />
+			</physical>
+			<virtual>
+				<upper-left-vector x="0" y="0" />
+				<lower-left-vector x="0" y="1050" />
+				<lower-right-vector x="1400" y="1050" />
+				<upper-right-vector x="1400" y="0" />
+			</virtual>
+		</display>
+		<display id="P2" type="projector" stereo="right-eye" pixel-size-x="1400" pixel-size-y="1050" metric-size-x="2.72" metric-size-y="2.04">
+			<physical>
+				<upper-left-vector x="-1.36" y="1.02" z="-2" />
+				<lower-left-vector x="-1.36" y="-1.02" z="-2" />
+				<lower-right-vector x="1.36" y="-1.02" z="-2" />
+				<upper-right-vector x="1.36" y="1.02" z="-2" />
+			</physical>
+			<virtual>
+				<upper-left-vector x="1400" y="0" />
+				<lower-left-vector x="1400" y="1050" />
+				<lower-right-vector x="2800" y="1050" />
+				<upper-right-vector x="2800" y="0" />
+			</virtual>
+		</display>
+	</display-setup>
+</openDECL>
