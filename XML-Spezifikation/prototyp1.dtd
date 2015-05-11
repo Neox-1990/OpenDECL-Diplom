@@ -42,7 +42,7 @@
 
 <!ATTLIST upper-left-vector x CDATA #REQUIRED>
 <!ATTLIST upper-left-vector y CDATA #REQUIRED>
-<!ATTLIST upper-left-vector z CDATA "0s">
+<!ATTLIST upper-left-vector z CDATA "0">
 
 <!ATTLIST lower-left-vector x CDATA #REQUIRED>
 <!ATTLIST lower-left-vector y CDATA #REQUIRED>

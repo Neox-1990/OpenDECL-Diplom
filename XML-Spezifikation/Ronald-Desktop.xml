@@ -14,30 +14,30 @@
 	<display-setup name="flat">
 		<display id="M1" type="monitor" stereo="none" pixel-size-x="1280" pixel-size-y="800" metric-size-x="0.32" metric-size-y="0.2">
 			<physical>
-				<upper-left-vector x="-0.32" y="0.1" z="-0.5" />
-				<lower-left-vector x="-0.32" y="-0.1" z="-0.5" />
-				<lower-right-vector x="0" y="-0.1" z="-0.5" />
-				<upper-right-vector x="0" y="0.1" z="-0.5" />
+				<vector to="upper-left" x="-0.32" y="0.1" z="-0.5" />
+				<vector to="lower-left" x="-0.32" y="-0.1" z="-0.5" />
+				<vector to="lower-right" x="0" y="-0.1" z="-0.5" />
+				<vector to="upper-right" x="0" y="0.1" z="-0.5" />
 			</physical>
 			<virtual>
-				<upper-left-vector x="0" y="0" />
-				<lower-left-vector x="0" y="800" />
-				<lower-right-vector x="1280" y="800" />
-				<upper-right-vector x="1280" y="0" />
+				<vector to="upper-left" x="0" y="0" />
+				<vector to="lower-left" x="0" y="800" />
+				<vector to="lower-right" x="1280" y="800" />
+				<vector to="upper-right" x="1280" y="0" />
 			</virtual>
 		</display>
 		<display id="M2" type="monitor" stereo="none" pixel-size-x="1920" pixel-size-y="1080" metric-size-x="0.464" metric-size-y="0.26">
 			<physical>
-				<upper-left-vector x="0" y="0.13" z="-0.5" />
-				<lower-left-vector x="0" y="-0.13" z="-0.5" />
-				<lower-right-vector x="0.464" y="-0.13" z="-0.5" />
-				<upper-right-vector x="0.464" y="0.13" z="-0.5" />
+				<vector to="upper-left" x="0" y="0.13" z="-0.5" />
+				<vector to="lower-left" x="0" y="-0.13" z="-0.5" />
+				<vector to="lower-right" x="0.464" y="-0.13" z="-0.5" />
+				<vector to="upper-right" x="0.464" y="0.13" z="-0.5" />
 			</physical>
 			<virtual>
-				<upper-left-vector x="1280" y="0" />
-				<lower-left-vector x="1280" y="1080" />
-				<lower-right-vector x="3200" y="1080" />
-				<upper-right-vector x="3200" y="0" />
+				<vector to="upper-left" x="1280" y="0" />
+				<vector to="lower-left" x="1280" y="1080" />
+				<vector to="lower-right" x="3200" y="1080" />
+				<vector to="upper-right" x="3200" y="0" />
 			</virtual>
 		</display>
 	</display-setup>
