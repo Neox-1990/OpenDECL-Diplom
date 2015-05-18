@@ -1,43 +1,74 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE openDECL SYSTEM "prototyp1.dtd">
-<openDECL>
+<openDECL xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.tu-dresden.de" xsi:schemaLocation="http://www.tu-dresden.de openDECL.xsd">
 	<node name="Ronald-PC" address="127.0.0.1" purpose="render">
 		<device type="graphics-card" gpu-count="1" vram="512" model-name="ATi Radeon HD 3650 mobility">
-			<port type="display" id="M1" slot="0" />
-			<port type="display" id="M2" slot="HDMI 1" />
+			<port type="display" id="M1" slot="0"></port>
+			<port type="display" id="M2" slot="HDMI 1"></port>
 		</device>
 		<device type="network-card">
-			<port type="ethernet" id="e1" />
+			<port type="ethernet" id="e1"></port>
 		</device>
 	</node>
-	<network id="e1" bandwidth="10 Gbit/s" subnet-mask="255.255.255.0" />
+	<network id="e1" bandwidth="10 Gbit/s" subnet-mask="255.255.255.0"></network>
 	<display-setup name="flat">
 		<display id="M1" type="monitor" stereo="none" pixel-size-x="1280" pixel-size-y="800" metric-size-x="0.32" metric-size-y="0.2">
 			<physical>
-				<vector to="upper-left" x="-0.32" y="0.1" z="-0.5" />
-				<vector to="lower-left" x="-0.32" y="-0.1" z="-0.5" />
-				<vector to="lower-right" x="0" y="-0.1" z="-0.5" />
-				<vector to="upper-right" x="0" y="0.1" z="-0.5" />
+				<upper-left>
+					<vector x="-0.32" y="0.1" z="-0.5"></vector>
+				</upper-left>
+				<lower-left>
+					<vector x="-0.32" y="-0.1" z="-0.5"></vector>
+				</lower-left>
+				<lower-right>
+					<vector x="0" y="-0.1" z="-0.5"></vector>
+				</lower-right>
+				<upper-right>
+					<vector x="0" y="0.1" z="-0.5"></vector>
+				</upper-right>
 			</physical>
 			<virtual>
-				<vector to="upper-left" x="0" y="0" />
-				<vector to="lower-left" x="0" y="800" />
-				<vector to="lower-right" x="1280" y="800" />
-				<vector to="upper-right" x="1280" y="0" />
+				<upper-left>
+					<vector x="0" y="0"></vector>
+				</upper-left>
+				<lower-left>
+					<vector x="0" y="800"></vector>
+				</lower-left>
+				<lower-right>
+					<vector x="1280" y="800"></vector>
+				</lower-right>
+				<upper-right>
+					<vector x="1280" y="0"></vector>
+				</upper-right>
 			</virtual>
 		</display>
 		<display id="M2" type="monitor" stereo="none" pixel-size-x="1920" pixel-size-y="1080" metric-size-x="0.464" metric-size-y="0.26">
 			<physical>
-				<vector to="upper-left" x="0" y="0.13" z="-0.5" />
-				<vector to="lower-left" x="0" y="-0.13" z="-0.5" />
-				<vector to="lower-right" x="0.464" y="-0.13" z="-0.5" />
-				<vector to="upper-right" x="0.464" y="0.13" z="-0.5" />
+				<upper-left>
+					<vector x="0" y="0.13" z="-0.5"></vector>
+				</upper-left>
+				<lower-left>
+					<vector x="0" y="-0.13" z="-0.5"></vector>
+				</lower-left>
+				<lower-right>
+					<vector x="0.464" y="-0.13" z="-0.5"></vector>
+				</lower-right>
+				<upper-right>
+					<vector x="0.464" y="0.13" z="-0.5"></vector>
+				</upper-right>
 			</physical>
 			<virtual>
-				<vector to="upper-left" x="1280" y="0" />
-				<vector to="lower-left" x="1280" y="1080" />
-				<vector to="lower-right" x="3200" y="1080" />
-				<vector to="upper-right" x="3200" y="0" />
+				<upper-left>
+					<vector x="1280" y="0"></vector>
+				</upper-left>
+				<lower-left>
+					<vector x="1280" y="1080"></vector>
+				</lower-left>
+				<lower-right>
+					<vector x="3200" y="1080"></vector>
+				</lower-right>
+				<upper-right>
+					<vector x="3200" y="0"></vector>
+				</upper-right>
 			</virtual>
 		</display>
 	</display-setup>

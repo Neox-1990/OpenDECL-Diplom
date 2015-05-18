@@ -355,3 +355,13 @@ In Kernel:
 Inputmanager -> kontrolliert Inputdevices, Proxys für verschiedene Inputs, Proxy verweist auf Device, Inputmanager hat zugriff auf Proxy, somit Austauschbarkeit des Devices in dem Proxy auf anderes Device verweist
 
 ==> Plattform ähnlich zu JVM, aber nur für neu geschriebene Anwendungen, nichts für schon bestehende
+
+======================
+
+VRUI http://idav.ucdavis.edu/~okreylos/ResDev/Vrui/
+
+interessantester Teil .cfg, beschreibt Viewer und Displays getrennt in einem Koordinatensystem, ähnlich wie bei mir mit koordinaten der entsprechenden sachen
+
+middleVR http://www.middlevr.com/
+
+auch ähnlicher Ansatz, nur mit eigenem Editor
