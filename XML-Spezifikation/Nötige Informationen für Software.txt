@@ -32,3 +32,14 @@ megamol.cfg:
 <set name="*-window" value="w1024h640" /> Fenstergröße -> *-> inst name(space)
 
 -p C:\Users\Ronald\Desktop\Megamol\MegaMolConf_v1_0\tutorial.mmprj -i Project_1 inst -i Project_1 inst2 --paramfile "C:/tut.txt"
+
+Paramfile:
+
+::inst::TileView1::eye=Left Eye
+::inst::TileView1::projType=Mono
+::inst::TileView1::tile=-0.500000;0.000000;1.000000;1.000000
+::inst::TileView1::virtSize=1.000000;1.000000
+::inst2::TileView1::eye=Left Eye
+::inst2::TileView1::projType=Mono
+::inst2::TileView1::tile=0.500000;0.000000;1.000000;1.000000
+::inst2::TileView1::virtSize=1.000000;1.000000

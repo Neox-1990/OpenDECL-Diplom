@@ -48,6 +48,25 @@ elementFormDefault="qualified">
   <xs:attribute name="z" type="xs:decimal" use="optional" />
 </xs:complexType>
 
+<xs:complexType name="positiontype">
+  <xs:sequence>
+    <xs:element name="vector" type="vectortype" minOccurs="1" maxOccurs="1" />
+  </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="orientationtype">
+  <xs:sequence>
+    <xs:element name="vector" type="vectortype" minOccurs="1" maxOccurs="1" />
+  </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="usertype">
+  <xs:sequence>
+    <xs:element name="position" type="positiontype" minOccurs="1" maxOccurs="1" />
+    <xs:element name="orientation" type="orientationtype" minOccurs="1" maxOccurs="1" />
+  </xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="upper-lefttype">
   <xs:sequence>
     <xs:element name="vector" type="vectortype" minOccurs="1" maxOccurs="1" />
@@ -114,6 +133,7 @@ elementFormDefault="qualified">
 
 <xs:complexType name="display-setuptype">
   <xs:sequence>
+	<xs:element name="user" type="usertype" minOccurs="0" maxOccurs="1" />
     <xs:element name="display" type="displaytype" minOccurs="1" maxOccurs="unbounded" />
   </xs:sequence>
   <xs:attribute name="name" type="xs:ID" use="required" />
