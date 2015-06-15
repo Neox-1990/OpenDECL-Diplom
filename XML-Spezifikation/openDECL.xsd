@@ -9,35 +9,32 @@ elementFormDefault="qualified">
   <xs:attribute name="slot" type="xs:string" use="optional" />
 </xs:complexType>
 
-<xs:simpleType name="nodeDeviceType">
-  <xs:restriction base="xs:string">
-    <xs:enumeration value="graphics-card" />
-    <xs:enumeration value="network-card" />
-    <xs:enumeration value="other" />
-  </xs:restriction>
-</xs:simpleType>
-
-<xs:complexType name="devicetype">
+<xs:complexType name="graphic-devicetype">
   <xs:sequence>
     <xs:element name="port" type="porttype" minOccurs="1" maxOccurs="unbounded" />
   </xs:sequence>
-  <xs:attribute name="type" type="nodeDeviceType" use="required" />
   <xs:attribute name="gpu-count" type="xs:integer" use="optional" />
   <xs:attribute name="vram" type="xs:integer" use="optional" />
   <xs:attribute name="model-name" type="xs:string" use="optional" />
 </xs:complexType>
 
+<xs:complexType name="network-devicetype">
+  <xs:attribute name="type" type="xs:string" use="required" />
+  <xs:attribute name="id" type="xs:IDREF" use="required" />
+  <xs:attribute name="address" type="xs:string" use="required" />
+</xs:complexType>
+
 <xs:complexType name="nodetype">
   <xs:sequence>
-    <xs:element name="device" type="devicetype" minOccurs="1" maxOccurs="unbounded" />
+    <xs:element name="graphic-device" type="graphic-devicetype" minOccurs="0" maxOccurs="unbounded" />
+	<xs:element name="network-device" type="network-devicetype" minOccurs="0" maxOccurs="unbounded" />
   </xs:sequence>
   <xs:attribute name="name" type="xs:ID" use="required" />
-  <xs:attribute name="address" type="xs:string" use="required" />
   <xs:attribute name="purpose" type="xs:string" use="optional" />
 </xs:complexType>
 
 <xs:complexType name="networktype">
-  <xs:attribute name="id" type="xs:IDREFS" use="required" />
+  <xs:attribute name="id" type="xs:ID" use="required" />
   <xs:attribute name="bandwidth" type="xs:string" use="optional" />
   <xs:attribute name="subnet-mask" type="xs:string" use="optional" />
 </xs:complexType>
