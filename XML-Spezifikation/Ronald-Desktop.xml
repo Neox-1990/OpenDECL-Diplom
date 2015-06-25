@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <openDECL xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.tu-dresden.de" xsi:schemaLocation="http://www.tu-dresden.de openDECL.xsd">
 	<node name="Ronald-PC" purpose="render">
-		<graphic-device gpu-count="1" vram="512" model-name="ATi Radeon HD 3650 mobility">
+		<graphics-device id="gd1" gpu-count="1" vram="512" model-name="ATi Radeon HD 3650 mobility">
 			<port type="display" id="M1" slot="0"></port>
 			<port type="display" id="M2" slot="HDMI 1"></port>
-		</graphic-device>
-		<network-device type="ethernet" id="e1" address="127.0.0.1" />
+		</graphics-device>
+		<network-device type="ethernet" id="nd1" network="e1" address="127.0.0.1" />
 	</node>
 	<network id="e1" bandwidth="10 Gbit/s" subnet-mask="255.255.255.0" />
 	<display-setup name="flat">

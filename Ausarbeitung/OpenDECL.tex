@@ -1,0 +1,159 @@
+\documentclass[hyperref,german,diplommedieninf]{cgvpub}
+%weitere Optionen zum Ergänzen (in eckigen Klammern):
+% 
+% female	weibliche Titelbezeichnung bei Diplom
+% bibnum	numerische Literaturschlüssel
+% final 	für Abgabe	
+% lof			Abbildungsverzeichis
+% lot			Tabellenverzeichnis
+% noproblem	keine Aufgabenstellung
+% notoc			kein Inhaltsverzeichnis
+% twoside		zweiseitig
+
+
+\author{Ronald Großmann}
+\title{Open Display Environment Configuration Language}
+\birthday{6. April 1990}
+\placeofbirth{Sebnitz}
+\matno{3507432}
+\betreuer{Dr. rer. nat. Sebastian Grottel}
+\bibfiles{literatur}
+\problem{
+Die Anzahl der Multi-Display-Installationen nimmt in beinahe jeder Umgebung zu: angefangen von
+Desktopsystemen mit mehreren Monitoren, über Projektionsflächen mit mehreren Projektoren
+(aka Powerwalls) bis hin zu komplexen VR-Installationen wie Caves. Oft benötigen solche DisplaySysteme leistungsstarke, parallel GPU-Cluster zur Bilderzeugung, allein um der notwendigen Pixelfüllrate gerecht werden zu können. Zusätzlich kommen in solchen Anlagen üblicherweise auch
+Tracking-Systeme zum Einsatz, die den Benutzer, also die physische Welt, mit den dargestellten
+Szenen, der künstlichen Welt, verbinden; auch im Desktop-Bereich, z.B. durch Windows Kinect
+oder Leap Motion. Um solche Systeme zu betreiben bedarf es komplexer Software. Diese ist oft
+im akademischen Umfeld entwickelt. Solche Software muss umfassend konfiguriert werden, einerseits was die verfügbare Rechnerinfrastruktur betrifft (welche Computer sind mit welchen Ausgabegeräten verbunden, welche Computer dienen rein zur entfernten Bilderzeugung und wie sind
+die Rechner miteinander vernetzt), andererseits auch was die logischen und physikalischen Parameter der Ausgabegeräte betrifft (virtuelle Desktop-Größen und Teile einzelner Beamer, physikalische Anordnung von Display oder Projektoren und Abgleich mit den Raumkoordinaten eines Benutzer-Trackings). Allerdings hat sich für diese Konfigurationen bisher kein Standard entwickelt.\\
+
+In dieser Arbeit soll ein Vorschlag für so ein standardisiertes Konfigurationsformat auf Basis von
+XML entwickelt werden. Mittels XSLT soll es möglich sein, aus einer XML-Datei Konfigurationsdateien für unterschiedliche Programme zu erzeugen. Ein graphischer interaktiver Editor soll das
+Erstellen und Bearbeiten der XML-Dateien, sowohl der strukturellen Eigenschaften (ComputeCluster-Architektur, inklusive GPUs und Display-Anschlüssen) als auch der 3D physikalischen Eigenschaften (Display-, Projekt-Setup) anschaulich und einfach ermöglichen. Das XML-Format
+muss ?sauber? durch Namespaces aufgeteilt und erweiterbar sein, was auch durch entsprechende Funktionen im graphischen Editor reflektiert werden muss (z.B. muss es im Editor möglich
+sein, eigentlich nicht unterstütze Tags editieren und beim Abspeichern erhalten zu können). Die
+Erstellung von XSLT-Dateien muss durch den Editor NICHT unterstützt werden, ihre Anwendung
+zum Export der Konfiguration in entsprechende andere Formate jedoch schon.\\
+
+Folgende Hardware-Installationen müssen unterstützt werden:
+\begin{enumerate}
+\item Desktop-Computer mit mehreren Monitoren (mindestens zwei) die nicht in einer
+gemeinsamen Ebene stehen.
+\item Stereo-Powerwall durch zwei Beamer betrieben an einem Rechner (Powerwall an der
+Professur CGV)
+\item Großfläche Displaywand mit mehreren Panels (Displaywand an der Professur XYZ)
+\item Fünf-Wand-CAVE mit zehn Beamer (im VR-Labor der Professur XYZ)
+\end{enumerate}
+
+Die Hardwareinstallationen sollen in ihrem physikalischen Raum, in Metern, frei definierbar sein.
+Ist kein Benutzertracking vorhanden, so muss eine Standardposition für den Benutzer (Blickpunkt)
+konfigurierbar sein.\\
+
+Die Konfiguration der Rechnerinfrastruktur muss mindestens die Computer enthalten, die direkt
+an die Ausgabegeräte angeschlossen sind. Ihre Netzwerkverbindungen untereinander sollten enthalten sein. Eventuelle Compute-Cluster zur Bilderzeugung und ihre Netzwerkverbindungen untereinander, sowie zu den Ausgaberechnern sollten ebenfalls konfigurierbar sein.\\
+
+Folgende Software muss unterstützt werden, indem ihre Konfigurationsdateien, mindestens aber
+der entsprechend dieser Arbeit relevante Teil der Konfigurationsdateien, erzeugt werden kann:
+\begin{description}
+\item[a,] MegaMol, bzw. mittels einer kleinen Bibliothek jede an der TUD selbst entwickelte
+Software
+\item[b,] Paraview
+\item[c,] Equalizer
+\end{description}
+
+Weitere Software soll nach Absprache mit dem Betreuer ebenfalls unterstützt werden.
+
+Die Bearbeitung erfolgt mit diesen Teilzielen:
+\begin{itemize}
+\item Anforderungsanalyse auf Basis der vorgegebenen Display-Hardware und
+Konfigurationsspezifikationen der einzusetzenden Software
+\item Literaturrecherche zur Large-Display- und VR-Software-Middleware und Konfigurationen.
+Auch zu allgemeinen Arbeiten zur Kalibrieren und Konfiguration solcher Hardware-System
+\item Spezifikation der XML-basierten Konfiguration
+\item Umsetzung des geforderten Editor-Prototypens inklusive XSLT-basiertem Export der
+Konfigurationen
+\item Evaluierung im Kontext der vorgegebenen Display-Systeme durch Darlegung und
+Durchführung des kompletten Konfigurationsprozesses anhand der vorgegebene Software
+\item Optional: Erweiterung des Editors um weitere Funktionalitäten zur semi-automatischen
+Erzeugung der Konfigurationsdateien
+\item Optional: Code-Bibliothek zur direkten Nutzung der Konfigurations-Xml-Datei
+\item Optional: Untersuchung weiterer Display-Konfigurationen (z.B. gekrümmter Projektionen)
+und weiterer Visualisierungs- und VR-Software
+\end{itemize}
+}
+\copyrighterklaerung{Hier soll jeder Autor die von ihm eingeholten
+Zustimmungen der Copyright-Besitzer angeben bzw. die in Web Press
+Rooms angegebenen generellen Konditionen seiner Text- und
+Bild"ubernahmen zitieren.}
+\acknowledgments{Die Danksagung...}
+
+\abstracten{abstract text english}
+\abstractde{ Zusammenfassung Text Deutsch}
+
+\begin{document}
+\chapter{Problemstellung}
+
+\section{Problemfelder}
+
+\chapter{Verwandte Arbeiten}
+
+\section{Problemfeld 1}
+
+\section{Problemfeld 2}
+
+\section{Problemfeld 3}
+
+\chapter{Anforderungsanalyse}
+
+\section{Hardwareanalyse}
+
+\section{Softwareanalyse}
+
+\chapter{Konzeption}
+
+\chapter{OpenDECL Spezifikation}
+
+\section{Ansatz}
+
+\section{Aufbau}
+
+\subsection{node}
+
+\subsubsection{graphics-device}
+
+\subsubsection{port}
+
+\subsubsection{network-device}
+
+\subsection{network}
+
+\subsection{display-setup}
+
+\subsubsection{vector}
+
+\subsubsection{user}
+
+\subsubsection{display}
+
+\subsubsection{physical}
+
+\subsubsection{virtual}
+
+\chapter{XSLT Konfigurationsgenerierung}
+
+\section{Beispiel}
+
+\chapter{Editor}
+
+\section{Funktionen}
+
+\section{Umsetzung}
+
+\chapter{Evaluation}
+
+\chapter{Diskussion}
+
+\chapter{Ausblick}
+
+\end{document}
