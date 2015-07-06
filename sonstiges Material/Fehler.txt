@@ -1,0 +1,80 @@
+C:\Users\Ronald\Desktop\ParaView-4.3.1-Windows-32bit\ParaView-4.3.1-Windows-32bit\bin>mpirun -machinefile machfile.txt -np 2 notepad.exe
+connecting to Rico-PC
+username:Rico
+password:
+Save Credential?(Y/N) n
+[Ronald-PC:02876] Could not connect to namespace cimv2 on node Rico-PC. Error code =-2147024891
+--------------------------------------------------------------------------
+Sorry!  You were supposed to get help about:
+    orterun:proc-failed-to-start-no-status-no-node
+But I couldn't open the help file:
+    C:\DBD\pvs-x32\install\share\openmpi\help-orterun.txt: No such file or directory.  Sorry!
+--------------------------------------------------------------------------
+
+http://comments.gmane.org/gmane.comp.clustering.open-mpi.user/16942
+http://www.docusnap.com/media/doc/howto/Beseitigung%20von%20WMI%20Zugriff%20verweigert%20-%20Problemen.pdf
+
+
+
+
+C:\Microsoft_MPI\Bin>msmpiexec -np 2 F:/pvserver.exe
+[Ronald-PC:03968] [[INVALID],INVALID] ERROR: Failed to identify the local daemon's URI
+[Ronald-PC:03968] [[INVALID],INVALID] ERROR: This is a fatal condition when the binomial router
+[Ronald-PC:03968] [[INVALID],INVALID] ERROR: has been selected - either select the unity router
+[Ronald-PC:03968] [[INVALID],INVALID] ERROR: or ensure that the local daemon info is provided
+[Ronald-PC:03968] [[INVALID],INVALID] ORTE_ERROR_LOG: Fatal in file C:\DBD\pvs-x32\mpi\src\mpi\orte\mca\ess\base\ess_base_std_app.c at line 151
+--------------------------------------------------------------------------
+Sorry!  You were supposed to get help about:
+    orte_init:startup:internal-failure
+But I couldn't open the help file:
+    C:\DBD\pvs-x32\install\share\openmpi\help-orte-runtime.txt: No such file or directory.  Sorry!
+--------------------------------------------------------------------------
+[Ronald-PC:03968] [[INVALID],INVALID] ORTE_ERROR_LOG: Fatal in file C:\DBD\pvs-x32\mpi\src\mpi\orte\mca\ess\singleton\ess_singleton_module.c at line 2
+77
+[Ronald-PC:03968] [[INVALID],INVALID] ORTE_ERROR_LOG: Fatal in file C:\DBD\pvs-x32\mpi\src\mpi\orte\runtime\orte_init.c at line 132
+--------------------------------------------------------------------------
+Sorry!  You were supposed to get help about:
+    orte_init:startup:internal-failure
+But I couldn't open the help file:
+    C:\DBD\pvs-x32\install\share\openmpi\help-orte-runtime: No such file or directory.  Sorry!
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Sorry!  You were supposed to get help about:
+    mpi_init:startup:internal-failure
+But I couldn't open the help file:
+    C:\DBD\pvs-x32\install\share\openmpi\help-mpi-runtime: No such file or directory.  Sorry!
+--------------------------------------------------------------------------
+[Ronald-PC:03792] [[INVALID],INVALID] ERROR: Failed to identify the local daemon's URI
+[Ronald-PC:03792] [[INVALID],INVALID] ERROR: This is a fatal condition when the binomial router
+[Ronald-PC:03792] [[INVALID],INVALID] ERROR: has been selected - either select the unity router
+[Ronald-PC:03792] [[INVALID],INVALID] ERROR: or ensure that the local daemon info is provided
+[Ronald-PC:03792] [[INVALID],INVALID] ORTE_ERROR_LOG: Fatal in file C:\DBD\pvs-x32\mpi\src\mpi\orte\mca\ess\base\ess_base_std_app.c at line 151
+--------------------------------------------------------------------------
+Sorry!  You were supposed to get help about:
+    orte_init:startup:internal-failure
+But I couldn't open the help file:
+    C:\DBD\pvs-x32\install\share\openmpi\help-orte-runtime.txt: No such file or directory.  Sorry!
+--------------------------------------------------------------------------
+[Ronald-PC:03792] [[INVALID],INVALID] ORTE_ERROR_LOG: Fatal in file C:\DBD\pvs-x32\mpi\src\mpi\orte\mca\ess\singleton\ess_singleton_module.c at line 2
+77
+[Ronald-PC:03792] [[INVALID],INVALID] ORTE_ERROR_LOG: Fatal in file C:\DBD\pvs-x32\mpi\src\mpi\orte\runtime\orte_init.c at line 132
+--------------------------------------------------------------------------
+Sorry!  You were supposed to get help about:
+    orte_init:startup:internal-failure
+But I couldn't open the help file:
+    C:\DBD\pvs-x32\install\share\openmpi\help-orte-runtime: No such file or directory.  Sorry!
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Sorry!  You were supposed to get help about:
+    mpi_init:startup:internal-failure
+But I couldn't open the help file:
+    C:\DBD\pvs-x32\install\share\openmpi\help-mpi-runtime: No such file or directory.  Sorry!
+--------------------------------------------------------------------------
+*** The MPI_Init() function was called before MPI_INIT was invoked.
+*** This is disallowed by the MPI standard.
+*** Your MPI job will now abort.
+[Ronald-PC:3968] Abort before MPI_INIT completed successfully; not able to guarantee that all other processes were killed!
+*** The MPI_Init() function was called before MPI_INIT was invoked.
+*** This is disallowed by the MPI standard.
+*** Your MPI job will now abort.
+[Ronald-PC:3792] Abort before MPI_INIT completed successfully; not able to guarantee that all other processes were killed!
