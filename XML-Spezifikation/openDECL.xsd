@@ -31,7 +31,7 @@ elementFormDefault="qualified">
     <xs:element name="graphics-device" type="graphics-devicetype" minOccurs="0" maxOccurs="unbounded" />
 	<xs:element name="network-device" type="network-devicetype" minOccurs="0" maxOccurs="unbounded" />
   </xs:sequence>
-  <xs:attribute name="name" type="xs:ID" use="required" />
+  <xs:attribute name="id" type="xs:ID" use="required" />
   <xs:attribute name="purpose" type="xs:string" use="optional" />
 </xs:complexType>
 
@@ -121,7 +121,8 @@ elementFormDefault="qualified">
     <xs:element name="physical" type="physicaltype" minOccurs="1" maxOccurs="1" />
     <xs:element name="virtual" type="virtualtype" minOccurs="1" maxOccurs="1" />
   </xs:sequence>
-  <xs:attribute name="id" type="xs:IDREF" use="required" />
+  <xs:attribute name="id" type="xs:ID" use="required" />
+  <xs:attribute name="portref" type="xs:IDREF" use="required" />
   <xs:attribute name="type" type="xs:string" use="optional" />
   <xs:attribute name="stereo" type="stereoType" use="required" />
   <xs:attribute name="pixel-size-x" type="xs:positiveInteger" use="required" />
@@ -135,7 +136,7 @@ elementFormDefault="qualified">
 	<xs:element name="user" type="usertype" minOccurs="0" maxOccurs="1" />
     <xs:element name="display" type="displaytype" minOccurs="1" maxOccurs="unbounded" />
   </xs:sequence>
-  <xs:attribute name="name" type="xs:ID" use="required" />
+  <xs:attribute name="id" type="xs:ID" use="required" />
   <xs:attribute name="eye-distance" type="xs:decimal" default="0.0" />
 </xs:complexType>
 

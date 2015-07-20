@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.12.16)  6 JUL 2015 14:42
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.12.16)  20 JUL 2015 13:50
 entering extended mode
 **OpenDECL.tex
 (C:\Users\Ronald\Documents\OpenDECL-Diplom\Ausarbeitung\OpenDECL.tex
@@ -679,7 +679,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.26 ...{\numberline {8}Evaluation}{10}{chapter.8}
+l.26 ...{\numberline {8}Evaluation}{12}{chapter.8}
                                                    [1
 
 
@@ -707,11 +707,21 @@ Class scrreprt Warning: \float@addtolists detected!
 (scrreprt)              a package that still implements the
 (scrreprt)              deprecated \float@addtolist interface .
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--74
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--77
+
+ []
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.77 \chapter
+l.79 \chapter
              {Verwandte Arbeiten} [3
 
 
@@ -721,17 +731,32 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.86 \chapter
+l.88 \chapter
              {Anforderungsanalyse} [4
 
 ]
  3.
+
+Underfull \hbox (badness 10000) in paragraph at lines 89--92
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 94--98
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 100--103
+
+ []
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.93 \chapter
-             {Konzeption} [5
+l.105 \chapter
+              {Konzeption} [5
 
 ]
  4.
@@ -739,70 +764,155 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.6}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.96 \chapter
-             {OpenDECL Spezifikation} [6
+l.111 \chapter
+              {OpenDECL Spezifikation} [6
 
 ]
  5.
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--113
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 119--121
+
+ []
+
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 102.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 122.
+
+Underfull \hbox (badness 10000) in paragraph at lines 123--125
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 127--129
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--133
+
+ []
+
 [7
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 135--137
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 139--141
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 143--145
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--149
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 151--153
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 155--157
+
+ []
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 159--161
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 163--165
+
+ []
+
+[9]
  6.
-[8
 
-]
- 7.
-[9
+Underfull \hbox (badness 10000) in paragraph at lines 168--170
 
-]
- 8.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 172--175
+
+ []
+
 [10
 
 ]
- 9.
+ 7.
+
+Underfull \hbox (badness 10000) in paragraph at lines 180--183
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 185--188
+
+ []
+
 [11
 
 ]
- 10.
+ 8.
 [12
+
+]
+ 9.
+[13
+
+]
+ 10.
+[14
 
 ] (C:\Users\Ronald\Documents\OpenDECL-Diplom\Ausarbeitung\OpenDECL.bbl
 
 LaTeX Warning: Empty `thebibliography' environment or \BreakBibliography
                before end of `thebibliography' environment on input line 3.
 
-) [13
+) [15
 
 
-] [14
+] [16
 
 
 
 
-] [15
+] [17
 
 
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 145.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 145.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 198.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 198.
 
 (C:\Users\Ronald\Documents\OpenDECL-Diplom\Ausarbeitung\OpenDECL.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 145.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 145.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 198.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 198.
 Package rerunfilecheck Info: File `OpenDECL.out' has not changed.
 (rerunfilecheck)             Checksum: A92924FF2B763FFF6ACF24924B3FAC8C;1821.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 145.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 198.
  )
 (\end occurred inside a group at level 1)
 
 ### semi simple group (level 1) entered at line 70 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 10310 strings out of 493921
- 152998 string characters out of 3144872
+ 10312 strings out of 493921
+ 153012 string characters out of 3144872
  329576 words of memory out of 3000000
  13397 multiletter control sequences out of 15000+200000
  46644 words of font info for 57 fonts, out of 3000000 for 9000
@@ -813,9 +923,9 @@ enc}<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pf
 b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Pr
 ogram Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files
  (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on OpenDECL.pdf (21 pages, 90208 bytes).
+Output written on OpenDECL.pdf (23 pages, 93380 bytes).
 PDF statistics:
- 277 PDF objects out of 1000 (max. 8388607)
- 58 named destinations out of 1000 (max. 500000)
+ 285 PDF objects out of 1000 (max. 8388607)
+ 60 named destinations out of 1000 (max. 500000)
  233 words of extra memory for PDF output out of 10000 (max. 10000000)
 

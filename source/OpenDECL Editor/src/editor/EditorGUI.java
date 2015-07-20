@@ -28,6 +28,7 @@ import java.io.FileReader;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -37,6 +38,7 @@ import xmleditorkit.*;
 
 import javax.swing.event.CaretListener;
 import javax.swing.event.CaretEvent;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.Caret;
 
@@ -54,9 +56,15 @@ import org.xml.sax.SAXParseException;
 import org.xml.sax.helpers.*;
 import org.w3c.dom.Document;
 import org.w3c.dom.DocumentType;
+import org.w3c.dom.Element;
 import org.w3c.dom.Entity;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
+
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 
 
@@ -68,56 +76,17 @@ public class EditorGUI extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField txtTest;
+	private JPanel editPanel;
 	private OpenDECLdoc myDoc;
+	private JTextPane logPane;
 	private final static String DEFAULT_MIN_URI = "default-min.xml";
 	
 	private static final JFileChooser xmlfc = new JFileChooser();
-	
-	private static class MyErrorHandler implements ErrorHandler {
-	     
-	    private PrintWriter out;
-
-	    MyErrorHandler(PrintWriter out) {
-	        this.out = out;
-	    }
-
-	    private String getParseExceptionInfo(SAXParseException spe) {
-	        String systemId = spe.getSystemId();
-	        if (systemId == null) {
-	            systemId = "null";
-	        }
-
-	        String info = "URI=" + systemId + " Line=" + spe.getLineNumber() +
-	                      ": " + spe.getMessage();
-	        return info;
-	    }
-
-	    public void warning(SAXParseException spe) throws SAXException {
-	        out.println("Warning: " + getParseExceptionInfo(spe));
-	    }
-	        
-	    public void error(SAXParseException spe) throws SAXException {
-	        String message = "Error: " + getParseExceptionInfo(spe);
-	        throw new SAXException(message);
-	    }
-
-	    public void fatalError(SAXParseException spe) throws SAXException {
-	        String message = "Fatal Error: " + getParseExceptionInfo(spe);
-	        throw new SAXException(message);
-	    }
-	}
-	
-    private int indent = 0;
-    private final String basicIndent = " ";
-    private JTextField txtTester1;
-    private JTextField txtTester2;
-    private JTextField txtTester3;
-    private JTextField txtTester4;
-    private JTextField txtTester5;
-    private JTextField txtTester6;
     
     private JEditorPane editorPane;
+    private JTextField txtID;
+    private JTextField txtBandwidth;
+    private JTextField txtSubnetmask;
 
 	/**
 	 * Launch the application.
@@ -125,7 +94,7 @@ public class EditorGUI extends JFrame {
 	public static void main(String[] args) {
 		System.out.println("Start");
 		xmlfc.setFileSelectionMode(JFileChooser.FILES_ONLY);
-		xmlfc.setFileFilter(new xmlFileFilter());
+		xmlfc.setFileFilter(new FileNameExtensionFilter("XML file", "xml"));
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -194,183 +163,30 @@ public class EditorGUI extends JFrame {
 		scrollPaneEditor.setBounds(10, 11, 617, 647);
 		contentPane.add(scrollPaneEditor);
 		
-		JPanel editPanel = new JPanel();
+		editPanel = new JPanel();
 		editPanel.setBorder(new TitledBorder(new LineBorder(new Color(0, 0, 0)), "Edit", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		editPanel.setBounds(637, 11, 369, 647);
 		contentPane.add(editPanel);
 		editPanel.setLayout(null);
 		
-		JButton btnTest = new JButton("Test");
-		btnTest.setBounds(272, 25, 87, 23);
-		editPanel.add(btnTest);
-		
-		txtTest = new JTextField();
-		txtTest.setBounds(10, 26, 252, 20);
-		editPanel.add(txtTest);
-		txtTest.setColumns(10);
-		
-		txtTester1 = new JTextField();
-		txtTester1.setBounds(10, 54, 86, 20);
-		editPanel.add(txtTester1);
-		txtTester1.setColumns(10);
-		
-		txtTester2 = new JTextField();
-		txtTester2.setBounds(106, 54, 86, 20);
-		editPanel.add(txtTester2);
-		txtTester2.setColumns(10);
-		
-		txtTester3 = new JTextField();
-		txtTester3.setBounds(202, 54, 86, 20);
-		editPanel.add(txtTester3);
-		txtTester3.setColumns(10);
-		
-		txtTester4 = new JTextField();
-		txtTester4.setBounds(10, 81, 86, 20);
-		editPanel.add(txtTester4);
-		txtTester4.setColumns(10);
-		
-		txtTester5 = new JTextField();
-		txtTester5.setBounds(106, 81, 86, 20);
-		editPanel.add(txtTester5);
-		txtTester5.setColumns(10);
-		
-		txtTester6 = new JTextField();
-		txtTester6.setBounds(202, 81, 86, 20);
-		editPanel.add(txtTester6);
-		txtTester6.setColumns(10);
-		
-		JButton btnAddnode = new JButton("AddNode");
-		btnAddnode.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				if(myDoc!=null && txtTester1.getText()!=""){
-					myDoc.addNode(txtTester1.getText());
-					if(!txtTester2.getText().isEmpty()) myDoc.setNodePurpose(txtTester1.getText(), txtTester2.getText());
-					try {
-						myDoc.save("temp.");
-					} catch (TransformerFactoryConfigurationError
-							| TransformerException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
-					updateEditorPane();
+		String[] superComboBoxString = {"node:","network:","displaysetup:"};
+		JComboBox superComboBox = new JComboBox(superComboBoxString);
+		superComboBox.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(myDoc!=null){
+					if((String) superComboBox.getSelectedItem()=="network:") networkEditor();
+				}else{
+					textLogPane("no document selected");
 				}
+				
 			}
 		});
-		btnAddnode.setBounds(10, 113, 91, 23);
-		editPanel.add(btnAddnode);
+		superComboBox.setBounds(10, 25, 150, 22);
+		editPanel.add(superComboBox);
 		
-		JButton btnSetnodename = new JButton("SetNodeName");
-		btnSetnodename.setFont(new Font("Tahoma", Font.PLAIN, 9));
-		btnSetnodename.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				if(myDoc!=null && txtTester1.getText()!="" && txtTester2.getText()!=""){
-					myDoc.setNodeName(txtTester1.getText(), txtTester2.getText());
-					try {
-						myDoc.save("temp.");
-					} catch (TransformerFactoryConfigurationError
-							| TransformerException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
-					updateEditorPane();
-				}
-			}
-		});
-		btnSetnodename.setBounds(106, 113, 91, 23);
-		editPanel.add(btnSetnodename);
 		
-		JButton btnSetnodepupose = new JButton("SetNodePupose");
-		btnSetnodepupose.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				if(myDoc!=null && txtTester1.getText()!="" && txtTester2.getText()!=""){
-					myDoc.setNodePurpose(txtTester1.getText(), txtTester2.getText());
-					try {
-						myDoc.save("temp.");
-					} catch (TransformerFactoryConfigurationError
-							| TransformerException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
-					updateEditorPane();
-				}
-			}
-		});
-		btnSetnodepupose.setFont(new Font("Tahoma", Font.PLAIN, 9));
-		btnSetnodepupose.setBounds(202, 113, 91, 23);
-		editPanel.add(btnSetnodepupose);
 		
-		JButton btnAddgdevice = new JButton("AddGDevice");
-		btnAddgdevice.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				if(myDoc!=null && !txtTester1.getText().isEmpty() && !txtTester2.getText().isEmpty()){
-					myDoc.addGraphicsDevice(txtTester1.getText(), txtTester2.getText());
-					if(!txtTester3.getText().isEmpty()) myDoc.setGraphicsDeviceGpuCount(txtTester1.getText(), txtTester2.getText(), txtTester3.getText());
-					if(!txtTester4.getText().isEmpty()) myDoc.setGraphicsDeviceVram(txtTester1.getText(), txtTester2.getText(), txtTester4.getText());
-					if(!txtTester5.getText().isEmpty()) myDoc.setGraphicsDeviceModelName(txtTester1.getText(), txtTester2.getText(), txtTester5.getText());
-					try {
-						myDoc.save("temp.");
-					} catch (TransformerFactoryConfigurationError
-							| TransformerException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
-					updateEditorPane();
-				}
-			}
-		});
-		btnAddgdevice.setFont(new Font("Tahoma", Font.PLAIN, 8));
-		btnAddgdevice.setBounds(10, 147, 91, 23);
-		editPanel.add(btnAddgdevice);
-		
-		JButton btnSetgdevicsid = new JButton("SetGDevicsID");
-		btnSetgdevicsid.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				if(myDoc!=null && !txtTester1.getText().isEmpty() && !txtTester2.getText().isEmpty() && !txtTester2.getText().isEmpty()){
-					myDoc.setGraphicsDeviceId(txtTester1.getText(), txtTester2.getText(), txtTester3.getText());
-					try {
-						myDoc.save("temp.");
-					} catch (TransformerFactoryConfigurationError
-							| TransformerException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
-					updateEditorPane();
-				}
-			}
-		});
-		btnSetgdevicsid.setFont(new Font("Tahoma", Font.PLAIN, 8));
-		btnSetgdevicsid.setBounds(106, 147, 91, 23);
-		editPanel.add(btnSetgdevicsid);
-		
-		JButton btnSetgdeviceoptionals = new JButton("setGDeviceOptionals");
-		btnSetgdeviceoptionals.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				if(myDoc!=null && !txtTester1.getText().isEmpty() && !txtTester2.getText().isEmpty()){
-					if(!txtTester3.getText().isEmpty()) myDoc.setGraphicsDeviceGpuCount(txtTester1.getText(), txtTester2.getText(), txtTester3.getText());
-					if(!txtTester4.getText().isEmpty()) myDoc.setGraphicsDeviceVram(txtTester1.getText(), txtTester2.getText(), txtTester4.getText());
-					if(!txtTester5.getText().isEmpty()) myDoc.setGraphicsDeviceModelName(txtTester1.getText(), txtTester2.getText(), txtTester5.getText());
-					try {
-						myDoc.save("temp.");
-					} catch (TransformerFactoryConfigurationError
-							| TransformerException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
-					updateEditorPane();
-				}
-			}
-		});
-		btnSetgdeviceoptionals.setFont(new Font("Tahoma", Font.PLAIN, 8));
-		btnSetgdeviceoptionals.setBounds(202, 147, 91, 23);
-		editPanel.add(btnSetgdeviceoptionals);
-		
-		JTextPane logPane = new JTextPane();		
+		logPane = new JTextPane();		
 		logPane.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		logPane.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		logPane.setEditable(false);
@@ -402,7 +218,7 @@ public class EditorGUI extends JFrame {
 		        if (returnVal == JFileChooser.APPROVE_OPTION) {
 		            File file = xmlfc.getSelectedFile();
 		            //This is where a real application would open the file.
-		            logPane.setText(logPane.getText()+"\n- Opening: " + file.getName());
+		            textLogPane("opening: "+file.getPath());
 		            String dateiinhalt=loadFile(file.getPath());
 					editorPane.setText("");
 					editorPane.setText(dateiinhalt);
@@ -412,9 +228,9 @@ public class EditorGUI extends JFrame {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
-					logPane.setText(logPane.getText()+"\n- "+file.getPath()+" erfolgreich geladen");
+					textLogPane(file.getPath()+" succesfully loaded");
 		        } else {
-		        	logPane.setText(logPane.getText()+"\n- Opening aborted");
+		        	textLogPane("aborted opening");
 		        }
 			}
 		});
@@ -422,30 +238,164 @@ public class EditorGUI extends JFrame {
 		addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowOpened(WindowEvent e) {
-				logPane.setText("- window loaded");
-				logPane.setText(logPane.getText()+"\n- READY");
-			}
-		});
-		btnTest.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				try {
-					testFunction();
-				} catch (Exception e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
+				textLogPane("window loaded");
+				textLogPane("READY");
 			}
 		});
 		
-		editorPane.addCaretListener(new CaretListener() {
-			public void caretUpdate(CaretEvent e) {
-				Caret currentcaret = editorPane.getCaret();
-				logPane.setText(logPane.getText()+"\n- Caret-Position: "+currentcaret.getDot());
+	}
+	private void resetEdit(){
+		editPanel.removeAll();
+	}
+	private void networkEditor(){
+		ArrayList<Element> networkElements=myDoc.getNetworks();
+		JComboBox<String> networkComboBox = new JComboBox<String>();
+		networkComboBox.addItem("*add new*");
+		for(int i=0;i<networkElements.size();i++){
+			networkComboBox.addItem((String)networkElements.get(i).getAttribute("id"));
+		}
+		networkComboBox.setBounds(165, 25, 150, 22);
+		editPanel.add(networkComboBox);
+		
+		JButton btnDeleteNetwork = new JButton("x");
+		btnDeleteNetwork.setBounds(316, 25, 43, 23);
+		editPanel.add(btnDeleteNetwork);
+		
+		JLabel txtIDLbl = new JLabel("ID*");
+		txtIDLbl.setBounds(10, 58, 103, 14);
+		editPanel.add(txtIDLbl);
+		
+		txtID = new JTextField();
+		txtID.setBounds(10, 73, 103, 20);
+		editPanel.add(txtID);
+		txtID.setColumns(10);
+		
+		JLabel txtBandwidthLbl = new JLabel("Bandwidth");
+		txtBandwidthLbl.setBounds(132, 58, 103, 14);
+		editPanel.add(txtBandwidthLbl);
+		
+		txtBandwidth = new JTextField();
+		txtBandwidth.setBounds(132, 73, 103, 20);
+		editPanel.add(txtBandwidth);
+		txtBandwidth.setColumns(10);
+		
+		JLabel txtSubnetmaskLbl = new JLabel("Subnetmask");
+		txtSubnetmaskLbl.setBounds(256, 58, 103, 14);
+		editPanel.add(txtSubnetmaskLbl);
+		
+		txtSubnetmask = new JTextField();
+		txtSubnetmask.setBounds(256, 73, 103, 20);
+		editPanel.add(txtSubnetmask);
+		txtSubnetmask.setColumns(10);
+				
+		JButton BtnSetNetwork = new JButton("Set Network");
+		BtnSetNetwork.setBounds(10, 99, 349, 23);
+		editPanel.add(BtnSetNetwork);
+		
+		editPanel.repaint();
+
+		btnDeleteNetwork.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(!(networkComboBox.getSelectedItem().toString().compareTo("*add new*")==0)){
+					myDoc.removeNetwork(networkComboBox.getSelectedItem().toString());
+					textLogPane("removed network with the id "+networkComboBox.getSelectedItem().toString());
+					networkComboBox.removeItemAt(networkComboBox.getSelectedIndex());
+					txtID.setText("");
+					txtBandwidth.setText("");
+					txtSubnetmask.setText("");
+				}else{
+					textLogPane("error: choose a network to delete first");
+				}
+				updateEditorPane();
+				editPanel.repaint();
+			}
+		});
+
+		networkComboBox.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(networkComboBox.getSelectedItem()!="*add new*"){
+					Element tempNetwork = myDoc.getNetwork((String)networkComboBox.getSelectedItem());
+					txtID.setText(tempNetwork.getAttribute("id"));
+					txtBandwidth.setText(tempNetwork.getAttribute("bandwidth"));
+					txtSubnetmask.setText(tempNetwork.getAttribute("subnet-mask"));
+				}else{
+					txtID.setText("");
+					txtBandwidth.setText("");
+					txtSubnetmask.setText("");
+				}
+				editPanel.repaint();
+			}
+		});
+
+		BtnSetNetwork.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(networkComboBox.getSelectedItem().toString().compareTo("*add new*")==0){
+					ArrayList<Element> tempList = myDoc.getNetworks();
+					ArrayList<String> idList = new ArrayList<String>();
+					for(int i=0;i<tempList.size();i++){
+						idList.add((String)tempList.get(i).getAttribute("id"));
+					}
+					if(idList.contains((String)txtID.getText())){
+						textLogPane("error: there is already a network with the id"+txtID.getText());
+					}else{
+						myDoc.addNetwork(txtID.getText());
+						if(txtBandwidth.getText()!="")myDoc.setNetworkBandwidth(txtID.getText(), txtBandwidth.getText());
+						if(txtSubnetmask.getText()!="")myDoc.setNetworkSubnetMask(txtID.getText(), txtBandwidth.getText());
+						networkComboBox.addItem(txtID.getText());
+						textLogPane("added network with the id "+txtID.getText());
+					}
+				}else{
+					ArrayList<Element> tempList = myDoc.getNetworks();
+					ArrayList<String> idList = new ArrayList<String>();
+					for(int i=0;i<tempList.size();i++){
+						idList.add((String)tempList.get(i).getAttribute("id"));
+					}
+					if(idList.contains((String)txtID.getText()) && txtID.getText().compareTo(networkComboBox.getSelectedItem().toString())!=0){
+						textLogPane("error: there is already a network with the id"+txtID.getText());
+					}else{
+						String tempID = txtID.getText();
+						String tempBandW = txtBandwidth.getText();
+						String tempSubN = txtSubnetmask.getText();
+						if(txtID.getText().compareTo(networkComboBox.getSelectedItem().toString())!=0){
+							myDoc.setNetworkId(networkComboBox.getSelectedItem().toString(), tempID);
+							networkComboBox.addItem(tempID);
+							networkComboBox.removeItemAt(networkComboBox.getSelectedIndex());
+						}
+						if(tempBandW!="")myDoc.setNetworkBandwidth(tempID, tempBandW);
+						if(tempSubN!="")myDoc.setNetworkSubnetMask(tempID, tempSubN);
+						textLogPane("updated network with the id "+tempID);
+					}
+				}
+				updateEditorPane();
+				editPanel.repaint();
+			}
+		});
+
+		txtID.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyReleased(KeyEvent e) {
+				ArrayList<Element> tempList = myDoc.getNetworks();
+				ArrayList<String> idList = new ArrayList<String>();
+				for(int i=0;i<tempList.size();i++){
+					idList.add((String)tempList.get(i).getAttribute("id"));
+				}
+				if((idList.contains(txtID.getText()) && txtID.getText().compareTo(networkComboBox.getSelectedItem().toString())!=0)||txtID.getText().compareTo("*add new*")==0) txtID.setBackground(new Color(255, 64, 64));
+				else txtID.setBackground(new Color(255, 255, 255));
+				editPanel.repaint();
 			}
 		});
 	}
+	
 	private void updateEditorPane(){
+		try {
+			myDoc.save("temp.output.xml");
+		} catch (TransformerFactoryConfigurationError e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (TransformerException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		File file = new File("temp.output.xml");
 		String dateiinhalt=loadFile(file.getPath());
 		try {
@@ -473,6 +423,9 @@ public class EditorGUI extends JFrame {
         } 
 
         return buff.toString(); 
+	}
+	private void textLogPane(String text){
+		logPane.setText(logPane.getText()+"\n- "+text);
 	}
 	private void testFunction()throws Exception{
 		/*DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
@@ -503,135 +456,5 @@ public class EditorGUI extends JFrame {
 		Float physicalZ[] = {-0.5f,-0.5f,-0.5f,-0.5f};
 		myDoc.addDisplayPhysical("simple1", "M1", physicalX, physicalY, physicalZ);
 		myDoc.save("C:/");*/
-	}
-	private void echo(Node n) {
-	    outputIndentation();
-	    int type = n.getNodeType();
-
-	    switch (type) {
-	        case Node.ATTRIBUTE_NODE:
-	            System.out.print("ATTR:");
-	            printlnCommon(n);
-	            break;
-
-	        case Node.CDATA_SECTION_NODE:
-	        	System.out.print("CDATA:");
-	            printlnCommon(n);
-	            break;
-
-	        case Node.COMMENT_NODE:
-	        	System.out.print("COMM:");
-	            printlnCommon(n);
-	            break;
-
-	        case Node.DOCUMENT_FRAGMENT_NODE:
-	        	System.out.print("DOC_FRAG:");
-	            printlnCommon(n);
-	            break;
-
-	        case Node.DOCUMENT_NODE:
-	        	System.out.print("DOC:");
-	            printlnCommon(n);
-	            break;
-
-	        case Node.DOCUMENT_TYPE_NODE:
-	        	System.out.print("DOC_TYPE:");
-	            printlnCommon(n);
-	            NamedNodeMap nodeMap = ((DocumentType)n).getEntities();
-	            indent += 2;
-	            for (int i = 0; i < nodeMap.getLength(); i++) {
-	                Entity entity = (Entity)nodeMap.item(i);
-	                echo(entity);
-	            }
-	            indent -= 2;
-	            break;
-
-	        case Node.ELEMENT_NODE:
-	        	System.out.print("ELEM:");
-	            printlnCommon(n);
-
-	            NamedNodeMap atts = n.getAttributes();
-	            indent += 2;
-	            for (int i = 0; i < atts.getLength(); i++) {
-	                Node att = atts.item(i);
-	                echo(att);
-	            }
-	            indent -= 2;
-	            break;
-
-	        case Node.ENTITY_NODE:
-	        	System.out.print("ENT:");
-	            printlnCommon(n);
-	            break;
-
-	        case Node.ENTITY_REFERENCE_NODE:
-	        	System.out.print("ENT_REF:");
-	            printlnCommon(n);
-	            break;
-
-	        case Node.NOTATION_NODE:
-	        	System.out.print("NOTATION:");
-	            printlnCommon(n);
-	            break;
-
-	        case Node.PROCESSING_INSTRUCTION_NODE:
-	        	System.out.print("PROC_INST:");
-	            printlnCommon(n);
-	            break;
-
-	        case Node.TEXT_NODE:
-	        	System.out.print("TEXT:");
-	            printlnCommon(n);
-	            break;
-
-	        default:
-	        	System.out.print("UNSUPPORTED NODE: " + type);
-	            printlnCommon(n);
-	            break;
-	    }
-
-	    indent++;
-	    for (Node child = n.getFirstChild(); child != null;
-	         child = child.getNextSibling()) {
-	        echo(child);
-	    }
-	    indent--;
-	}
-	private void outputIndentation() {
-	    for (int i = 0; i < indent; i++) {
-	    	System.out.print(basicIndent);
-	    }
-	}
-	private void printlnCommon(Node n) {
-		System.out.print(" nodeName=\"" + n.getNodeName() + "\"");
-
-	    String val = n.getNamespaceURI();
-	    if (val != null) {
-	    	System.out.print(" uri=\"" + val + "\"");
-	    }
-
-	    val = n.getPrefix();
-
-	    if (val != null) {
-	    	System.out.print(" pre=\"" + val + "\"");
-	    }
-
-	    val = n.getLocalName();
-	    if (val != null) {
-	    	System.out.print(" local=\"" + val + "\"");
-	    }
-
-	    val = n.getNodeValue();
-	    if (val != null) {
-	    	System.out.print(" nodeValue=");
-	        if (val.trim().equals("")) {
-	            // Whitespace
-	        	System.out.print("[WS]");
-	        }
-	        else {
-	        	System.out.print("\"" + n.getNodeValue() + "\"");
-	        }
-	    }
-	    System.out.println();
 	}
 }

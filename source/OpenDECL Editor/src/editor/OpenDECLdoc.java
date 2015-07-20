@@ -28,6 +28,7 @@ import java.io.File;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.List;
 
 public class OpenDECLdoc {
 	//Fehlerhandler für SAX
@@ -66,7 +67,7 @@ public class OpenDECLdoc {
 	    }
 	}
 	//Felder
-	private final static String DEFAULT_MIN_URI = "C:/default-min.xml";
+	//private final static String DEFAULT_MIN_URI = "C:/default-min.xml";
 	
 	private int indent = 0;
 	private final String basicIndent = " ";
@@ -100,7 +101,7 @@ public class OpenDECLdoc {
 	}
 	public void save(String path) throws TransformerFactoryConfigurationError, TransformerException{
 		Transformer transformer = TransformerFactory.newInstance().newTransformer();
-		Result output = new StreamResult(new File(path+"output.xml"));
+		Result output = new StreamResult(new File(path));
 		Source input = new DOMSource(doc);
 		transformer.transform(input, output);
 	}
@@ -282,6 +283,19 @@ public class OpenDECLdoc {
 		}
 		return result;
 	}
+	private ArrayList<Element> getElements(Node parent, String nodeName){
+		ArrayList<Element> result = new ArrayList<Element>();
+		NodeList list = parent.getChildNodes();
+		for(int i=0;i<list.getLength();i++){
+			if(list.item(i).getNodeType()==Node.ELEMENT_NODE){
+				if(list.item(i).getNodeName().equals(nodeName)){
+					result.add((Element) list.item(i));
+				}
+			}
+		}
+		return result;
+	}
+	
 	private void removeNode(Node n){
 		n.getParentNode().removeChild(n);
 	}
@@ -302,102 +316,108 @@ public class OpenDECLdoc {
 	
 	//Einzelfunktionen
 	//Node
-	public Element getNode(String Name){
-		return (Element) getElement(doc.getDocumentElement(),"node","name",Name);
+	public ArrayList<Element> getNodes(){
+		return getElements(doc.getDocumentElement(),"node");
 	}
-	public void addNode(String Name){
+	public Element getNode(String id){
+		return (Element) getElement(doc.getDocumentElement(),"node","id",id);
+	}
+	public void addNode(String id){
 		Node toAdd = addElement(doc.getDocumentElement(),"node");
-		setAttribute(toAdd, "name", Name);
+		setAttribute(toAdd, "id", id);
 	}
-	public void removeNode(String Name){
-		Node toRemove = getElement(doc.getDocumentElement(),"node","name",Name);
+	public void removeNode(String id){
+		Node toRemove = getElement(doc.getDocumentElement(),"node","id",id);
 		if(null!=toRemove)removeNode(toRemove);
 	}
-	public void setNodeName(String oldName, String newName){
-		Node toChange = getElement(doc.getDocumentElement(),"node","name",oldName);
-		setAttribute(toChange,"name",newName);
+	public void setNodeName(String oldId, String newId){
+		Node toChange = getElement(doc.getDocumentElement(),"node","name",oldId);
+		setAttribute(toChange,"name",newId);
 	}
-	public void setNodePurpose(String Name, String purpose){
-		Node toChange = getElement(doc.getDocumentElement(),"node","name",Name);
+	public void setNodePurpose(String id, String purpose){
+		Node toChange = getElement(doc.getDocumentElement(),"node","id",id);
 		setAttribute(toChange,"purpose",purpose);
 	}
 	
 	//graphics device
-	public Element getGraphicsDevice(String nodeName,String id){
-		return (Element) getElement(getElement(doc.getDocumentElement(),"node","name",nodeName),"graphics-device","id",id);
+	public Element getGraphicsDevice(String nodeId,String id){
+		return (Element) getElement(getElement(doc.getDocumentElement(),"node","name",nodeId),"graphics-device","id",id);
 	}
-	public void addGraphicsDevice(String nodeName,String id){
-		Node toAdd = addElement(getElement(doc.getDocumentElement(),"node","name",nodeName),"graphics-device");
+	public void addGraphicsDevice(String nodeId,String id){
+		Node toAdd = addElement(getElement(doc.getDocumentElement(),"node","name",nodeId),"graphics-device");
 		setAttribute(toAdd, "id", id);
 	}
-	public void removeGraphicsDevice(String nodeName,String id){
-		Node toRemove = getElement(getElement(doc.getDocumentElement(),"node","name",nodeName),"graphics-device","id",id);
+	public void removeGraphicsDevice(String nodeId,String id){
+		Node toRemove = getElement(getElement(doc.getDocumentElement(),"node","name",nodeId),"graphics-device","id",id);
 		if(null!=toRemove)removeNode(toRemove);
 	}
-	public void setGraphicsDeviceId(String nodeName, String oldId, String newId){
-		Node toChange = getElement(getElement(doc.getDocumentElement(),"node","name",nodeName),"graphics-device","id",oldId);
+	public void setGraphicsDeviceId(String nodeId, String oldId, String newId){
+		Node toChange = getElement(getElement(doc.getDocumentElement(),"node","name",nodeId),"graphics-device","id",oldId);
 		setAttribute(toChange,"id",newId);
 	}
-	public void setGraphicsDeviceGpuCount(String nodeName,String id, String gpuCount){
-		Node toChange = getElement(getElement(doc.getDocumentElement(),"node","name",nodeName),"graphics-device","id",id);
+	public void setGraphicsDeviceGpuCount(String nodeId,String id, String gpuCount){
+		Node toChange = getElement(getElement(doc.getDocumentElement(),"node","name",nodeId),"graphics-device","id",id);
 		setAttribute(toChange,"gpu-count",gpuCount);
 	}
-	public void setGraphicsDeviceVram(String nodeName,String id, String vram){
-		Node toChange = getElement(getElement(doc.getDocumentElement(),"node","name",nodeName),"graphics-device","id",id);
+	public void setGraphicsDeviceVram(String nodeId,String id, String vram){
+		Node toChange = getElement(getElement(doc.getDocumentElement(),"node","name",nodeId),"graphics-device","id",id);
 		setAttribute(toChange,"vram",vram);
 	}
-	public void setGraphicsDeviceModelName(String nodeName,String id, String modelName){
-		Node toChange = getElement(getElement(doc.getDocumentElement(),"node","name",nodeName),"graphics-device","id",id);
+	public void setGraphicsDeviceModelName(String nodeId,String id, String modelName){
+		Node toChange = getElement(getElement(doc.getDocumentElement(),"node","name",nodeId),"graphics-device","id",id);
 		setAttribute(toChange,"model-name",modelName);
 	}
 	
 	//port
-	public Element getPort(String nodeName,String graphicsDeviceId,String id){
-		return (Element) getElement(getElement(getElement(doc.getDocumentElement(),"node","name",nodeName),"graphics-device","id",graphicsDeviceId),"port","id",id);
+	public Element getPort(String nodeId,String graphicsDeviceId,String id){
+		return (Element) getElement(getElement(getElement(doc.getDocumentElement(),"node","name",nodeId),"graphics-device","id",graphicsDeviceId),"port","id",id);
 	}
-	public void addPort(String nodeName,String graphicsDeviceId,String id){
-		Node toAdd = addElement(getElement(getElement(doc.getDocumentElement(),"node","name",nodeName),"graphics-device","id",graphicsDeviceId),"port");
+	public void addPort(String nodeId,String graphicsDeviceId,String id){
+		Node toAdd = addElement(getElement(getElement(doc.getDocumentElement(),"node","name",nodeId),"graphics-device","id",graphicsDeviceId),"port");
 		setAttribute(toAdd, "id", id);
 	}
-	public void removePort(String nodeName,String graphicsDeviceId,String id){
-		Node toRemove = getElement(getElement(getElement(doc.getDocumentElement(),"node","name",nodeName),"graphics-device","id",graphicsDeviceId),"port","id",id);
+	public void removePort(String nodeId,String graphicsDeviceId,String id){
+		Node toRemove = getElement(getElement(getElement(doc.getDocumentElement(),"node","name",nodeId),"graphics-device","id",graphicsDeviceId),"port","id",id);
 		if(null!=toRemove)removeNode(toRemove);
 	}
-	public void setPortType(String nodeName,String graphicsDeviceId,String id, String type){
-		Node toChange = getElement(getElement(getElement(doc.getDocumentElement(),"node","name",nodeName),"graphics-device","id",graphicsDeviceId),"port","id",id);
+	public void setPortType(String nodeId,String graphicsDeviceId,String id, String type){
+		Node toChange = getElement(getElement(getElement(doc.getDocumentElement(),"node","name",nodeId),"graphics-device","id",graphicsDeviceId),"port","id",id);
 		setAttribute(toChange,"type",type);
 	}
-	public void setPortSlot(String nodeName,String graphicsDeviceId,String id, String slot){
-		Node toChange = getElement(getElement(getElement(doc.getDocumentElement(),"node","name",nodeName),"graphics-device","id",graphicsDeviceId),"port","id",id);
+	public void setPortSlot(String nodeId,String graphicsDeviceId,String id, String slot){
+		Node toChange = getElement(getElement(getElement(doc.getDocumentElement(),"node","name",nodeId),"graphics-device","id",graphicsDeviceId),"port","id",id);
 		setAttribute(toChange,"type",slot);
 	}
 	
 	//network device
-	public Element getNetworkDevice(String nodeName,String id){
-		return (Element) getElement(getElement(doc.getDocumentElement(),"node","name",nodeName),"network-device","id",id);
+	public Element getNetworkDevice(String nodeId,String id){
+		return (Element) getElement(getElement(doc.getDocumentElement(),"node","name",nodeId),"network-device","id",id);
 	}
-	public void addNetworkDevice(String nodeName,String id){
-		Node toAdd = addElement(getElement(doc.getDocumentElement(),"node","name",nodeName),"network-device");
+	public void addNetworkDevice(String nodeId,String id){
+		Node toAdd = addElement(getElement(doc.getDocumentElement(),"node","name",nodeId),"network-device");
 		setAttribute(toAdd, "id", id);
 	}
-	public void removeNetworkDevice(String nodeName,String id){
-		Node toRemove = getElement(getElement(doc.getDocumentElement(),"node","name",nodeName),"network-device","id",id);
+	public void removeNetworkDevice(String nodeId,String id){
+		Node toRemove = getElement(getElement(doc.getDocumentElement(),"node","name",nodeId),"network-device","id",id);
 		if(null!=toRemove)removeNode(toRemove);
 	}
-	public void setNetworkDeviceType(String nodeName,String id, String type){
-		Node toChange = getElement(getElement(doc.getDocumentElement(),"node","name",nodeName),"network-device","id",id);
+	public void setNetworkDeviceType(String nodeId,String id, String type){
+		Node toChange = getElement(getElement(doc.getDocumentElement(),"node","name",nodeId),"network-device","id",id);
 		setAttribute(toChange,"type",type);
 	}
-	public void setNetworkDeviceNetwork(String nodeName,String id, String network){
-		Node toChange = getElement(getElement(doc.getDocumentElement(),"node","name",nodeName),"network-device","id",id);
+	public void setNetworkDeviceNetwork(String nodeId,String id, String network){
+		Node toChange = getElement(getElement(doc.getDocumentElement(),"node","name",nodeId),"network-device","id",id);
 		setAttribute(toChange,"network",network);
 	}
-	public void setNetworkDeviceAddress(String nodeName,String id, String address){
-		Node toChange = getElement(getElement(doc.getDocumentElement(),"node","name",nodeName),"network-device","id",id);
+	public void setNetworkDeviceAddress(String nodeId,String id, String address){
+		Node toChange = getElement(getElement(doc.getDocumentElement(),"node","name",nodeId),"network-device","id",id);
 		setAttribute(toChange,"address",address);
 	}
 	
 	//Network
+	public ArrayList<Element> getNetworks(){
+		return getElements(doc.getDocumentElement(),"network");
+	}
 	public Element getNetwork(String id){
 		return (Element) getElement(doc.getDocumentElement(),"network","id",id);
 	}
@@ -411,7 +431,7 @@ public class OpenDECLdoc {
 	}
 	public void setNetworkId(String oldId, String newId){
 		Node toChange = getElement(doc.getDocumentElement(),"network","id",oldId);
-		setAttribute(toChange,"name",newId);
+		setAttribute(toChange,"id",newId);
 	}
 	public void setNetworkBandwidth(String id, String bandwidth){
 		Node toChange = getElement(doc.getDocumentElement(),"network","id",id);
@@ -423,41 +443,44 @@ public class OpenDECLdoc {
 	}
 	
 	//Display Setup
-	public Element getDisplaySetup(String name){
-		return (Element) getElement(doc.getDocumentElement(),"display-setup","name",name);
+	public ArrayList<Element> getDisplaySetups(){
+		return getElements(doc.getDocumentElement(),"display-setup");
 	}
-	public void addDisplaySetup(String name){
+	public Element getDisplaySetup(String id){
+		return (Element) getElement(doc.getDocumentElement(),"display-setup","id",id);
+	}
+	public void addDisplaySetup(String id){
 		Node toAdd = addElement(doc.getDocumentElement(),"display-setup");
-		setAttribute(toAdd, "name", name);
+		setAttribute(toAdd, "id", id);
 	}
-	public void removeDisplaySetup(String name){
-		Node toRemove = getElement(doc.getDocumentElement(),"display-setup","name",name);
+	public void removeDisplaySetup(String id){
+		Node toRemove = getElement(doc.getDocumentElement(),"display-setup","id",id);
 		if(null!=toRemove)removeNode(toRemove);
 	}
-	public void setDisplaySetupId(String oldName, String newName){
-		Node toChange = getElement(doc.getDocumentElement(),"display-setup","name",oldName);
-		setAttribute(toChange,"name",newName);
+	public void setDisplaySetupId(String oldId, String newId){
+		Node toChange = getElement(doc.getDocumentElement(),"display-setup","id",oldId);
+		setAttribute(toChange,"id",newId);
 	}
-	public void setDisplaySetupEyeDistance(String name, Float dist){
-		Node toChange = getElement(doc.getDocumentElement(),"display-setup","name",name);
+	public void setDisplaySetupEyeDistance(String id, Float dist){
+		Node toChange = getElement(doc.getDocumentElement(),"display-setup","id",id);
 		setAttribute(toChange,"eye-distance",dist.toString());
 	}
 	
 	//user
-	public Element getUser(String displaySetupName){
-		return (Element) getElement(getElement(doc.getDocumentElement(),"display-setup","name",displaySetupName),"user");
+	public Element getUser(String displaySetupId){
+		return (Element) getElement(getElement(doc.getDocumentElement(),"display-setup","id",displaySetupId),"user");
 	}
-	public void addUser(String displaySetupName){
-		if(null==getElement(getElement(doc.getDocumentElement(),"display-setup","name",displaySetupName),"user")){
-			addElement(getElement(doc.getDocumentElement(),"display-setup","name",displaySetupName),"user");
+	public void addUser(String displaySetupId){
+		if(null==getElement(getElement(doc.getDocumentElement(),"display-setup","id",displaySetupId),"user")){
+			addElement(getElement(doc.getDocumentElement(),"display-setup","id",displaySetupId),"user");
 		}
 	}
-	public void removeUser(String displaySetupName){
-		Node toRemove = getElement(getElement(doc.getDocumentElement(),"display-setup","name",displaySetupName),"user");
+	public void removeUser(String displaySetupId){
+		Node toRemove = getElement(getElement(doc.getDocumentElement(),"display-setup","id",displaySetupId),"user");
 		if(null!=toRemove)removeNode(toRemove);
 	}
-	public void addUserPosition(String displaySetupName, Float x, Float y, Float z){
-		Node toChange = getElement(getElement(doc.getDocumentElement(),"display-setup","name",displaySetupName),"user");
+	public void addUserPosition(String displaySetupId, Float x, Float y, Float z){
+		Node toChange = getElement(getElement(doc.getDocumentElement(),"display-setup","id",displaySetupId),"user");
 		if(null!=toChange){
 			toChange = addElement(toChange,"position");
 			toChange = addElement(toChange,"vector");
@@ -466,8 +489,8 @@ public class OpenDECLdoc {
 			setAttribute(toChange,"z", z.toString());
 		}
 	}
-	public void addUserOrientation(String displaySetupName, Float x, Float y, Float z){
-		Node toChange = getElement(getElement(doc.getDocumentElement(),"display-setup","name",displaySetupName),"user");
+	public void addUserOrientation(String displaySetupId, Float x, Float y, Float z){
+		Node toChange = getElement(getElement(doc.getDocumentElement(),"display-setup","id",displaySetupId),"user");
 		if(null!=toChange){
 			toChange = addElement(toChange,"orientation");
 			toChange = addElement(toChange,"vector");
@@ -476,16 +499,16 @@ public class OpenDECLdoc {
 			setAttribute(toChange,"z", z.toString());
 		}
 	}
-	public void setUserPosition(String displaySetupName, Float x, Float y, Float z){
-		Node toChange = getElement(getElement(getElement(getElement(doc.getDocumentElement(),"display-setup","name",displaySetupName),"user"),"position"),"vector");
+	public void setUserPosition(String displaySetupId, Float x, Float y, Float z){
+		Node toChange = getElement(getElement(getElement(getElement(doc.getDocumentElement(),"display-setup","id",displaySetupId),"user"),"position"),"vector");
 		if(null!=toChange){
 			setAttribute(toChange,"x", x.toString());
 			setAttribute(toChange,"y", y.toString());
 			setAttribute(toChange,"z", z.toString());
 		}
 	}
-	public void setUserOrientation(String displaySetupName, Float x, Float y, Float z){
-		Node toChange = getElement(getElement(getElement(getElement(doc.getDocumentElement(),"display-setup","name",displaySetupName),"user"),"orientation"),"vector");;
+	public void setUserOrientation(String displaySetupId, Float x, Float y, Float z){
+		Node toChange = getElement(getElement(getElement(getElement(doc.getDocumentElement(),"display-setup","id",displaySetupId),"user"),"orientation"),"vector");;
 		if(null!=toChange){
 			setAttribute(toChange,"x", x.toString());
 			setAttribute(toChange,"y", y.toString());
@@ -494,41 +517,45 @@ public class OpenDECLdoc {
 	}
 	
 	//display
-	public Element getDisplay(String displaySetupName, String id){
-		return (Element) getElement(getElement(doc.getDocumentElement(),"display-setup","name",displaySetupName),"display","id",id);
+	public Element getDisplay(String displaySetupId, String id){
+		return (Element) getElement(getElement(doc.getDocumentElement(),"display-setup","id",displaySetupId),"display","id",id);
 	}
-	public void addDisplay(String displaySetupName, String id){
-		Node toAdd = addElement(getElement(doc.getDocumentElement(),"display-setup","name",displaySetupName),"display");
+	public void addDisplay(String displaySetupId, String id){
+		Node toAdd = addElement(getElement(doc.getDocumentElement(),"display-setup","id",displaySetupId),"display");
 		setAttribute(toAdd, "id", id);
 	}
-	public void removeDisplay(String displaySetupName, String id){
-		Node toRemove = getElement(getElement(doc.getDocumentElement(),"display-setup","name",displaySetupName),"display","id",id);
+	public void removeDisplay(String displaySetupId, String id){
+		Node toRemove = getElement(getElement(doc.getDocumentElement(),"display-setup","id",displaySetupId),"display","id",id);
 		if(null!=toRemove)removeNode(toRemove);
 	}
-	public void setDisplayId(String displaySetupName, String oldId, String newId){
-		Node toChange = getElement(getElement(doc.getDocumentElement(),"display-setup","name",displaySetupName),"display","id",oldId);
+	public void setDisplayId(String displaySetupId, String oldId, String newId){
+		Node toChange = getElement(getElement(doc.getDocumentElement(),"display-setup","id",displaySetupId),"display","id",oldId);
 		setAttribute(toChange,"id",newId);
 	}
-	public void setDisplayType(String displaySetupName, String id, String type){
-		Node toChange = getElement(getElement(doc.getDocumentElement(),"display-setup","name",displaySetupName),"display","id",id);
+	public void setDisplayPortref(String displaySetupId, String id, String portref){
+		Node toChange = getElement(getElement(doc.getDocumentElement(),"display-setup","id",displaySetupId),"display","id",id);
+		setAttribute(toChange,"portref",portref);
+	}
+	public void setDisplayType(String displaySetupId, String id, String type){
+		Node toChange = getElement(getElement(doc.getDocumentElement(),"display-setup","id",displaySetupId),"display","id",id);
 		setAttribute(toChange,"type",type);
 	}
-	public void setDisplayStereo(String displaySetupName, String id, String stereo){
-		Node toChange = getElement(getElement(doc.getDocumentElement(),"display-setup","name",displaySetupName),"display","id",id);
+	public void setDisplayStereo(String displaySetupId, String id, String stereo){
+		Node toChange = getElement(getElement(doc.getDocumentElement(),"display-setup","id",displaySetupId),"display","id",id);
 		setAttribute(toChange,"stereo",stereo);
 	}
-	public void setDisplayPixelsize(String displaySetupName, String id, Float x, Float y){
-		Node toChange = getElement(getElement(doc.getDocumentElement(),"display-setup","name",displaySetupName),"display","id",id);
+	public void setDisplayPixelsize(String displaySetupId, String id, Float x, Float y){
+		Node toChange = getElement(getElement(doc.getDocumentElement(),"display-setup","id",displaySetupId),"display","id",id);
 		setAttribute(toChange,"pixel-size-x",x.toString());
 		setAttribute(toChange,"pixel-size-y",y.toString());
 	}
-	public void setDisplayMetricsize(String displaySetupName, String id, Float x, Float y){
-		Node toChange = getElement(getElement(doc.getDocumentElement(),"display-setup","name",displaySetupName),"display","id",id);
+	public void setDisplayMetricsize(String displaySetupId, String id, Float x, Float y){
+		Node toChange = getElement(getElement(doc.getDocumentElement(),"display-setup","id",displaySetupId),"display","id",id);
 		setAttribute(toChange,"metric-size-x",x.toString());
 		setAttribute(toChange,"metric-size-y",y.toString());
 	}
-	public void addDisplayPhysical(String displaySetupName, String id, Float[] x, Float[] y, Float[] z){
-		Node toChange = getElement(getElement(doc.getDocumentElement(),"display-setup","name",displaySetupName),"display","id",id);
+	public void addDisplayPhysical(String displaySetupId, String id, Float[] x, Float[] y, Float[] z){
+		Node toChange = getElement(getElement(doc.getDocumentElement(),"display-setup","id",displaySetupId),"display","id",id);
 		if(null!=toChange){
 			toChange = addElement(toChange,"physical");
 			Node upperLeft = addElement(toChange,"upper-left");
@@ -553,8 +580,8 @@ public class OpenDECLdoc {
 			setAttribute(upperRight,"z", z[3].toString());
 		}
 	}
-	public void addDisplayVirtual(String displaySetupName, String id, Float[] x, Float[] y){
-		Node toChange = getElement(getElement(doc.getDocumentElement(),"display-setup","name",displaySetupName),"display","id",id);
+	public void addDisplayVirtual(String displaySetupId, String id, Float[] x, Float[] y){
+		Node toChange = getElement(getElement(doc.getDocumentElement(),"display-setup","id",displaySetupId),"display","id",id);
 		if(null!=toChange){
 			toChange = addElement(toChange,"virtual");
 			Node upperLeft = addElement(toChange,"upper-left");
@@ -575,8 +602,8 @@ public class OpenDECLdoc {
 			setAttribute(upperRight,"y", y[3].toString());
 		}
 	}
-	public void setDisplayPhysical(String displaySetupName, String id, Float[] x, Float[] y, Float[] z){
-		Node toChange = getElement(getElement(getElement(doc.getDocumentElement(),"display-setup","name",displaySetupName),"display","id",id),"physical");
+	public void setDisplayPhysical(String displaySetupId, String id, Float[] x, Float[] y, Float[] z){
+		Node toChange = getElement(getElement(getElement(doc.getDocumentElement(),"display-setup","id",displaySetupId),"display","id",id),"physical");
 		if(null!=toChange){
 			Node upperLeft = getElement(toChange,"upper-left");
 			Node lowerLeft = getElement(toChange,"lower-left");
@@ -602,8 +629,8 @@ public class OpenDECLdoc {
 			}
 		}
 	}
-	public void setDisplayVirtual(String displaySetupName, String id, Float[] x, Float[] y){
-		Node toChange = getElement(getElement(doc.getDocumentElement(),"display-setup","name",displaySetupName),"display","id",id);
+	public void setDisplayVirtual(String displaySetupId, String id, Float[] x, Float[] y){
+		Node toChange = getElement(getElement(doc.getDocumentElement(),"display-setup","id",displaySetupId),"display","id",id);
 		if(null!=toChange){
 			toChange = addElement(toChange,"virtual");
 			Node upperLeft = getElement(toChange,"upper-left");
