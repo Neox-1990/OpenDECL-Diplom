@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.12.16)  20 JUL 2015 13:50
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.12.16)  27 JUL 2015 13:23
 entering extended mode
 **OpenDECL.tex
 (C:\Users\Ronald\Documents\OpenDECL-Diplom\Ausarbeitung\OpenDECL.tex
@@ -679,7 +679,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.26 ...{\numberline {8}Evaluation}{12}{chapter.8}
+l.25 ...{\numberline {8}Evaluation}{15}{chapter.8}
                                                    [1
 
 
@@ -708,12 +708,18 @@ Class scrreprt Warning: \float@addtolists detected!
 (scrreprt)              deprecated \float@addtolist interface .
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 73--74
+Underfull \hbox (badness 10000) in paragraph at lines 73--76
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 76--77
+Overfull \hbox (2.74709pt too wide) in paragraph at lines 78--82
+\T1/ptm/m/n/10.95 Protabilität von VR und Vis-Anwendungen, An-wen-dun-gen all-g
+e-mein, He-te-ro-ge-ni-tät der Um-ge-bun-gen/In-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 78--82
 
  []
 
@@ -721,33 +727,41 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.79 \chapter
+l.84 \chapter
              {Verwandte Arbeiten} [3
 
 
 ]
  2.
+
+Underfull \hbox (badness 10000) in paragraph at lines 85--88
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--94
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 96--100
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 102--109
+
+ []
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.88 \chapter
-             {Anforderungsanalyse} [4
+l.109 
+       [4
 
 ]
- 3.
-
-Underfull \hbox (badness 10000) in paragraph at lines 89--92
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 94--98
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 100--103
+Underfull \hbox (badness 10000) in paragraph at lines 111--114
 
  []
 
@@ -755,177 +769,244 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.105 \chapter
-              {Konzeption} [5
+l.116 \chapter
+              {Anforderungsanalyse} [5]
+ 3.
 
-]
- 4.
-pdfTeX warning (ext4): destination with the same identifier (name{page.6}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.111 \chapter
-              {OpenDECL Spezifikation} [6
-
-]
- 5.
-
-Underfull \hbox (badness 10000) in paragraph at lines 112--113
+Underfull \hbox (badness 10000) in paragraph at lines 117--120
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 119--121
+Underfull \hbox (badness 10000) in paragraph at lines 122--123
 
  []
 
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 122.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 123.
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--125
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 127--129
+Underfull \hbox (badness 10000) in paragraph at lines 124--126
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 131--133
+Underfull \hbox (badness 10000) in paragraph at lines 127--131
 
  []
 
-[7
+
+Underfull \hbox (badness 10000) in paragraph at lines 132--135
+
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.6}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.135 \subsection
+                 *{CAVE} [6
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 135--137
+Underfull \hbox (badness 10000) in paragraph at lines 136--140
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 139--141
+Underfull \hbox (badness 10000) in paragraph at lines 142--145
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 143--145
+Underfull \hbox (badness 10000) in paragraph at lines 146--150
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 147--149
+Underfull \hbox (badness 10000) in paragraph at lines 151--156
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 151--153
+Underfull \hbox (badness 10000) in paragraph at lines 157--159
+
+ []
+
+[7] [8]
+ 4.
+
+Underfull \hbox (badness 10000) in paragraph at lines 162--166
+
+ []
+
+[9
+
+]
+ 5.
+
+Underfull \hbox (badness 10000) in paragraph at lines 169--174
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 155--157
-
- []
-
-[8]
-Underfull \hbox (badness 10000) in paragraph at lines 159--161
+Underfull \hbox (badness 10000) in paragraph at lines 176--178
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 163--165
-
- []
-
-[9]
- 6.
-
-Underfull \hbox (badness 10000) in paragraph at lines 168--170
+Underfull \hbox (badness 10000) in paragraph at lines 180--182
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 172--175
+Underfull \hbox (badness 10000) in paragraph at lines 184--186
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 188--190
 
  []
 
 [10
 
 ]
- 7.
-
-Underfull \hbox (badness 10000) in paragraph at lines 180--183
+Underfull \hbox (badness 10000) in paragraph at lines 192--194
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 185--188
+Underfull \hbox (badness 10000) in paragraph at lines 196--198
 
  []
 
-[11
 
-]
- 8.
-[12
+Underfull \hbox (badness 10000) in paragraph at lines 200--202
 
-]
- 9.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 204--206
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 208--210
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 212--214
+
+ []
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 216--218
+
+ []
+
+[12]
+ 6.
+
+Underfull \hbox (badness 10000) in paragraph at lines 221--223
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 225--228
+
+ []
+
 [13
 
 ]
- 10.
+ 7.
+
+Underfull \hbox (badness 10000) in paragraph at lines 233--236
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 238--241
+
+ []
+
 [14
+
+]
+ 8.
+
+Underfull \hbox (badness 10000) in paragraph at lines 244--247
+
+ []
+
+[15
+
+]
+ 9.
+
+Underfull \hbox (badness 10000) in paragraph at lines 250--251
+
+ []
+
+[16
+
+]
+ 10.
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--257
+
+ []
+
+[17
 
 ] (C:\Users\Ronald\Documents\OpenDECL-Diplom\Ausarbeitung\OpenDECL.bbl
 
 LaTeX Warning: Empty `thebibliography' environment or \BreakBibliography
                before end of `thebibliography' environment on input line 3.
 
-) [15
+) [18
 
 
-] [16
+] [19
 
 
 
 
-] [17
+] [20
 
 
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 198.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 198.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 258.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 258.
 
 (C:\Users\Ronald\Documents\OpenDECL-Diplom\Ausarbeitung\OpenDECL.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 198.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 198.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 258.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 258.
 Package rerunfilecheck Info: File `OpenDECL.out' has not changed.
-(rerunfilecheck)             Checksum: A92924FF2B763FFF6ACF24924B3FAC8C;1821.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 198.
+(rerunfilecheck)             Checksum: 865E302BB8E93C1305CB2029AFE113F4;1821.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 258.
  )
 (\end occurred inside a group at level 1)
 
 ### semi simple group (level 1) entered at line 70 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 10312 strings out of 493921
- 153012 string characters out of 3144872
+ 10320 strings out of 493921
+ 153017 string characters out of 3144872
  329576 words of memory out of 3000000
- 13397 multiletter control sequences out of 15000+200000
+ 13396 multiletter control sequences out of 15000+200000
  46644 words of font info for 57 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 47i,11n,58p,1418b,1369s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 47i,11n,58p,1418b,1395s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.
 enc}<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pf
 b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Pr
 ogram Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files
  (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on OpenDECL.pdf (23 pages, 93380 bytes).
+Output written on OpenDECL.pdf (26 pages, 99217 bytes).
 PDF statistics:
- 285 PDF objects out of 1000 (max. 8388607)
- 60 named destinations out of 1000 (max. 500000)
- 233 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 302 PDF objects out of 1000 (max. 8388607)
+ 69 named destinations out of 1000 (max. 500000)
+ 225 words of extra memory for PDF output out of 10000 (max. 10000000)
 

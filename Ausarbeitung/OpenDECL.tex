@@ -70,19 +70,47 @@ Bild"ubernahmen zitieren.}
 \begin{document}
 %Kapitel 1 #######################
 \chapter{Problemstellung}
+Was sind Tiled/Multi Display Umgebungen\\
+Wo kommen Sie zum Einsatz, warum\\
 Grundsätzliche Herausforderungen bei Tiled/Multi Display Umgebungen\\
 
 \section{Problemfelder}
 Aufteilung der Problemfelder\\
+Infrastruktur, Pixeldichte, Paralleles/Verteiltes Rendering, Probleme beim Rendern für Large High Resolution Displays\\
+Kalibrierung von Enviroments, Einrichtung\\
+Protabilität von VR und Vis-Anwendungen, Anwendungen allgemein, Heterogenität der Umgebungen/Infrastruktur\\
 
 %Kapitel 2 #######################
 \chapter{Verwandte Arbeiten}
+Allgemeines zu LHRD, vielleicht auch n bisschen was Richtung MCI\\
+A Survey of Large High Resolution Display Technologies, Techniques and Application 2006\\
+Designing LHRD Workspaces 2012\\
 
-\section{Problemfeld 1}
+\section{Betrieb von Large High Resolution Displays}
+Sachen zu Cluster, Distributed Rendering, Streaming usw\\
+Chromium: A Stream-processing Framework for Interactive Rendering on Clusters 2002\\
+Scaleable Graphics Architecture for High Resolution Display 2005\\
+Software Enviroments for Cluster-Based Display Systems 2001\\
 
-\section{Problemfeld 2}
+\section{Kalibrierung von Large High Resolution Displays}
+Vor allem für Projektor basierende LHRD, Kalibrierung, Schwierigkeiten usw\\
+PixelFlex: A reconfigurable Multi-Projektor Display System 2001\\
+Automatic Alignment of Highresolution Multiprojector Displays Using an uncalibrated Camera 2000\\
+XMegaWall: A Super High-Resolution Tiled Display using a PC Cluster 2007\\
 
-\section{Problemfeld 3}
+\section{Middleware für Anwendungen auf Large High Resolution Displays}
+Wie wurde versucht Portabilität für Anwendungen zu erreichen\\
+Wie wurde versucht Anwendungen oder Umgebungen zu beschreiben/eine Beschreibung zu finden\\
+HIVE: a Highly Scaleable Framework for DVE (Distributed Virtual Enviromment)\\
+Coupling Virtual Reality Open Source Software Using Message Oriented Middleware 2003\\
+FlowVR: a middleware for large scale virtual realtity applications\\
+InTml: A Description Language for VR Application 2002\\
+VR Juggler: A Virtual Platform for Virtual Reality Application Development 2001\\
+
+\section{Einordnung meiner Arbeit}
+Wo ist meine Arbeit einzuordnen, welches Problemfeld\\
+Konzentration auf Infrastruktur, vor allem Displays\\
+Keine bisherigen mir bekannten Arbeiten zu diesem Ansatz\\
 
 %Kapitel 3 #######################
 \chapter{Anforderungsanalyse}
@@ -91,75 +119,100 @@ auf welche Aspekte habe ich mich konzentriert\\
 was habe ich weniger oder gar nicht analysiert\\
 
 \section{Hardwareanalyse}
-mein Desktop System\\
-CGV Stereowall\\
-MT Powerwall\\
-CAVE\\
+allgemeines zu Hardware\\
+\subsection*{Desktop Systeme}
+Variationen und daraus resultierende Schwierigkeiten\\
+mein System als Beispiel\\
+\subsection*{CGV Stereowall}
+Aufbau\\
+Infrastruktur\\
+3D\\
+Kompromisse\\
+\subsection*{MT Powerwall}
+Aufbau\\
+Infrastruktur\\
+Kompromisse und Probleme\\
+\subsection*{CAVE}
+Aufbau\\
+Infrastruktur\\
+3D\\
+Kompromisse und Probleme\\
 
 \section{Softwareanalyse}
-Megamol\\
-Paraview\\
-Equalizer\\
+Was habe ich analysiert -> vor allem Konfigurationen\\
+Welche Konfigurationsmöglichkeiten gibt es\\
+Wie habe ich die Software auf entsprechenden getestet\\
+\subsection*{Megamol}
+Kurze Beschreibung des Tools (was, woher, wofür)\\
+Konfigurationsmöglichkeiten -> Config, Paramfile\\
+Test auf Powerwalls und Desktop\\
+Warum nicht CAVE\\
+\subsection*{Paraview}
+Kurze Beschreibung des Tools (was, woher, wofür)\\
+Workaround für Konfigurierbare Views\\
+Konfigurationsmöglichkeiten -> pvx files, parameter für Serverstart\\
+Test auf Desktop,MT Powerwall und Cave (*sadsmily*)\\
+Warum nicht CGV 3D Powerwall\\
+\subsection*{Equalizer}
+Kurze Beschreibung des Tools (was, woher, wofür)\\
+Als optionales Tool nicht ausgeführt aber Konfigurierung unter die Lupe genommen und Analysiert\\
 
 %Kapitel 4 #######################
 \chapter{Konzeption}
 Auf was konzentriert sich mein Ansatz, wo liegt der Fokus\\
 Was soll Abgebildet werden\\
-Was wird Beschrieben
+Was wird Beschrieben\\
+Welche Schlüsse zieh ich aus der Analyse (Hard+Software)\\
 
 %Kapitel 5 #######################
 \chapter{OpenDECL Spezifikation}
 Spezifikation liegt als XSD vor, siehe Anhang\\
-
-\section{Ansatz}
 Wie habe ich geplant die Konzeption umzusetzen\\
 Wo habe ich mich orientiert, bzw. Habe ich andere Vorlagen gehabt (stichwort equalizer, VRUI,...)
-
-\section{Aufbau}
 Es folgt die konkrete Umsetzung der Spezifikation\\
 Ich gehe Schritt für Schritt die Elemente durch, wobei das Wurzelelement (openDECL) drei verschiedene Untelemente besitzen kann, die hier als Anhaltspunkt für die weitergehende Beschreibung genutzt werden.\\
 
-\subsection{node}
+\section{node}
 Was soll * darstellen\\
 Welche Atrribute beschreiben was + optional vs required\\
 
-\subsubsection{graphics-device}
+\subsection{graphics-device}
 Was soll * darstellen\\
 Welche Atrribute beschreiben was + optional vs required\\
 
-\subsubsection*{port}
+\subsection*{port}
 Was soll * darstellen\\
 Welche Atrribute beschreiben was + optional vs required\\
 
-\subsubsection{network-device}
+\subsection{network-device}
 Was soll * darstellen\\
 Welche Atrribute beschreiben was + optional vs required\\
 
-\subsection{network}
+\section{network}
 Was soll * darstellen\\
 Welche Atrribute beschreiben was + optional vs required\\
 
-\subsection{display-setup}
+\section{display-setup}
 Was soll * darstellen\\
 Welche Atrribute beschreiben was + optional vs required\\
 
-\subsubsection*{vector}
+\subsection*{vector}
 Was soll * darstellen\\
 Welche Atrribute beschreiben was + optional vs required\\
 
-\subsubsection{user}
+\subsection{user}
 Was soll * darstellen\\
 Welche Atrribute beschreiben was + optional vs required\\
 
-\subsubsection{display}
+\subsection{display}
 Was soll * darstellen\\
 Welche Atrribute beschreiben was + optional vs required\\
 
-\subsubsection*{physical}
+\subsection*{physical}
 Was soll * darstellen\\
 Welche Atrribute beschreiben was + optional vs required\\
 
-\subsubsection*{virtual}
+\subsection*{virtual}
 Was soll * darstellen\\
 Welche Atrribute beschreiben was + optional vs required\\
 
@@ -188,11 +241,18 @@ Zugriff via Interface\\
 
 %Kapitel 8 #######################
 \chapter{Evaluation}
+Wie gut Erfüllt Ergebnis die Aufgabenstellung\\
+Wie gut lassen sich die XSLTs erstellen\\
+Wie ist die Qualität der Konfigurationen die hinten raus kommen\\
 
 %Kapitel 9 #######################
 \chapter{Diskussion}
+Vergleich Ergebnis mit Vorgaben, Ideen, Konzeption\\
 
 %Kapitel 10 ######################
 \chapter{Ausblick}
+Mögliche Erweiterungen\\
+Ausgelassene oder vereinfachte Aspekte, die noch Ausbaufähig sind\\
+weitere Optionen für Editor\\
 
 \end{document}
