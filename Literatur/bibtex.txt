@@ -207,6 +207,7 @@ masid = {11295870}
 @article{6143028,
 author = {Fábio Rodrigues and Rodrigo Ferraz and Márcio Cabral and Fernando Teubl and Olavo Belloc and Marcia Kondo and Marcelo Zuffo and Roseli Lopes},
 title = {{Coupling Virtual Reality Open Source Software Using Message Oriented Middleware}},
+year = {2003},
 masid = {6143028}
 }
 

@@ -1,3 +1,104 @@
-\begin{thebibliography}{}
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{GKM{\etalchar{+}}15}
+
+\bibitem[AGL{\etalchar{+}}04]{1847038}
+\textsc{Allard}, Jérémie ; \textsc{Gouranton}, Valérie ; \textsc{Lecointre},
+  Loïck ; \textsc{Limet}, Sébastien ; \textsc{Raffin}, Bruno  ;
+  \textsc{Robert}, Sophie:
+\newblock \emph{{FlowVR: A Middleware for Large Scale Virtual Reality
+  Applications}}.
+\newblock 2004. --
+\newblock  497--505 S
+
+\bibitem[AGL05]{ahrens200536}
+\textsc{Ahrens}, James ; \textsc{Geveci}, Berk  ; \textsc{Law}, Charles:
+\newblock 36 ParaView: An End-User Tool for Large-Data Visualization.
+\newblock {In: }\emph{The Visualization Handbook}
+\newblock  (2005), S. 717
+
+\bibitem[BJH{\etalchar{+}}01]{4077770}
+\textsc{Bierbaum}, Allen ; \textsc{Just}, Christopher ; \textsc{Hartling},
+  Patrick ; \textsc{Meinert}, Kevin ; \textsc{Baker}, Albert  ;
+  \textsc{Cruz-neira}, Carolina:
+\newblock {VR Juggler: A Virtual Platform for Virtual Reality Application
+  Development}.
+\newblock {In: }\emph{Virtual Reality}, 2001, S. 89--96
+
+\bibitem[CNSD93]{CAVE}
+\textsc{Cruz-Neira}, Carolina ; \textsc{Sandin}, Daniel~J.  ; \textsc{DeFanti},
+  Thomas~A.:
+\newblock {Surround-screen projection-based virtual reality: the design and
+  implementation of the CAVE}.
+\newblock {In: }\emph{Annual Conference on Computer Graphics}, 1993, S.
+  135--142
+
+\bibitem[EBZ{\etalchar{+}}12]{56912988}
+\textsc{Endert}, Alex ; \textsc{Bradel}, Lauren ; \textsc{Zeitz}, Jessica ;
+  \textsc{Andrews}, Christopher  ; \textsc{North}, Chris:
+\newblock {Designing large high-resolution display workspaces}.
+\newblock
+\newblock  (2012), S. 58--65
+
+\bibitem[EMP09]{EMP:09}
+\textsc{Eilemann}, Stefan ; \textsc{Makhinya}, Maxim  ; \textsc{Pajarola},
+  Renato:
+\newblock Equalizer: A Scalable Parallel Rendering Framework.
+\newblock {In: }\emph{IEEE Transactions on Visualization and Computer Graphics}
+\newblock 15 (2009), May/June, Nr. 3, S. 436--452
+
+\bibitem[GKM{\etalchar{+}}15]{grottel2014megamol}
+\textsc{Grottel}, S. ; \textsc{Krone}, M. ; \textsc{Muller}, C. ;
+  \textsc{Reina}, G.  ; \textsc{Ertl}, T.:
+\newblock MegaMol -- A Prototyping Framework for Particle-based Visualization.
+\newblock {In: }\emph{Visualization and Computer Graphics, IEEE Transactions
+  on}
+\newblock 21 (2015), Feb, Nr. 2, S. 201--214. --
+\newblock ISSN 1077--2626
+
+\bibitem[HHN{\etalchar{+}}02]{422242}
+\textsc{Humphreys}, Greg ; \textsc{Houston}, Mike ; \textsc{Ng}, Ren ;
+  \textsc{Frank}, Randall~J. ; \textsc{Ahern}, Sean ; \textsc{Kirchner},
+  Peter~D.  ; \textsc{Klosowski}, James~T.:
+\newblock {Chromium: a stream-processing framework for interactive rendering on
+  clusters}.
+\newblock {In: }\emph{ACM Transactions on Graphics}
+\newblock 21 (2002), S. 693--702
+
+\bibitem[JJR{\etalchar{+}}]{Jeong_scalablegraphics}
+\textsc{Jeong}, Byungil ; \textsc{Jagodic}, Ratko ; \textsc{Renambot}, Luc ;
+  \textsc{Singh}, Rajvikram ; \textsc{Johnson}, Andrew  ; \textsc{Leigh},
+  Jason:
+\newblock Scalable Graphics Architecture for High Resolution Displays.
+\newblock {In: }\emph{Presented at IEEE Information Visualization Workshop
+  2005}, S. 10--24
+
+\bibitem[NSS{\etalchar{+}}06]{4856637}
+\textsc{Ni}, Tao ; \textsc{Schmidt}, Greg~S. ; \textsc{Staadt}, Oliver~G. ;
+  \textsc{Livingston}, Mark~A. ; \textsc{Ball}, Robert  ; \textsc{May},
+  Richard~A.:
+\newblock {A Survey of Large High-Resolution Display Technologies, Techniques,
+  and Applications}.
+\newblock {In: }\emph{Virtual Reality, IEEE Annual International Symposium},
+  2006, S. 223--236
+
+\bibitem[RFC{\etalchar{+}}03]{6143028}
+\textsc{Rodrigues}, Fábio ; \textsc{Ferraz}, Rodrigo ; \textsc{Cabral}, Márcio
+  ; \textsc{Teubl}, Fernando ; \textsc{Belloc}, Olavo ; \textsc{Kondo}, Marcia
+  ; \textsc{Zuffo}, Marcelo  ; \textsc{Lopes}, Roseli:
+\newblock {Coupling Virtual Reality Open Source Software Using Message Oriented
+  Middleware}.
+\newblock
+\newblock  (2003)
+
+\bibitem[SLM04]{vtk2004}
+\textsc{Schroeder}, Will~J. ; \textsc{Lorensen}, Bill  ; \textsc{Martin}, Ken:
+\newblock \emph{The visualization toolkit}.
+\newblock Kitware, 2004
+
+\bibitem[YGH{\etalchar{+}}01]{68109}
+\textsc{Yang}, Ruigang ; \textsc{Gotz}, David ; \textsc{Hensley}, Justin ;
+  \textsc{Towles}, Herman  ; \textsc{Brown}, Michael~S.:
+\newblock {PixelFlex: a reconfigurable multi-projector display system}.
+\newblock {In: }\emph{IEEE Visualization}, 2001, S. 167--174
 
 \end{thebibliography}
