@@ -1,4 +1,4 @@
-\documentclass[hyperref,german,diplommedieninf]{cgvpub}
+\documentclass[hyperref,german,diplommedieninf,twoside]{cgvpub}
 %weitere Optionen zum Ergänzen (in eckigen Klammern):
 % 
 % female	weibliche Titelbezeichnung bei Diplom
@@ -56,14 +56,6 @@ Die Bearbeitung erfolgt mit diesen Teilzielen:
 \item Optional: Code-Bibliothek zur direkten Nutzung der Konfigurations-Xml-Datei
 \item Optional: Untersuchung weiterer Display-Konfigurationen (z.B. gekrümmter Projektionen) und weiterer Visualisierungs- und VR-Software
 \end{itemize}
-}
-\copyrighterklaerung{Hier soll jeder Autor die von ihm eingeholten
-Zustimmungen der Copyright-Besitzer angeben bzw. die in Web Press
-Rooms angegebenen generellen Konditionen seiner Text- und
-Bild"ubernahmen zitieren.}
-\acknowledgments{Danke Dr. rer. nat. Sebastian Grottel für die Betreuung\\
-Danke Dipl.-Inf. Ulrich von Zadow für Betreuung an der Powerwall des Lehrstuhl für Multimedia-Technologie\\
-Danke Dr.-Ing. Wolfgang Steger für die Betreung an der CAVE des Lehrstuhl Konstruktionstechnik/CAD
 }
 
 \abstracten{abstract text english}
@@ -193,23 +185,24 @@ Das \textit{node} Element beschreibt einen Rechner. Würde das LHRD also von eine
 Ein \textit{node} Element und damit ein Rechner, kann beliebig viele \textit{graphics-device} und \textit{network-device} Elemente enthalten.
 
 \subsection{graphics-device}
-Das \textit{graphics-device} Element beschreibt eine Grafikkarte in einem Rechner. Das \textit{id} Attribute dient als eindeutiger Bezeichner für diese Grafikkarte und ist ein Pflichtattribut. Das \textit{gpu-count}, \textit{vram} und \textit{model-name} Attribut sind optionale Attribute um die Grafikkarte bezüglich Anzahl der GPUs, Speicher und Model Namen näher zu beschreiben.\\
+Das \textit{graphics-device} Element beschreibt eine Grafikkarte in einem Rechner. Das \textit{id} Attribut dient als eindeutiger Bezeichner für diese Grafikkarte und ist ein Pflichtattribut. Das \textit{gpu-count}, \textit{vram} und \textit{model-name} Attribut sind optionale Attribute um die Grafikkarte bezüglich Anzahl der GPUs, Speicher und Model Namen näher zu beschreiben.\\
 Ein \textit{graphics-device} Element enthält beliebig viele aber mindestens ein \textit{port} Element.
 
 \subsection*{port}
-Das \textit{port} Element beschreibt einen Anschluss an der Grafikkarte, an den ein Display angeschlossen werden kann. Das \textit{id} Attribut dient als eindeutiger Bezeichner dieses Anschlusses und dient als Referenz für die Zuordnung von Displays an diesen Anschluss. Das \textit{type} und \textit{slot} sind optionale Attribute um diesen Anschluss näher zu beschreiben, beispielsweise ob es sich um einen HDMI oder VGA Anschluss handelt oder welcher Anschluss bei Grafikkarten mit mehreren Anschlüssen beschrieben wird.
+Das \textit{port} Element beschreibt einen Anschluss an der Grafikkarte, an den ein Display angeschlossen werden kann. Das \textit{id} Attribut dient als eindeutiger Bezeichner dieses Anschlusses und dient als Referenz ID für die Zuordnung von Displays an diesen Anschluss. Das \textit{type} und \textit{slot} sind optionale Attribute um diesen Anschluss näher zu beschreiben, beispielsweise ob es sich um einen HDMI oder VGA Anschluss handelt oder welcher Anschluss bei Grafikkarten mit mehreren Anschlüssen beschrieben wird.
 
 \subsection{network-device}
-Was soll * darstellen\\
-Welche Atrribute beschreiben was + optional vs required\\
+Das \textit{network-device} Element beschreibt einen Netzwerk Adapter, der mit einem Netzwerk verbunden ist. Das \textit{id} Attribut dient als eindeutiger Bezeichner dieses Netzwek Adapters und ist, wie alle anderen Attribute von \textit{network-device}, ein Pflichtattribut. Das Attribut \textit{network} ist eine Referenz auf ein \textit{network} Element mit der angegebenen \textit{id}. Damit ist dieser Netzwerk Adapter und damit auch der Rechner in dem dieser angegeben ist, mit dem angegebenen Netzwerk verbunden. Das Attribut \textit{address} gibt dabei die entsprechende Adresse des Netzwerk Adapters im Netzwerk an.
 
 \section{network}
-Was soll * darstellen\\
-Welche Atrribute beschreiben was + optional vs required\\
+Das \textit{network} Element beschreibt ein Netzwerk für mehrere Rechner. Das \textit{id} Attribut dient als eindeutiger Bezeichner des Netzwerks und ist ein Pflichtattribut. Es dient als Referenz ID für die Zuordnung von Netzwerk Adapter die mit diesem Netzwerk verbunden sind. Die Attribute \textit{bandwidth} und \textit{subnet-mask} sind optionale Attribute und dienen zur näheren Beschreibung des Netzwerkes.\\
+\\
+Ein Beispiel für die Beschreibung der Infrastruktur mittels \textit{node} und \textit{network} sieht man in Ref(Listing). Dies ist die Beschreibung des XYZ System.\\
+Quellcode Listing.
 
 \section{display-setup}
-Was soll * darstellen\\
-Welche Atrribute beschreiben was + optional vs required\\
+Das Element \textit{display-setup} stellt eine mögliche Konfiguration von Displays dar. Sind die Displays auf verschiedenen Arten konfigurierbar, so lässt sich dies mit mehreren \textit{display-setup} Elementen abbilden. Das Attribute \textit{id} dient als eindeutiger Bezeichner und ist ein Pflichtattribut. Das Attribut \textit{eye-distance} beschreibt den Augenabstand der für die Stereoprojektion verwendet wird. Wird dieser nicht angegeben, so wird standardmäßig der Wert \textit{0.0} angenommen.\\
+Ein \textit{display-setup} Element kann ein \textit{user} Element enthalten, sowie mindestens ein oder beliebig viele \textit{display} Elemente.
 
 \subsection*{vector}
 Was soll * darstellen\\

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.12.16)  6 AUG 2015 07:20
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.12.16)  10 AUG 2015 13:54
 entering extended mode
 **OpenDECL.tex
 (C:\Users\Ronald\Documents\OpenDECL-Diplom\Ausarbeitung\OpenDECL.tex
@@ -251,12 +251,6 @@ Class scrreprt Warning: You've used obsolete option `pointlessnumbers'.
 .
 
 Class scrreprt Info: Switching compatibility level to `first'.
-Class scrreprt Info: You've used standard option `oneside'.
-(scrreprt)           This is correct!
-(scrreprt)           Internally I'm using `twoside=false'.
-(scrreprt)           If you'd like to set the option with \KOMAoptions,
-(scrreprt)           you'd have to use `twoside=false' there
-(scrreprt)           instead of `oneside', too.
 Class scrreprt Info: You've used standard option `openright'.
 (scrreprt)           This is correct!
 (scrreprt)           Internally I'm using `open=right'.
@@ -302,8 +296,8 @@ Package typearea Info: These are the values describing the layout:
 (typearea)             \paperwidth      = 597.50793pt
 (typearea)              \textwidth      = 418.25555pt
 (typearea)              DIV departure   = -14%
-(typearea)              \evensidemargin = 17.3562pt
-(typearea)              \oddsidemargin  = 17.3562pt
+(typearea)              \evensidemargin = 47.2316pt
+(typearea)              \oddsidemargin  = -12.5192pt
 (typearea)             \paperheight     = 845.04694pt
 (typearea)              \textheight     = 595.80026pt
 (typearea)              \topmargin      = -25.16531pt
@@ -550,20 +544,20 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 ))
 (C:\Users\Ronald\Documents\OpenDECL-Diplom\Ausarbeitung\OpenDECL.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -580,7 +574,7 @@ LaTeX Font Info:    ... okay on input line 72.
 \everyMPtoPDFconversion=\toks28
 )
 \AtBeginShipoutBox=\box37
-Package hyperref Info: Link coloring OFF on input line 72.
+Package hyperref Info: Link coloring OFF on input line 64.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -589,9 +583,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count135
 )
-LaTeX Info: Redefining \ref on input line 72.
-LaTeX Info: Redefining \pageref on input line 72.
-LaTeX Info: Redefining \nameref on input line 72.
+LaTeX Info: Redefining \ref on input line 64.
+LaTeX Info: Redefining \pageref on input line 64.
+LaTeX Info: Redefining \nameref on input line 64.
 
 (C:\Users\Ronald\Documents\OpenDECL-Diplom\Ausarbeitung\OpenDECL.out)
 (C:\Users\Ronald\Documents\OpenDECL-Diplom\Ausarbeitung\OpenDECL.out)
@@ -601,71 +595,81 @@ LaTeX Info: Redefining \nameref on input line 72.
 
 
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
-LaTeX Font Info:    Try loading font information for T1+phv on input line 72.
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [2
+
+
+]
+LaTeX Font Info:    Try loading font information for T1+phv on input line 64.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\t1phv.fd"
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 72.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 64.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 72.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 64.
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--72
+Underfull \hbox (badness 10000) in paragraph at lines 64--64
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--64
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--72
+Underfull \vbox (badness 4492) has occurred while \output is active []
 
- []
-
-[2
-
-
-]
-Overfull \hbox (20.76735pt too wide) in paragraph at lines 72--72
+ [3]
+Overfull \hbox (20.76735pt too wide) in paragraph at lines 64--64
 []\T1/ptm/m/n/10.95 Groÿfläche Dis-play-wand mit meh-re-ren Pa-nels (Dis-play-w
 and an der Pro-fes-sur Multimedia-Technologie) 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--72
+Underfull \hbox (badness 10000) in paragraph at lines 64--64
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--72
+Underfull \hbox (badness 10000) in paragraph at lines 64--64
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--72
+Underfull \hbox (badness 10000) in paragraph at lines 64--64
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--72
+Underfull \hbox (badness 10000) in paragraph at lines 64--64
 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 72.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 64.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 72.
- [3] [4]
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 64.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [4]
+[5] [6
+
+]
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <17.28> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 72.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 64.
+ [7
 
-[5
+] [8
 
+] [9] [10
 
-] [6
-
-] (C:\Users\Ronald\Documents\OpenDECL-Diplom\Ausarbeitung\OpenDECL.toc
+]
+(C:\Users\Ronald\Documents\OpenDECL-Diplom\Ausarbeitung\OpenDECL.toc
 LaTeX Font Info:    Try loading font information for U+msa on input line 2.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
@@ -679,9 +683,8 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.25 ...{\numberline {8}Evaluation}{22}{chapter.8}
+l.25 ...{\numberline {8}Evaluation}{27}{chapter.8}
                                                    [1
-
 
 ])
 \tf@toc=\write5
@@ -689,7 +692,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.72 \begin{document}
+l.64 \begin{document}
                       [2]
  1.
 
@@ -711,7 +714,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.83 
+l.75 
       [3
 
 
@@ -719,28 +722,31 @@ l.83
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.85 \chapter
+l.77 \chapter
              {Verwandte Arbeiten} [4]
  2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 92--95
+Underfull \hbox (badness 10000) in paragraph at lines 84--87
 
  []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.98 
+l.90 
       [5
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 100--105
+Underfull \hbox (badness 10000) in paragraph at lines 92--97
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--105
+Underfull \hbox (badness 10000) in paragraph at lines 92--97
 
  []
 
@@ -748,185 +754,193 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.6}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.105 
-       [6] [7]
+l.97 
+      [6]pdfTeX warning (ext4): destination with the same identifier (name{page
+.7}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.102 \chapter
+              {Anforderungsanalyse} [7]pdfTeX warning (ext4): destination with 
+the same identifier (name{page.8}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.102 \chapter
+              {Anforderungsanalyse} [8
+
+]
  3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 115--116
+Underfull \hbox (badness 10000) in paragraph at lines 107--108
 
  []
 
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 116.
-[8
-
-] <img/CGV-Aufbau.png, id=234, 1284.8pt x 722.7pt>
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 108.
+pdfTeX warning (ext4): destination with the same identifier (name{page.9}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.111 
+       [9] <img/CGV-Aufbau.png, id=252, 1284.8pt x 722.7pt>
 File: img/CGV-Aufbau.png Graphic file (type png)
- <use img/CGV-Aufbau.png>
-Package pdftex.def Info: img/CGV-Aufbau.png used on input line 123.
-(pdftex.def)             Requested size: 455.24408pt x 256.06956pt.
 
-[9 <C:/Users/Ronald/Documents/OpenDECL-Diplom/Ausarbeitung/img/CGV-Aufbau.png>]
-<img/Powerwall-Aufbau.png, id=245, 1284.8pt x 722.7pt>
+<use img/CGV-Aufbau.png>
+Package pdftex.def Info: img/CGV-Aufbau.png used on input line 115.
+(pdftex.def)             Requested size: 455.24408pt x 256.06956pt.
+pdfTeX warning (ext4): destination with the same identifier (name{page.10}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.121 
+       [10 <C:/Users/Ronald/Documents/OpenDECL-Diplom/Ausarbeitung/img/CGV-Aufb
+au.png>] <img/Powerwall-Aufbau.png, id=262, 1284.8pt x 722.7pt>
 File: img/Powerwall-Aufbau.png Graphic file (type png)
 
 <use img/Powerwall-Aufbau.png>
-Package pdftex.def Info: img/Powerwall-Aufbau.png used on input line 133.
+Package pdftex.def Info: img/Powerwall-Aufbau.png used on input line 125.
 (pdftex.def)             Requested size: 455.24408pt x 256.06956pt.
- [10 <C:/Users/Ronald/Documents/OpenDECL-Diplom/Ausarbeitung/img/Powerwall-Aufb
+ [11 <C:/Users/Ronald/Documents/OpenDECL-Diplom/Ausarbeitung/img/Powerwall-Aufb
 au.png>]
-<img/CAVE-Aufbau.png, id=255, 1284.8pt x 722.7pt>
+<img/CAVE-Aufbau.png, id=272, 1284.8pt x 722.7pt>
 File: img/CAVE-Aufbau.png Graphic file (type png)
  <use img/CAVE-Aufbau.png>
-Package pdftex.def Info: img/CAVE-Aufbau.png used on input line 144.
+Package pdftex.def Info: img/CAVE-Aufbau.png used on input line 136.
 (pdftex.def)             Requested size: 455.24408pt x 256.06956pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 145--145
+Underfull \hbox (badness 10000) in paragraph at lines 137--137
 [][]\T1/ptm/m/n/10.95 Schematische Dar-stel-lung der Fünf-Seiten-CAVE des Lehr-
 stuhl
  []
 
-[11 <C:/Users/Ronald/Documents/OpenDECL-Diplom/Ausarbeitung/img/CAVE-Aufbau.png
->] [12] [13] [14]
- 4.
-[15
+[12 <C:/Users/Ronald/Documents/OpenDECL-Diplom/Ausarbeitung/img/CAVE-Aufbau.png
+>] [13]
+Underfull \vbox (badness 2961) has occurred while \output is active []
 
-] [16]
- 5.
-[17
+ [14]
+[15] [16
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 203--205
+ 4.
+[17] [18]
+ 5.
+[19
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 198--202
+
+ []
+
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 208--210
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 207--209
+Underfull \hbox (badness 10000) in paragraph at lines 212--214
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 211--213
+Underfull \hbox (badness 10000) in paragraph at lines 216--218
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 215--217
+Underfull \hbox (badness 10000) in paragraph at lines 220--222
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 219--221
+Underfull \hbox (badness 10000) in paragraph at lines 224--226
 
  []
 
-[18]
-Underfull \hbox (badness 10000) in paragraph at lines 223--225
+[21] [22
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 227--229
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 231--233
-
- []
-
-[19]
+]
  6.
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--238
+Underfull \hbox (badness 10000) in paragraph at lines 229--231
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 240--244
+Underfull \hbox (badness 10000) in paragraph at lines 233--237
 
  []
 
-[20
+[23] [24
 
 ]
  7.
 
-Underfull \hbox (badness 10000) in paragraph at lines 249--252
+Underfull \hbox (badness 10000) in paragraph at lines 242--245
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--257
+Underfull \hbox (badness 10000) in paragraph at lines 247--250
 
  []
 
-[21
+[25] [26
 
 ]
  8.
 
-Underfull \hbox (badness 10000) in paragraph at lines 260--263
+Underfull \hbox (badness 10000) in paragraph at lines 253--256
 
  []
 
-[22
+[27] [28
 
 ]
  9.
 
-Underfull \hbox (badness 10000) in paragraph at lines 266--267
+Underfull \hbox (badness 10000) in paragraph at lines 259--260
 
  []
 
-[23
+[29] [30
 
 ]
  10.
-<test.png, id=334, 421.575pt x 301.125pt>
+<test.png, id=376, 421.575pt x 301.125pt>
 File: test.png Graphic file (type png)
  <use test.png>
-Package pdftex.def Info: test.png used on input line 275.
+Package pdftex.def Info: test.png used on input line 268.
 (pdftex.def)             Requested size: 421.57396pt x 301.12425pt.
- [24
-
- <C:/Users/Ronald/Documents/OpenDECL-Diplom/Ausarbeitung/test.png>]
-(C:\Users\Ronald\Documents\OpenDECL-Diplom\Ausarbeitung\OpenDECL.bbl [25
-
-
-])
-[26] [27
-
-
-
-
-] [28
-
-
+ [31 <C:/Users/Ronald/Documents/OpenDECL-Diplom/Ausarbeitung/test.png>] [32
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 280.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 280.
+(C:\Users\Ronald\Documents\OpenDECL-Diplom\Ausarbeitung\OpenDECL.bbl
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-(C:\Users\Ronald\Documents\OpenDECL-Diplom\Ausarbeitung\OpenDECL.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 280.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 280.
+ [33
+
+])
+[34]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 273.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 273.
+ (C:\Users\Ronald\Documents\OpenDECL-Diplom\Ausarbeitung\OpenDECL.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 273.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 273.
 Package rerunfilecheck Info: File `OpenDECL.out' has not changed.
 (rerunfilecheck)             Checksum: D78102B46A8307E280760AD41B8BD62D;1819.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 280.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 273.
  )
 (\end occurred inside a group at level 1)
 
-### semi simple group (level 1) entered at line 72 (\begingroup)
+### semi simple group (level 1) entered at line 64 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 10391 strings out of 493921
- 153991 string characters out of 3144872
- 332576 words of memory out of 3000000
- 13433 multiletter control sequences out of 15000+200000
+ 10398 strings out of 493921
+ 154065 string characters out of 3144872
+ 332648 words of memory out of 3000000
+ 13436 multiletter control sequences out of 15000+200000
  51860 words of font info for 59 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 47i,11n,58p,1637b,1429s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 47i,11n,58p,1637b,1430s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.
 enc}<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C
@@ -934,9 +948,9 @@ enc}<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb>
 rogram Files (x86)/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program F
 iles (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files (x86)/
 MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on OpenDECL.pdf (34 pages, 292917 bytes).
+Output written on OpenDECL.pdf (44 pages, 298620 bytes).
 PDF statistics:
- 403 PDF objects out of 1000 (max. 8388607)
- 96 named destinations out of 1000 (max. 500000)
+ 442 PDF objects out of 1000 (max. 8388607)
+ 100 named destinations out of 1000 (max. 500000)
  245 words of extra memory for PDF output out of 10000 (max. 10000000)
 
