@@ -1,6 +1,27 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: OpenDECL.aux
 The style file: alphadin.bst
 Database file #1: literatur.bib
+Repeated entry---line 205 of file literatur.bib
+ : @article{4485564
+ :                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 229 of file literatur.bib
+ : @inproceedings{1766189
+ :                       ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 246 of file literatur.bib
+ : @inproceedings{581051
+ :                      ,
+I'm skipping whatever remains of this entry
+Warning--to sort, need author or key in VRUI
 Warning--empty edition in 1847038
 Warning--empty edition in vtk2004
-(There were 2 warnings)
+`skip$' is a function literal, not a string, for entry VRUI
+while executing---line 1656 of file alphadin.bst
+ptr=2, stack=
+
+
+---the literal stack isn't empty for entry VRUI
+while executing---line 1656 of file alphadin.bst
+Warning--empty edition in 2435429
+(There were 5 error messages)

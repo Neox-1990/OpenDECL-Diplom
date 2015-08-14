@@ -1,9 +1,9 @@
 \newcommand{\etalchar}[1]{$^{#1}$}
-\begin{thebibliography}{GKM{\etalchar{+}}15}
+\begin{thebibliography}{CNSD{\etalchar{+}}92}
 
 \bibitem[AGL{\etalchar{+}}04]{1847038}
-\textsc{Allard}, Jérémie ; \textsc{Gouranton}, Valérie ; \textsc{Lecointre},
-  Loïck ; \textsc{Limet}, Sébastien ; \textsc{Raffin}, Bruno  ;
+\textsc{Allard}, J?r?mie ; \textsc{Gouranton}, Val?rie ; \textsc{Lecointre},
+  Lo?ck ; \textsc{Limet}, S?bastien ; \textsc{Raffin}, Bruno  ;
   \textsc{Robert}, Sophie:
 \newblock \emph{{FlowVR: A Middleware for Large Scale Virtual Reality
   Applications}}.
@@ -16,6 +16,14 @@
 \newblock {In: }\emph{The Visualization Handbook}
 \newblock  (2005), S. 717
 
+\bibitem[BGA{\etalchar{+}}03]{bresnahan2003building}
+\textsc{Bresnahan}, Glenn ; \textsc{Gasser}, Raymond ; \textsc{Abaravichyus},
+  Augustinas ; \textsc{Brisson}, Erik  ; \textsc{Walterman}, Michael:
+\newblock Building a large-scale high-resolution tiled rear-projected passive
+  stereo display system based on commodity components.
+\newblock {In: }\emph{Electronic Imaging 2003}
+\newblock International Society for Optics and Photonics, 2003, S. 19--30
+
 \bibitem[BJH{\etalchar{+}}01]{4077770}
 \textsc{Bierbaum}, Allen ; \textsc{Just}, Christopher ; \textsc{Hartling},
   Patrick ; \textsc{Meinert}, Kevin ; \textsc{Baker}, Albert  ;
@@ -23,6 +31,28 @@
 \newblock {VR Juggler: A Virtual Platform for Virtual Reality Application
   Development}.
 \newblock {In: }\emph{Virtual Reality}, 2001, S. 89--96
+
+\bibitem[CCF{\etalchar{+}}00]{chen2000automatic}
+\textsc{Chen}, Yuqun ; \textsc{Clark}, Douglas~W. ; \textsc{Finkelstein}, Adam
+  ; \textsc{Housel}, Timothy~C.  ; \textsc{Li}, Kai:
+\newblock Automatic alignment of high-resolution multi-projector display using
+  an un-calibrated camera.
+\newblock {In: }\emph{Proceedings of the conference on Visualization'00}
+\newblock IEEE Computer Society Press, 2000, S. 125--130
+
+\bibitem[CCL{\etalchar{+}}01]{156748}
+\textsc{Chen}, Han ; \textsc{Clark}, Douglas~W. ; \textsc{Liu}, Zhiyan ;
+  \textsc{Wallace}, Grant ; \textsc{Li}, Kai  ; \textsc{Chen}, Yuqun:
+\newblock {Software Environments For Cluster-Based Display Systems}.
+\newblock {In: }\emph{Cluster Computing and the Grid}, 2001, S. 202--211
+
+\bibitem[CNSD{\etalchar{+}}92]{Cruz-Neira:1992:CAV:129888.129892}
+\textsc{Cruz-Neira}, Carolina ; \textsc{Sandin}, Daniel~J. ; \textsc{DeFanti},
+  Thomas~A. ; \textsc{Kenyon}, Robert~V.  ; \textsc{Hart}, John~C.:
+\newblock The CAVE: Audio Visual Experience Automatic Virtual Environment.
+\newblock {In: }\emph{Commun. ACM}
+\newblock 35 (1992), Juni, Nr. 6, S. 64--72. --
+\newblock ISSN 0001--0782
 
 \bibitem[CNSD93]{CAVE}
 \textsc{Cruz-Neira}, Carolina ; \textsc{Sandin}, Daniel~J.  ; \textsc{DeFanti},
@@ -46,6 +76,11 @@
 \newblock {In: }\emph{IEEE Transactions on Visualization and Computer Graphics}
 \newblock 15 (2009), May/June, Nr. 3, S. 436--452
 
+\bibitem[FGH02]{581051}
+\textsc{Figueroa}, Pablo ; \textsc{Green}, Mark  ; \textsc{Hoover}, H.~J.:
+\newblock {InTml: a description language for VR applications}.
+\newblock {In: }\emph{Web3D / VRML Symposium}, 2002, S. 53--58
+
 \bibitem[GKM{\etalchar{+}}15]{grottel2014megamol}
 \textsc{Grottel}, S. ; \textsc{Krone}, M. ; \textsc{Muller}, C. ;
   \textsc{Reina}, G.  ; \textsc{Ertl}, T.:
@@ -64,6 +99,14 @@
 \newblock {In: }\emph{ACM Transactions on Graphics}
 \newblock 21 (2002), S. 693--702
 
+\bibitem[JGS{\etalchar{+}}07]{4161017}
+\textsc{Johnson}, T. ; \textsc{Gyarfas}, F. ; \textsc{Skarbez}, R. ;
+  \textsc{Towles}, H.  ; \textsc{Fuchs}, H.:
+\newblock A Personal Surround Environment: Projective Display with Correction
+  for Display Surface Geometry and Extreme Lens Distortion.
+\newblock {In: }\emph{Virtual Reality Conference, 2007. VR '07. IEEE}, 2007, S.
+  147--154
+
 \bibitem[JJR{\etalchar{+}}]{Jeong_scalablegraphics}
 \textsc{Jeong}, Byungil ; \textsc{Jagodic}, Ratko ; \textsc{Renambot}, Luc ;
   \textsc{Singh}, Rajvikram ; \textsc{Johnson}, Andrew  ; \textsc{Leigh},
@@ -71,6 +114,27 @@
 \newblock Scalable Graphics Architecture for High Resolution Displays.
 \newblock {In: }\emph{Presented at IEEE Information Visualization Workshop
   2005}, S. 10--24
+
+\bibitem[KBSR07]{4580342}
+\textsc{KÃ¶nig}, Werner~A. ; \textsc{Bieg}, Hans-Joachim ; \textsc{Schmidt},
+  Toni  ; \textsc{Reiterer}, Harald:
+\newblock {POSITION-INDEPENDENT INTERACTION FOR LARGE HIGH-RESOLUTION
+  DISPLAYS}.
+\newblock
+\newblock  (2007)
+
+\bibitem[KC07]{4485564}
+\textsc{Kang}, Yong-Bin ; \textsc{Chae}, Ki-Joon:
+\newblock {XMegaWall: A Super High-Resolution Tiled Display using a PC
+  Cluster}.
+\newblock
+\newblock  (2007)
+
+\bibitem[Mor12]{6378981}
+\textsc{Moreland}, K.:
+\newblock Redirecting research in large-format displays for visualization.
+\newblock {In: }\emph{Large Data Analysis and Visualization (LDAV), 2012 IEEE
+  Symposium on}, 2012, S. 91--95
 
 \bibitem[NSS{\etalchar{+}}06]{4856637}
 \textsc{Ni}, Tao ; \textsc{Schmidt}, Greg~S. ; \textsc{Staadt}, Oliver~G. ;
@@ -82,7 +146,7 @@
   2006, S. 223--236
 
 \bibitem[RFC{\etalchar{+}}03]{6143028}
-\textsc{Rodrigues}, Fábio ; \textsc{Ferraz}, Rodrigo ; \textsc{Cabral}, Márcio
+\textsc{Rodrigues}, F?bio ; \textsc{Ferraz}, Rodrigo ; \textsc{Cabral}, M?rcio
   ; \textsc{Teubl}, Fernando ; \textsc{Belloc}, Olavo ; \textsc{Kondo}, Marcia
   ; \textsc{Zuffo}, Marcelo  ; \textsc{Lopes}, Roseli:
 \newblock {Coupling Virtual Reality Open Source Software Using Message Oriented
@@ -94,6 +158,41 @@
 \textsc{Schroeder}, Will~J. ; \textsc{Lorensen}, Bill  ; \textsc{Martin}, Ken:
 \newblock \emph{The visualization toolkit}.
 \newblock Kitware, 2004
+
+\bibitem[SM10]{10.1111:j.1467-8659.2009.01676.x}
+\textsc{Sajadi}, Behzad ; \textsc{Majumder}, Aditi:
+\newblock {Scalable Multi-view Registration for Multi-Projector Displays on
+  Vertically Extruded Surfaces}.
+\newblock {In: }\emph{Computer Graphics Forum}
+\newblock  (2010). --
+\newblock ISSN 1467--8659
+
+\bibitem[SM11]{5710903}
+\textsc{Sajadi}, B. ; \textsc{Majumder}, A.:
+\newblock Autocalibrating Tiled Projectors on Piecewise Smooth Vertically
+  Extruded Surfaces.
+\newblock {In: }\emph{Visualization and Computer Graphics, IEEE Transactions
+  on}
+\newblock 17 (2011), Sept, Nr. 9, S. 1209--1222. --
+\newblock ISSN 1077--2626
+
+\bibitem[VRU]{VRUI}
+\emph{{Vrui} VR Toolkit}.
+\newblock \url{http://idav.ucdavis.edu/~okreylos/ResDev/Vrui/}. --
+\newblock zuletzt besucht: 14.08.2015
+
+\bibitem[WJS04]{1766189}
+\textsc{Wang}, Zonghui ; \textsc{Jiang}, Xiaohong  ; \textsc{Shi}, Jiaoying:
+\newblock {HIVE: a Highly Scalable Framework for DVE}.
+\newblock {In: }\emph{Virtual Reality, IEEE Annual International Symposium},
+  2004
+
+\bibitem[WSJ06]{2435429}
+\textsc{Wang}, Zonghui ; \textsc{Shi}, Jiaoying  ; \textsc{Jiang}, Xiaohong:
+\newblock \emph{{A Scalable HLA-Based Distributed Simulation Framework for VR
+  Application}}.
+\newblock 2006. --
+\newblock  361--371 S
 
 \bibitem[YGH{\etalchar{+}}01]{68109}
 \textsc{Yang}, Ruigang ; \textsc{Gotz}, David ; \textsc{Hensley}, Justin ;

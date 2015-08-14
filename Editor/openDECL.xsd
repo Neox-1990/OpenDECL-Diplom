@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+targetNamespace="http://www.tu-dresden.de"
+xmlns="http://www.tu-dresden.de"
+elementFormDefault="qualified">
+<xs:complexType name="porttype">
+  <xs:attribute name="id" type="xs:ID" use="required" />
+  <xs:attribute name="type" type="xs:string" use="optional" />
+  <xs:attribute name="slot" type="xs:string" use="optional" />
+</xs:complexType>
+
+<xs:complexType name="graphics-devicetype">
+  <xs:sequence>
+    <xs:element name="port" type="porttype" minOccurs="1" maxOccurs="unbounded" />
+  </xs:sequence>
+  <xs:attribute name="id" type="xs:ID" use="required" />
+  <xs:attribute name="gpu-count" type="xs:integer" use="optional" />
+  <xs:attribute name="vram" type="xs:integer" use="optional" />
+  <xs:attribute name="model-name" type="xs:string" use="optional" />
+</xs:complexType>
+
+<xs:complexType name="network-devicetype">
+  <xs:attribute name="type" type="xs:string" use="required" />
+  <xs:attribute name="id" type="xs:ID" use="required" />
+  <xs:attribute name="network" type="xs:IDREF" use="required" />
+  <xs:attribute name="address" type="xs:string" use="required" />
+</xs:complexType>
+
+<xs:complexType name="nodetype">
+  <xs:sequence>
+    <xs:element name="graphics-device" type="graphics-devicetype" minOccurs="0" maxOccurs="unbounded" />
+	<xs:element name="network-device" type="network-devicetype" minOccurs="0" maxOccurs="unbounded" />
+  </xs:sequence>
+  <xs:attribute name="id" type="xs:ID" use="required" />
+  <xs:attribute name="purpose" type="xs:string" use="optional" />
+</xs:complexType>
+
+<xs:complexType name="networktype">
+  <xs:attribute name="id" type="xs:ID" use="required" />
+  <xs:attribute name="bandwidth" type="xs:string" use="optional" />
+  <xs:attribute name="subnet-mask" type="xs:string" use="optional" />
+</xs:complexType>
+
+<xs:complexType name="vectortype">
+  <xs:attribute name="x" type="xs:decimal" use="required" />
+  <xs:attribute name="y" type="xs:decimal" use="required" />
+  <xs:attribute name="z" type="xs:decimal" use="optional" />
+</xs:complexType>
+
+<xs:complexType name="positiontype">
+  <xs:sequence>
+    <xs:element name="vector" type="vectortype" minOccurs="1" maxOccurs="1" />
+  </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="orientationtype">
+  <xs:sequence>
+    <xs:element name="vector" type="vectortype" minOccurs="1" maxOccurs="1" />
+  </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="usertype">
+  <xs:sequence>
+    <xs:element name="position" type="positiontype" minOccurs="1" maxOccurs="1" />
+    <xs:element name="orientation" type="orientationtype" minOccurs="1" maxOccurs="1" />
+  </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="upper-lefttype">
+  <xs:sequence>
+    <xs:element name="vector" type="vectortype" minOccurs="1" maxOccurs="1" />
+  </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="lower-lefttype">
+ <xs:sequence>
+    <xs:element name="vector" type="vectortype" minOccurs="1" maxOccurs="1" />
+  </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="lower-righttype">
+ <xs:sequence>
+    <xs:element name="vector" type="vectortype" minOccurs="1" maxOccurs="1" />
+  </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="upper-righttype">
+ <xs:sequence>
+    <xs:element name="vector" type="vectortype" minOccurs="1" maxOccurs="1" />
+  </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="physicaltype">
+  <xs:sequence>
+    <xs:element name="upper-left" type="upper-lefttype" minOccurs="1" maxOccurs="1" />
+    <xs:element name="lower-left" type="lower-lefttype" minOccurs="1" maxOccurs="1" />
+    <xs:element name="lower-right" type="lower-righttype" minOccurs="1" maxOccurs="1" />
+    <xs:element name="upper-right" type="upper-righttype" minOccurs="1" maxOccurs="1" />
+  </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="virtualtype">
+ <xs:sequence>
+    <xs:element name="upper-left" type="upper-lefttype" minOccurs="1" maxOccurs="1" />
+    <xs:element name="lower-left" type="lower-lefttype" minOccurs="1" maxOccurs="1" />
+    <xs:element name="lower-right" type="lower-righttype" minOccurs="1" maxOccurs="1" />
+    <xs:element name="upper-right" type="upper-righttype" minOccurs="1" maxOccurs="1" />
+  </xs:sequence>
+</xs:complexType>
+
+<xs:simpleType name="stereoType">
+  <xs:restriction base="xs:string">
+    <xs:enumeration value="none" />
+    <xs:enumeration value="left-eye" />
+    <xs:enumeration value="right-eye" />
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="displaytype">
+  <xs:sequence>
+    <xs:element name="physical" type="physicaltype" minOccurs="1" maxOccurs="1" />
+    <xs:element name="virtual" type="virtualtype" minOccurs="1" maxOccurs="1" />
+  </xs:sequence>
+  <xs:attribute name="id" type="xs:ID" use="required" />
+  <xs:attribute name="portref" type="xs:IDREF" use="required" />
+  <xs:attribute name="type" type="xs:string" use="optional" />
+  <xs:attribute name="stereo" type="stereoType" use="required" />
+  <xs:attribute name="pixel-size-x" type="xs:positiveInteger" use="required" />
+  <xs:attribute name="pixel-size-y" type="xs:positiveInteger" use="required" />
+  <xs:attribute name="metric-size-x" type="xs:decimal" use="required" />
+  <xs:attribute name="metric-size-y" type="xs:decimal" use="required" />
+</xs:complexType>
+
+<xs:complexType name="display-setuptype">
+  <xs:sequence>
+	<xs:element name="user" type="usertype" minOccurs="0" maxOccurs="1" />
+    <xs:element name="display" type="displaytype" minOccurs="1" maxOccurs="unbounded" />
+  </xs:sequence>
+  <xs:attribute name="id" type="xs:ID" use="required" />
+  <xs:attribute name="eye-distance" type="xs:decimal" default="0.0" />
+</xs:complexType>
+
+<xs:complexType name="openDECLtype">
+  <xs:sequence>
+    <xs:element name="node" type="nodetype" minOccurs="1" maxOccurs="unbounded" />
+    <xs:element name="network" type="networktype" minOccurs="0" maxOccurs="unbounded" />
+    <xs:element name="display-setup" type="display-setuptype" minOccurs="1" maxOccurs="unbounded" />
+  </xs:sequence>
+</xs:complexType>
+
+<xs:element name="openDECL" type="openDECLtype" />
+
+</xs:schema>

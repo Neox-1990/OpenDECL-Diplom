@@ -1,5 +1,5 @@
 \BOOKMARK [0][-]{chapter.1}{1 Einf\374hrung}{}% 1
-\BOOKMARK [1][-]{section.1.1}{1.1 Problemfelder}{chapter.1}% 2
+\BOOKMARK [1][-]{section.1.1}{1.1 Probleme}{chapter.1}% 2
 \BOOKMARK [0][-]{chapter.2}{2 Verwandte Arbeiten}{}% 3
 \BOOKMARK [1][-]{section.2.1}{2.1 Betrieb von Large High Resolution Displays}{chapter.2}% 4
 \BOOKMARK [1][-]{section.2.2}{2.2 Kalibrierung von Large High Resolution Displays}{chapter.2}% 5
@@ -9,7 +9,7 @@
 \BOOKMARK [1][-]{section.3.1}{3.1 Hardwareanalyse}{chapter.3}% 9
 \BOOKMARK [1][-]{section.3.2}{3.2 Softwareanalyse}{chapter.3}% 10
 \BOOKMARK [0][-]{chapter.4}{4 Konzeption}{}% 11
-\BOOKMARK [0][-]{chapter.5}{5 OpenDECL Spezifikation}{}% 12
+\BOOKMARK [0][-]{chapter.5}{5 OpenDECL-Spezifikation}{}% 12
 \BOOKMARK [1][-]{section.5.1}{5.1 node}{chapter.5}% 13
 \BOOKMARK [2][-]{subsection.5.1.1}{5.1.1 graphics-device}{section.5.1}% 14
 \BOOKMARK [2][-]{subsection.5.1.2}{5.1.2 network-device}{section.5.1}% 15
@@ -17,7 +17,7 @@
 \BOOKMARK [1][-]{section.5.3}{5.3 display-setup}{chapter.5}% 17
 \BOOKMARK [2][-]{subsection.5.3.1}{5.3.1 user}{section.5.3}% 18
 \BOOKMARK [2][-]{subsection.5.3.2}{5.3.2 display}{section.5.3}% 19
-\BOOKMARK [0][-]{chapter.6}{6 XSLT Konfigurationsgenerierung}{}% 20
+\BOOKMARK [0][-]{chapter.6}{6 XSLT-Konfigurationsgenerierung}{}% 20
 \BOOKMARK [1][-]{section.6.1}{6.1 Beispiel}{chapter.6}% 21
 \BOOKMARK [0][-]{chapter.7}{7 Editor}{}% 22
 \BOOKMARK [1][-]{section.7.1}{7.1 Funktionen}{chapter.7}% 23
@@ -25,4 +25,4 @@
 \BOOKMARK [0][-]{chapter.8}{8 Evaluation}{}% 25
 \BOOKMARK [0][-]{chapter.9}{9 Diskussion}{}% 26
 \BOOKMARK [0][-]{chapter.10}{10 Ausblick}{}% 27
-\BOOKMARK [0][-]{chapter*.17}{Literaturverzeichnis}{}% 28
+\BOOKMARK [0][-]{chapter*.16}{Literaturverzeichnis}{}% 28

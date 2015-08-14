@@ -330,9 +330,9 @@ public class OpenDECLdoc {
 		Node toRemove = getElement(doc.getDocumentElement(),"node","id",id);
 		if(null!=toRemove)removeNode(toRemove);
 	}
-	public void setNodeName(String oldId, String newId){
-		Node toChange = getElement(doc.getDocumentElement(),"node","name",oldId);
-		setAttribute(toChange,"name",newId);
+	public void setNodeId(String oldId, String newId){
+		Node toChange = getElement(doc.getDocumentElement(),"node","id",oldId);
+		setAttribute(toChange,"id",newId);
 	}
 	public void setNodePurpose(String id, String purpose){
 		Node toChange = getElement(doc.getDocumentElement(),"node","id",id);
@@ -341,77 +341,93 @@ public class OpenDECLdoc {
 	
 	//graphics device
 	public Element getGraphicsDevice(String nodeId,String id){
-		return (Element) getElement(getElement(doc.getDocumentElement(),"node","name",nodeId),"graphics-device","id",id);
+		return (Element) getElement(getElement(doc.getDocumentElement(),"node","id",nodeId),"graphics-device","id",id);
+	}
+	public ArrayList<Element> getGraphicsDevices(String nodeId){
+		return getElements(getElement(doc.getDocumentElement(), "node", "id", nodeId),"graphics-device");
 	}
 	public void addGraphicsDevice(String nodeId,String id){
-		Node toAdd = addElement(getElement(doc.getDocumentElement(),"node","name",nodeId),"graphics-device");
+		Node toAdd = addElement(getElement(doc.getDocumentElement(),"node","id",nodeId),"graphics-device");
 		setAttribute(toAdd, "id", id);
 	}
 	public void removeGraphicsDevice(String nodeId,String id){
-		Node toRemove = getElement(getElement(doc.getDocumentElement(),"node","name",nodeId),"graphics-device","id",id);
+		Node toRemove = getElement(getElement(doc.getDocumentElement(),"node","id",nodeId),"graphics-device","id",id);
 		if(null!=toRemove)removeNode(toRemove);
 	}
 	public void setGraphicsDeviceId(String nodeId, String oldId, String newId){
-		Node toChange = getElement(getElement(doc.getDocumentElement(),"node","name",nodeId),"graphics-device","id",oldId);
+		Node toChange = getElement(getElement(doc.getDocumentElement(),"node","id",nodeId),"graphics-device","id",oldId);
 		setAttribute(toChange,"id",newId);
 	}
 	public void setGraphicsDeviceGpuCount(String nodeId,String id, String gpuCount){
-		Node toChange = getElement(getElement(doc.getDocumentElement(),"node","name",nodeId),"graphics-device","id",id);
+		Node toChange = getElement(getElement(doc.getDocumentElement(),"node","id",nodeId),"graphics-device","id",id);
 		setAttribute(toChange,"gpu-count",gpuCount);
 	}
 	public void setGraphicsDeviceVram(String nodeId,String id, String vram){
-		Node toChange = getElement(getElement(doc.getDocumentElement(),"node","name",nodeId),"graphics-device","id",id);
+		Node toChange = getElement(getElement(doc.getDocumentElement(),"node","id",nodeId),"graphics-device","id",id);
 		setAttribute(toChange,"vram",vram);
 	}
 	public void setGraphicsDeviceModelName(String nodeId,String id, String modelName){
-		Node toChange = getElement(getElement(doc.getDocumentElement(),"node","name",nodeId),"graphics-device","id",id);
+		Node toChange = getElement(getElement(doc.getDocumentElement(),"node","id",nodeId),"graphics-device","id",id);
 		setAttribute(toChange,"model-name",modelName);
 	}
 	
 	//port
+	public ArrayList<Element> getPorts(String nodeId, String graphicsDeviceId){
+		return getElements(getElement(getElement(doc.getDocumentElement(),"node","id",nodeId), "graphics-device", "id", graphicsDeviceId),"port");
+	}
 	public Element getPort(String nodeId,String graphicsDeviceId,String id){
-		return (Element) getElement(getElement(getElement(doc.getDocumentElement(),"node","name",nodeId),"graphics-device","id",graphicsDeviceId),"port","id",id);
+		return (Element) getElement(getElement(getElement(doc.getDocumentElement(),"node","id",nodeId),"graphics-device","id",graphicsDeviceId),"port","id",id);
 	}
 	public void addPort(String nodeId,String graphicsDeviceId,String id){
-		Node toAdd = addElement(getElement(getElement(doc.getDocumentElement(),"node","name",nodeId),"graphics-device","id",graphicsDeviceId),"port");
+		Node toAdd = addElement(getElement(getElement(doc.getDocumentElement(),"node","id",nodeId),"graphics-device","id",graphicsDeviceId),"port");
 		setAttribute(toAdd, "id", id);
 	}
 	public void removePort(String nodeId,String graphicsDeviceId,String id){
-		Node toRemove = getElement(getElement(getElement(doc.getDocumentElement(),"node","name",nodeId),"graphics-device","id",graphicsDeviceId),"port","id",id);
+		Node toRemove = getElement(getElement(getElement(doc.getDocumentElement(),"node","id",nodeId),"graphics-device","id",graphicsDeviceId),"port","id",id);
 		if(null!=toRemove)removeNode(toRemove);
+	}public void setPortId(String nodeId,String graphicsDeviceId,String id, String newId){
+		Node toChange = getElement(getElement(getElement(doc.getDocumentElement(),"node","id",nodeId),"graphics-device","id",graphicsDeviceId),"port","id",id);
+		setAttribute(toChange,"id",newId);
 	}
 	public void setPortType(String nodeId,String graphicsDeviceId,String id, String type){
-		Node toChange = getElement(getElement(getElement(doc.getDocumentElement(),"node","name",nodeId),"graphics-device","id",graphicsDeviceId),"port","id",id);
+		Node toChange = getElement(getElement(getElement(doc.getDocumentElement(),"node","id",nodeId),"graphics-device","id",graphicsDeviceId),"port","id",id);
 		setAttribute(toChange,"type",type);
 	}
 	public void setPortSlot(String nodeId,String graphicsDeviceId,String id, String slot){
-		Node toChange = getElement(getElement(getElement(doc.getDocumentElement(),"node","name",nodeId),"graphics-device","id",graphicsDeviceId),"port","id",id);
+		Node toChange = getElement(getElement(getElement(doc.getDocumentElement(),"node","id",nodeId),"graphics-device","id",graphicsDeviceId),"port","id",id);
 		setAttribute(toChange,"type",slot);
 	}
 	
 	//network device
+	public ArrayList<Element> getNetworkDevices(String nodeId){
+		return getElements(getElement(doc.getDocumentElement(), "node", "id", nodeId),"network-device");
+	}
 	public Element getNetworkDevice(String nodeId,String id){
-		return (Element) getElement(getElement(doc.getDocumentElement(),"node","name",nodeId),"network-device","id",id);
+		return (Element) getElement(getElement(doc.getDocumentElement(),"node","id",nodeId),"network-device","id",id);
 	}
 	public void addNetworkDevice(String nodeId,String id){
-		Node toAdd = addElement(getElement(doc.getDocumentElement(),"node","name",nodeId),"network-device");
+		Node toAdd = addElement(getElement(doc.getDocumentElement(),"node","id",nodeId),"network-device");
 		setAttribute(toAdd, "id", id);
 	}
 	public void removeNetworkDevice(String nodeId,String id){
-		Node toRemove = getElement(getElement(doc.getDocumentElement(),"node","name",nodeId),"network-device","id",id);
+		Node toRemove = getElement(getElement(doc.getDocumentElement(),"node","id",nodeId),"network-device","id",id);
 		if(null!=toRemove)removeNode(toRemove);
 	}
 	public void setNetworkDeviceType(String nodeId,String id, String type){
-		Node toChange = getElement(getElement(doc.getDocumentElement(),"node","name",nodeId),"network-device","id",id);
+		Node toChange = getElement(getElement(doc.getDocumentElement(),"node","id",nodeId),"network-device","id",id);
 		setAttribute(toChange,"type",type);
 	}
 	public void setNetworkDeviceNetwork(String nodeId,String id, String network){
-		Node toChange = getElement(getElement(doc.getDocumentElement(),"node","name",nodeId),"network-device","id",id);
+		Node toChange = getElement(getElement(doc.getDocumentElement(),"node","id",nodeId),"network-device","id",id);
 		setAttribute(toChange,"network",network);
 	}
 	public void setNetworkDeviceAddress(String nodeId,String id, String address){
-		Node toChange = getElement(getElement(doc.getDocumentElement(),"node","name",nodeId),"network-device","id",id);
+		Node toChange = getElement(getElement(doc.getDocumentElement(),"node","id",nodeId),"network-device","id",id);
 		setAttribute(toChange,"address",address);
+	}
+	public void setNetworkDeviceId(String nodeId,String id, String newId){
+		Node toChange = getElement(getElement(doc.getDocumentElement(),"node","id",nodeId),"network-device","id",id);
+		setAttribute(toChange,"id",newId);
 	}
 	
 	//Network
@@ -515,10 +531,19 @@ public class OpenDECLdoc {
 			setAttribute(toChange,"z", z.toString());
 		}
 	}
+	public Element getUserPosition(String id){
+		return (Element) getElement(getElement(getElement(getElement(doc.getDocumentElement(),"display-setup","id",id),"user"),"position"),"vector");
+	}
+	public Element getUserOrientation(String id){
+		return (Element) getElement(getElement(getElement(getElement(doc.getDocumentElement(),"display-setup","id",id),"user"),"orientation"),"vector");
+	}
 	
 	//display
 	public Element getDisplay(String displaySetupId, String id){
 		return (Element) getElement(getElement(doc.getDocumentElement(),"display-setup","id",displaySetupId),"display","id",id);
+	}
+	public ArrayList<Element> getDisplays(String displaySetupId){
+		return getElements(getElement(doc.getDocumentElement(),"display-setup","id",displaySetupId),"display");
 	}
 	public void addDisplay(String displaySetupId, String id){
 		Node toAdd = addElement(getElement(doc.getDocumentElement(),"display-setup","id",displaySetupId),"display");
@@ -632,7 +657,7 @@ public class OpenDECLdoc {
 	public void setDisplayVirtual(String displaySetupId, String id, Float[] x, Float[] y){
 		Node toChange = getElement(getElement(doc.getDocumentElement(),"display-setup","id",displaySetupId),"display","id",id);
 		if(null!=toChange){
-			toChange = addElement(toChange,"virtual");
+			toChange = getElement(toChange,"virtual");
 			Node upperLeft = getElement(toChange,"upper-left");
 			Node lowerLeft = getElement(toChange,"lower-left");
 			Node lowerRight = getElement(toChange,"lower-right");
@@ -650,5 +675,29 @@ public class OpenDECLdoc {
 			setAttribute(upperRight,"x", x[3].toString());
 			setAttribute(upperRight,"y", y[3].toString());
 		}
+	}
+	public Element getDisplayPupperleft(String displaySetupId, String displayId){
+		return (Element) getElement(getElement(getElement(getElement(getElement(doc.getDocumentElement(),"display-setup","id",displaySetupId),"display","id",displayId),"physical"),"upper-left"),"vector");
+	}
+	public Element getDisplayPlowerleft(String displaySetupId, String displayId){
+		return (Element) getElement(getElement(getElement(getElement(getElement(doc.getDocumentElement(),"display-setup","id",displaySetupId),"display","id",displayId),"physical"),"lower-left"),"vector");
+	}
+	public Element getDisplayPlowerright(String displaySetupId, String displayId){
+		return (Element) getElement(getElement(getElement(getElement(getElement(doc.getDocumentElement(),"display-setup","id",displaySetupId),"display","id",displayId),"physical"),"lower-right"),"vector");
+	}
+	public Element getDisplayPupperright(String displaySetupId, String displayId){
+		return (Element) getElement(getElement(getElement(getElement(getElement(doc.getDocumentElement(),"display-setup","id",displaySetupId),"display","id",displayId),"physical"),"upper-right"),"vector");
+	}
+	public Element getDisplayVupperleft(String displaySetupId, String displayId){
+		return (Element) getElement(getElement(getElement(getElement(getElement(doc.getDocumentElement(),"display-setup","id",displaySetupId),"display","id",displayId),"virtual"),"upper-left"),"vector");
+	}
+	public Element getDisplayVlowerleft(String displaySetupId, String displayId){
+		return (Element) getElement(getElement(getElement(getElement(getElement(doc.getDocumentElement(),"display-setup","id",displaySetupId),"display","id",displayId),"virtual"),"lower-left"),"vector");
+	}
+	public Element getDisplayVlowerright(String displaySetupId, String displayId){
+		return (Element) getElement(getElement(getElement(getElement(getElement(doc.getDocumentElement(),"display-setup","id",displaySetupId),"display","id",displayId),"virtual"),"lower-right"),"vector");
+	}
+	public Element getDisplayVupperright(String displaySetupId, String displayId){
+		return (Element) getElement(getElement(getElement(getElement(getElement(doc.getDocumentElement(),"display-setup","id",displaySetupId),"display","id",displayId),"virtual"),"upper-right"),"vector");
 	}
 }
