@@ -1,0 +1,17 @@
+<pvx>
+  <Process Type="client"/>
+  <Process Type="render-server">
+    <Machine Name="MULTI" Environment="DISPLAY=:0" FullScreen="0" ShowBorders="0" Geometry="1920x1080+0+0" LowerLeft="-2.4275 0.345 -2.0" LowerRight="-1.2175 0.345 -2.0" UpperRight="-1.2175 1.025 -2.0"/>
+    <Machine Name="MULTI" Environment="DISPLAY=:0" FullScreen="0" ShowBorders="0" Geometry="1920x1080+1920+0" LowerLeft="-1.2125 0.345 -2.0" LowerRight="-0.0025 0.345 -2.0" UpperRight="-0.0025 1.025 -2.0"/>
+    <Machine Name="MULTI" Environment="DISPLAY=:0" FullScreen="0" ShowBorders="0" Geometry="1920x1080+3840+0" LowerLeft="0.0025 0.345 -2.0" LowerRight="1.2125 0.345 -2.0" UpperRight="1.2125 1.025 -2.0"/>
+    <Machine Name="MULTI" Environment="DISPLAY=:0" FullScreen="0" ShowBorders="0" Geometry="1920x1080+5760+0" LowerLeft="1.2175 0.345 -2.0" LowerRight="2.4275 0.345 -2.0" UpperRight="2.4275 1.025 -2.0"/>
+    <Machine Name="MULTI" Environment="DISPLAY=:0" FullScreen="0" ShowBorders="0" Geometry="1920x1080+0+1080" LowerLeft="-2.4275 -0.34 -2.0" LowerRight="-1.2175 -0.34 -2.0" UpperRight="-1.2175 0.34 -2.0"/>
+    <Machine Name="MULTI" Environment="DISPLAY=:0" FullScreen="0" ShowBorders="0" Geometry="1920x1080+1920+1080" LowerLeft="-1.2125 -0.34 -2.0" LowerRight="-0.0025 -0.34 -2.0" UpperRight="-0.0025 0.34 -2.0"/>
+    <Machine Name="MULTI" Environment="DISPLAY=:0" FullScreen="0" ShowBorders="0" Geometry="1920x1080+3840+1080" LowerLeft="0.0025 -0.34 -2.0" LowerRight="1.2125 -0.34 -2.0" UpperRight="1.2125 0.34 -2.0"/>
+    <Machine Name="MULTI" Environment="DISPLAY=:0" FullScreen="0" ShowBorders="0" Geometry="1920x1080+5760+1080" LowerLeft="1.2175 -0.34 -2.0" LowerRight="2.4275 -0.34 -2.0" UpperRight="2.4275 0.34 -2.0"/>
+    <Machine Name="MULTI" Environment="DISPLAY=:0" FullScreen="0" ShowBorders="0" Geometry="1920x1080+0+2160" LowerLeft="-2.4275 -1.025 -2.0" LowerRight="-1.2175 -1.025 -2.0" UpperRight="-1.2175 -0.345 -2.0"/>
+    <Machine Name="MULTI" Environment="DISPLAY=:0" FullScreen="0" ShowBorders="0" Geometry="1920x1080+1920+2160" LowerLeft="-1.2125 -1.025 -2.0" LowerRight="-0.0025 -1.025 -2.0" UpperRight="-0.0025 -0.345 -2.0"/>
+    <Machine Name="MULTI" Environment="DISPLAY=:0" FullScreen="0" ShowBorders="0" Geometry="1920x1080+3840+2160" LowerLeft="0.0025 -1.025 -2.0" LowerRight="1.2125 -1.025 -2.0" UpperRight="1.2125 -0.345 -2.0"/>
+    <Machine Name="MULTI" Environment="DISPLAY=:0" FullScreen="0" ShowBorders="0" Geometry="1920x1080+5760+2160" LowerLeft="1.2175 -1.025 -2.0" LowerRight="2.4275 -1.025 -2.0" UpperRight="2.4275 -0.345 -2.0"/>
+  </Process>
+</pvx>

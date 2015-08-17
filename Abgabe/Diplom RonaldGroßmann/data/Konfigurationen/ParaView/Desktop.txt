@@ -1,0 +1,7 @@
+<pvx>
+  <Process Type="client"/>
+  <Process Type="render-server">
+    <Machine Name="Ronald-PC" Environment="DISPLAY=:0" FullScreen="0" ShowBorders="0" Geometry="1280x800+0+0" LowerLeft="-0.32 -0.1 -0.5" LowerRight="0.0 -0.1 -0.5" UpperRight="0.0 0.1 -0.5"/>
+    <Machine Name="Ronald-PC" Environment="DISPLAY=:0" FullScreen="0" ShowBorders="0" Geometry="1920x1080+1280+0" LowerLeft="0.03 -0.16 -0.5" LowerRight="0.494 -0.16 -0.5" UpperRight="0.494 0.1 -0.5"/>
+  </Process>
+</pvx>

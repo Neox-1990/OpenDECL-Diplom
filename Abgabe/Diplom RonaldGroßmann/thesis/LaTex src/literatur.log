@@ -1,0 +1,14 @@
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdftex 2015.8.1)  1 AUG 2015 14:28
+entering extended mode
+**C:/Users/Ronald/Documents/OpenDECL-Diplom/Ausarbeitung/literatur.bib
+(C:/Users/Ronald/Documents/OpenDECL-Diplom/Ausarbeitung/literatur.bib
+! Undefined control sequence.
+l.3   title={{\LaTeX
+                    : eine Einf"uhrung}},
+? 
+! Emergency stop.
+l.3   title={{\LaTeX
+                    : eine Einf"uhrung}},
+End of file on the terminal!
+
+!  ==> Fatal error occurred, no output PDF file produced!

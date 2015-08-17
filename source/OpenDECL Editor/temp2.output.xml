@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><openDECL xmlns="http://www.tu-dresden.de" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tu-dresden.de openDECL.xsd">
-	
+	<node id="Brigitte" purpose="render">
+		<graphics-device id="video1">
+			<port id="left" type="display"/>
+			<port id="right" type="display"/>
+		</graphics-device>
+		<network-device address="127.0.0.1" id="EA1" network="e1" type="ethernet"/>
+	</node>
 	<network bandwidth="10 Gbit/s" id="e1" subnet-mask="255.255.255.0"/>
-	<display-setup id="flat">
+	<display-setup eye-distance="0.06" id="stereo">
 		<user>
 			<position>
 				<vector x="0" y="0" z="0"/>
@@ -10,19 +16,19 @@
 				<vector x="0" y="0" z="-1"/>
 			</orientation>
 		</user>
-		<display id="Mon1" metric-size-x="0.32" metric-size-y="0.2" pixel-size-x="1280" pixel-size-y="800" portref="M1" stereo="none" type="monitor">
+		<display id="projL" metric-size-x="0.4" metric-size-y="0.3" pixel-size-x="1400" pixel-size-y="1050" portref="left" stereo="left-eye" type="projector">
 			<physical>
 				<upper-left>
-					<vector x="-0.32" y="0.1" z="-0.5"/>
+					<vector x="-2.0" y="0.15" z="-0.2"/>
 				</upper-left>
 				<lower-left>
-					<vector x="-0.32" y="-0.1" z="-0.5"/>
+					<vector x="-2.0" y="-0.15" z="-0.2"/>
 				</lower-left>
 				<lower-right>
-					<vector x="0" y="-0.1" z="-0.5"/>
+					<vector x="-2.0" y="-0.15" z="0.2"/>
 				</lower-right>
 				<upper-right>
-					<vector x="0" y="0.1" z="-0.5"/>
+					<vector x="-2.0" y="0.15" z="0.2"/>
 				</upper-right>
 			</physical>
 			<virtual>
@@ -30,43 +36,72 @@
 					<vector x="0" y="0"/>
 				</upper-left>
 				<lower-left>
-					<vector x="0" y="800"/>
+					<vector x="0" y="1050"/>
 				</lower-left>
 				<lower-right>
-					<vector x="1280" y="800"/>
+					<vector x="1400" y="1050"/>
 				</lower-right>
 				<upper-right>
-					<vector x="1280" y="0"/>
+					<vector x="1400" y="0"/>
 				</upper-right>
 			</virtual>
 		</display>
-		<display id="Mon2" metric-size-x="0.464" metric-size-y="0.26" pixel-size-x="1920" pixel-size-y="1080" portref="M2" stereo="none" type="monitor">
+		<display id="MonL" metric-size-x="2.72" metric-size-y="2.04" pixel-size-x="1400" pixel-size-y="1050" portref="left" stereo="left-eye" type="monitor">
 			<physical>
 				<upper-left>
-					<vector x="0" y="0.13" z="-0.5"/>
+					<vector x="-1.36" y="1.02" z="-1.0"/>
 				</upper-left>
 				<lower-left>
-					<vector x="0" y="-0.13" z="-0.5"/>
+					<vector x="-1.36" y="-1.02" z="-1.0"/>
 				</lower-left>
 				<lower-right>
-					<vector x="0.464" y="-0.13" z="-0.5"/>
+					<vector x="1.36" y="-1.02" z="-1.0"/>
 				</lower-right>
 				<upper-right>
-					<vector x="0.464" y="0.13" z="-0.5"/>
+					<vector x="1.36" y="1.02" z="-1.0"/>
 				</upper-right>
 			</physical>
 			<virtual>
 				<upper-left>
-					<vector x="1280" y="0"/>
+					<vector x="0" y="0"/>
 				</upper-left>
 				<lower-left>
-					<vector x="1280" y="1080"/>
+					<vector x="0" y="1050"/>
 				</lower-left>
 				<lower-right>
-					<vector x="3200" y="1080"/>
+					<vector x="1400" y="1050"/>
 				</lower-right>
 				<upper-right>
-					<vector x="3200" y="0"/>
+					<vector x="1400" y="0"/>
+				</upper-right>
+			</virtual>
+		</display>
+		<display id="projR" metric-size-x="2.72" metric-size-y="2.04" pixel-size-x="1400" pixel-size-y="1050" portref="right" stereo="right-eye" type="projector">
+			<physical>
+				<upper-left>
+					<vector x="-1.36" y="1.02" z="-1.0"/>
+				</upper-left>
+				<lower-left>
+					<vector x="-1.36" y="-1.02" z="-1.0"/>
+				</lower-left>
+				<lower-right>
+					<vector x="1.36" y="-1.02" z="-1.0"/>
+				</lower-right>
+				<upper-right>
+					<vector x="1.36" y="1.02" z="-1.0"/>
+				</upper-right>
+			</physical>
+				<upper-left>
+					<vector x="1400" y="0"/>
+				</upper-left>
+				<lower-left>
+					<vector x="1400" y="1050"/>
+				</lower-left>
+				<lower-right>
+					<vector x="2800" y="1050"/>
+				</lower-right>
+				<upper-right>
+					<vector x="2800" y="0"/>
 				</upper-right>
 			</virtual>
 		</display>

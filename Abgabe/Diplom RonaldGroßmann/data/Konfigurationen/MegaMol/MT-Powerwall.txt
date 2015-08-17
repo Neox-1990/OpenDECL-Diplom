@@ -1,0 +1,37 @@
+<set name="tile1-window" value="x0y0w1920h1080nd" />
+<set name="tile2-window" value="x1920y0w1920h1080nd" />
+<set name="tile3-window" value="x3840y0w1920h1080nd" />
+<set name="tile4-window" value="x5760y0w1920h1080nd" />
+<set name="tile5-window" value="x0y1080w1920h1080nd" />
+<set name="tile6-window" value="x1920y1080w1920h1080nd" />
+<set name="tile7-window" value="x3840y1080w1920h1080nd" />
+<set name="tile8-window" value="x5760y1080w1920h1080nd" />
+<set name="tile9-window" value="x0y2160w1920h1080nd" />
+<set name="tile10-window" value="x1920y2160w1920h1080nd" />
+<set name="tile11-window" value="x3840y2160w1920h1080nd" />
+<set name="tile12-window" value="x5760y2160w1920h1080nd" />
+
+::tile1::TileView1::tile=0.000000;0.0000;1920.000000;1080.000000
+::tile1::TileView1::virtSize=7680.000000;3240.000000
+::tile2::TileView1::tile=1920.000000;0.0000;1920.000000;1080.000000
+::tile2::TileView1::virtSize=7680.000000;3240.000000
+::tile3::TileView1::tile=3840.000000;0.0000;1920.000000;1080.000000
+::tile3::TileView1::virtSize=7680.000000;3240.000000
+::tile4::TileView1::tile=5760.000000;0.0000;1920.000000;1080.000000
+::tile4::TileView1::virtSize=7680.000000;3240.000000
+::tile5::TileView1::tile=0.000000;1080.0000;1920.000000;1080.000000
+::tile5::TileView1::virtSize=7680.000000;3240.000000
+::tile6::TileView1::tile=1920.000000;1080.0000;1920.000000;1080.000000
+::tile6::TileView1::virtSize=7680.000000;3240.000000
+::tile7::TileView1::tile=3840.000000;1080.0000;1920.000000;1080.000000
+::tile7::TileView1::virtSize=7680.000000;3240.000000
+::tile8::TileView1::tile=5760.000000;1080.0000;1920.000000;1080.000000
+::tile8::TileView1::virtSize=7680.000000;3240.000000
+::tile9::TileView1::tile=0.000000;2160.0000;1920.000000;1080.000000
+::tile9::TileView1::virtSize=7680.000000;3240.000000
+::tile10::TileView1::tile=1920.000000;2160.0000;1920.000000;1080.000000
+::tile10::TileView1::virtSize=7680.000000;3240.000000
+::tile11::TileView1::tile=3840.000000;2160.0000;1920.000000;1080.000000
+::tile11::TileView1::virtSize=7680.000000;3240.000000
+::tile12::TileView1::tile=5760.000000;2160.0000;1920.000000;1080.000000
+::tile12::TileView1::virtSize=7680.000000;3240.000000

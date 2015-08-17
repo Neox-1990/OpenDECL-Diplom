@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><openDECL xmlns="http://www.tu-dresden.de" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tu-dresden.de openDECL.xsd">
-	<node id="Brigitte" purpose="render">
-		<graphics-device id="video1">
-			<port id="left" type="display"/>
-			<port id="right" type="display"/>
+	<node id="MULTI" purpose="render">
+		<graphics-device id="video1" model-name="AMD Radeon HD 7970" vram="3072">
+			<port id="M01" slot="11" type="display"/>
+			<port id="M02" slot="12" type="display"/>
+			<port id="M03" slot="13" type="display"/>
+			<port id="M04" slot="14" type="display"/>
+			<port id="M05" slot="15" type="display"/>
+			<port id="M06" slot="16" type="display"/>
+		</graphics-device>
+		<graphics-device id="video2" model-name="AMD Radeon HD 7970" vram="3072">
+			<port id="M07" slot="21" type="display"/>
+			<port id="M08" slot="22" type="display"/>
+			<port id="M09" slot="23" type="display"/>
+			<port id="M10" slot="24" type="display"/>
+			<port id="M11" slot="25" type="display"/>
+			<port id="M12" slot="26" type="display"/>
 		</graphics-device>
 		<network-device address="127.0.0.1" id="EA1" network="e1" type="ethernet"/>
 	</node>
 	<network bandwidth="10 Gbit/s" id="e1" subnet-mask="255.255.255.0"/>
-	<display-setup eye-distance="0.06" id="stereo">
+	<display-setup id="flat">
 		<user>
 			<position>
 				<vector x="0" y="0" z="0"/>
@@ -16,19 +28,19 @@
 				<vector x="0" y="0" z="-1"/>
 			</orientation>
 		</user>
-		<display id="projL" metric-size-x="0.4" metric-size-y="0.3" pixel-size-x="1400" pixel-size-y="1050" portref="left" stereo="left-eye" type="projector">
+		<display id="Mon01" metric-size-x="1.21" metric-size-y="0.68" pixel-size-x="1920" pixel-size-y="1080" portref="M01" stereo="none" type="monitor">
 			<physical>
 				<upper-left>
-					<vector x="-2.0" y="0.15" z="-0.2"/>
+					<vector x="-2.4275" y="1.025" z="-2.0"/>
 				</upper-left>
 				<lower-left>
-					<vector x="-2.0" y="-0.15" z="-0.2"/>
+					<vector x="-2.4275" y="0.345" z="-2.0"/>
 				</lower-left>
 				<lower-right>
-					<vector x="-2.0" y="-0.15" z="0.2"/>
+					<vector x="-1.2175" y="0.345" z="-2.0"/>
 				</lower-right>
 				<upper-right>
-					<vector x="-2.0" y="0.15" z="0.2"/>
+					<vector x="-1.2175" y="1.025" z="-2.0"/>
 				</upper-right>
 			</physical>
 			<virtual>
@@ -36,73 +48,343 @@
 					<vector x="0" y="0"/>
 				</upper-left>
 				<lower-left>
-					<vector x="0" y="1050"/>
+					<vector x="0" y="1080"/>
 				</lower-left>
 				<lower-right>
-					<vector x="1400" y="1050"/>
+					<vector x="1920" y="1080"/>
 				</lower-right>
 				<upper-right>
-					<vector x="1400" y="0"/>
+					<vector x="1920" y="0"/>
 				</upper-right>
 			</virtual>
 		</display>
-		<display id="MonL" metric-size-x="2.72" metric-size-y="2.04" pixel-size-x="1400" pixel-size-y="1050" portref="left" stereo="left-eye" type="monitor">
+		<display id="Mon02" metric-size-x="1.21" metric-size-y="0.68" pixel-size-x="1920" pixel-size-y="1080" portref="M02" stereo="none" type="monitor">
 			<physical>
 				<upper-left>
-					<vector x="-1.36" y="1.02" z="-1.0"/>
+					<vector x="-1.2125" y="1.025" z="-2.0"/>
 				</upper-left>
 				<lower-left>
-					<vector x="-1.36" y="-1.02" z="-1.0"/>
+					<vector x="-1.2125" y="0.345" z="-2.0"/>
 				</lower-left>
 				<lower-right>
-					<vector x="1.36" y="-1.02" z="-1.0"/>
+					<vector x="-0.0025" y="0.345" z="-2.0"/>
 				</lower-right>
 				<upper-right>
-					<vector x="1.36" y="1.02" z="-1.0"/>
+					<vector x="-0.0025" y="1.025" z="-2.0"/>
 				</upper-right>
 			</physical>
 			<virtual>
 				<upper-left>
-					<vector x="0" y="0"/>
+					<vector x="1920" y="0"/>
 				</upper-left>
 				<lower-left>
-					<vector x="0" y="1050"/>
+					<vector x="1920" y="1080"/>
 				</lower-left>
 				<lower-right>
-					<vector x="1400" y="1050"/>
+					<vector x="3840" y="1080"/>
 				</lower-right>
 				<upper-right>
-					<vector x="1400" y="0"/>
+					<vector x="3840" y="0"/>
 				</upper-right>
 			</virtual>
 		</display>
-		<display id="projR" metric-size-x="2.72" metric-size-y="2.04" pixel-size-x="1400" pixel-size-y="1050" portref="right" stereo="right-eye" type="projector">
+		<display id="Mon03" metric-size-x="1.21" metric-size-y="0.68" pixel-size-x="1920" pixel-size-y="1080" portref="M03" stereo="none" type="monitor">
 			<physical>
 				<upper-left>
-					<vector x="-1.36" y="1.02" z="-1.0"/>
+					<vector x="0.0025" y="1.025" z="-2.0"/>
 				</upper-left>
 				<lower-left>
-					<vector x="-1.36" y="-1.02" z="-1.0"/>
+					<vector x="0.0025" y="0.345" z="-2.0"/>
 				</lower-left>
 				<lower-right>
-					<vector x="1.36" y="-1.02" z="-1.0"/>
+					<vector x="1.2125" y="0.345" z="-2.0"/>
 				</lower-right>
 				<upper-right>
-					<vector x="1.36" y="1.02" z="-1.0"/>
+					<vector x="1.2125" y="1.025" z="-2.0"/>
 				</upper-right>
 			</physical>
 			<virtual>
 				<upper-left>
-					<vector x="1400" y="0"/>
+					<vector x="3840" y="0"/>
 				</upper-left>
 				<lower-left>
-					<vector x="1400" y="1050"/>
+					<vector x="3840" y="1080"/>
 				</lower-left>
 				<lower-right>
-					<vector x="2800" y="1050"/>
+					<vector x="5760" y="1080"/>
 				</lower-right>
 				<upper-right>
-					<vector x="2800" y="0"/>
+					<vector x="5760" y="0"/>
+				</upper-right>
+			</virtual>
+		</display>
+		<display id="Mon04" metric-size-x="1.21" metric-size-y="0.68" pixel-size-x="1920" pixel-size-y="1080" portref="M04" stereo="none" type="monitor">
+			<physical>
+				<upper-left>
+					<vector x="1.2175" y="1.025" z="-2.0"/>
+				</upper-left>
+				<lower-left>
+					<vector x="1.2175" y="0.345" z="-2.0"/>
+				</lower-left>
+				<lower-right>
+					<vector x="2.4275" y="0.345" z="-2.0"/>
+				</lower-right>
+				<upper-right>
+					<vector x="2.4275" y="1.025" z="-2.0"/>
+				</upper-right>
+			</physical>
+			<virtual>
+				<upper-left>
+					<vector x="5760" y="0"/>
+				</upper-left>
+				<lower-left>
+					<vector x="5760" y="1080"/>
+				</lower-left>
+				<lower-right>
+					<vector x="7680" y="1080"/>
+				</lower-right>
+				<upper-right>
+					<vector x="7680" y="0"/>
+				</upper-right>
+			</virtual>
+		</display>
+		<display id="Mon05" metric-size-x="1.21" metric-size-y="0.68" pixel-size-x="1920" pixel-size-y="1080" portref="M05" stereo="none" type="monitor">
+			<physical>
+				<upper-left>
+					<vector x="-2.4275" y="0.34" z="-2.0"/>
+				</upper-left>
+				<lower-left>
+					<vector x="-2.4275" y="-0.34" z="-2.0"/>
+				</lower-left>
+				<lower-right>
+					<vector x="-1.2175" y="-0.34" z="-2.0"/>
+				</lower-right>
+				<upper-right>
+					<vector x="-1.2175" y="0.34" z="-2.0"/>
+				</upper-right>
+			</physical>
+			<virtual>
+				<upper-left>
+					<vector x="0" y="1080"/>
+				</upper-left>
+				<lower-left>
+					<vector x="0" y="2160"/>
+				</lower-left>
+				<lower-right>
+					<vector x="1920" y="2160"/>
+				</lower-right>
+				<upper-right>
+					<vector x="1920" y="1080"/>
+				</upper-right>
+			</virtual>
+		</display>
+		<display id="Mon06" metric-size-x="1.21" metric-size-y="0.68" pixel-size-x="1920" pixel-size-y="1080" portref="M06" stereo="none" type="monitor">
+			<physical>
+				<upper-left>
+					<vector x="-1.2125" y="0.34" z="-2.0"/>
+				</upper-left>
+				<lower-left>
+					<vector x="-1.2125" y="-0.34" z="-2.0"/>
+				</lower-left>
+				<lower-right>
+					<vector x="-0.0025" y="-0.34" z="-2.0"/>
+				</lower-right>
+				<upper-right>
+					<vector x="-0.0025" y="0.34" z="-2.0"/>
+				</upper-right>
+			</physical>
+			<virtual>
+				<upper-left>
+					<vector x="1920" y="1080"/>
+				</upper-left>
+				<lower-left>
+					<vector x="1920" y="2160"/>
+				</lower-left>
+				<lower-right>
+					<vector x="3840" y="2160"/>
+				</lower-right>
+				<upper-right>
+					<vector x="3840" y="1080"/>
+				</upper-right>
+			</virtual>
+		</display>
+		<display id="Mon07" metric-size-x="1.21" metric-size-y="0.68" pixel-size-x="1920" pixel-size-y="1080" portref="M07" stereo="none" type="monitor">
+			<physical>
+				<upper-left>
+					<vector x="0.0025" y="0.34" z="-2.0"/>
+				</upper-left>
+				<lower-left>
+					<vector x="0.0025" y="-0.34" z="-2.0"/>
+				</lower-left>
+				<lower-right>
+					<vector x="1.2125" y="-0.34" z="-2.0"/>
+				</lower-right>
+				<upper-right>
+					<vector x="1.2125" y="0.34" z="-2.0"/>
+				</upper-right>
+			</physical>
+			<virtual>
+				<upper-left>
+					<vector x="3840" y="1080"/>
+				</upper-left>
+				<lower-left>
+					<vector x="3840" y="2160"/>
+				</lower-left>
+				<lower-right>
+					<vector x="5760" y="2160"/>
+				</lower-right>
+				<upper-right>
+					<vector x="5760" y="1080"/>
+				</upper-right>
+			</virtual>
+		</display>
+		<display id="Mon08" metric-size-x="1.21" metric-size-y="0.68" pixel-size-x="1920" pixel-size-y="1080" portref="M08" stereo="none" type="monitor">
+			<physical>
+				<upper-left>
+					<vector x="1.2175" y="0.34" z="-2.0"/>
+				</upper-left>
+				<lower-left>
+					<vector x="1.2175" y="-0.34" z="-2.0"/>
+				</lower-left>
+				<lower-right>
+					<vector x="2.4275" y="-0.34" z="-2.0"/>
+				</lower-right>
+				<upper-right>
+					<vector x="2.4275" y="0.34" z="-2.0"/>
+				</upper-right>
+			</physical>
+			<virtual>
+				<upper-left>
+					<vector x="5760" y="1080"/>
+				</upper-left>
+				<lower-left>
+					<vector x="5760" y="2160"/>
+				</lower-left>
+				<lower-right>
+					<vector x="7680" y="2160"/>
+				</lower-right>
+				<upper-right>
+					<vector x="7680" y="1080"/>
+				</upper-right>
+			</virtual>
+		</display>
+		<display id="Mon09" metric-size-x="1.21" metric-size-y="0.68" pixel-size-x="1920" pixel-size-y="1080" portref="M09" stereo="none" type="monitor">
+			<physical>
+				<upper-left>
+					<vector x="-2.4275" y="-0.345" z="-2.0"/>
+				</upper-left>
+				<lower-left>
+					<vector x="-2.4275" y="-1.025" z="-2.0"/>
+				</lower-left>
+				<lower-right>
+					<vector x="-1.2175" y="-1.025" z="-2.0"/>
+				</lower-right>
+				<upper-right>
+					<vector x="-1.2175" y="-0.345" z="-2.0"/>
+				</upper-right>
+			</physical>
+			<virtual>
+				<upper-left>
+					<vector x="0" y="2160"/>
+				</upper-left>
+				<lower-left>
+					<vector x="0" y="3240"/>
+				</lower-left>
+				<lower-right>
+					<vector x="1920" y="3240"/>
+				</lower-right>
+				<upper-right>
+					<vector x="1920" y="2160"/>
+				</upper-right>
+			</virtual>
+		</display>
+		<display id="Mon10" metric-size-x="1.21" metric-size-y="0.68" pixel-size-x="1920" pixel-size-y="1080" portref="M10" stereo="none" type="monitor">
+			<physical>
+				<upper-left>
+					<vector x="-1.2125" y="-0.345" z="-2.0"/>
+				</upper-left>
+				<lower-left>
+					<vector x="-1.2125" y="-1.025" z="-2.0"/>
+				</lower-left>
+				<lower-right>
+					<vector x="-0.0025" y="-1.025" z="-2.0"/>
+				</lower-right>
+				<upper-right>
+					<vector x="-0.0025" y="-0.345" z="-2.0"/>
+				</upper-right>
+			</physical>
+			<virtual>
+				<upper-left>
+					<vector x="1920" y="2160"/>
+				</upper-left>
+				<lower-left>
+					<vector x="1920" y="3240"/>
+				</lower-left>
+				<lower-right>
+					<vector x="3840" y="3240"/>
+				</lower-right>
+				<upper-right>
+					<vector x="3840" y="2160"/>
+				</upper-right>
+			</virtual>
+		</display>
+		<display id="Mon11" metric-size-x="1.21" metric-size-y="0.68" pixel-size-x="1920" pixel-size-y="1080" portref="M11" stereo="none" type="monitor">
+			<physical>
+				<upper-left>
+					<vector x="0.0025" y="-0.345" z="-2.0"/>
+				</upper-left>
+				<lower-left>
+					<vector x="0.0025" y="-1.025" z="-2.0"/>
+				</lower-left>
+				<lower-right>
+					<vector x="1.2125" y="-1.025" z="-2.0"/>
+				</lower-right>
+				<upper-right>
+					<vector x="1.2125" y="-0.345" z="-2.0"/>
+				</upper-right>
+			</physical>
+			<virtual>
+				<upper-left>
+					<vector x="3840" y="2160"/>
+				</upper-left>
+				<lower-left>
+					<vector x="3840" y="3240"/>
+				</lower-left>
+				<lower-right>
+					<vector x="5760" y="3240"/>
+				</lower-right>
+				<upper-right>
+					<vector x="5760" y="2160"/>
+				</upper-right>
+			</virtual>
+		</display>
+		<display id="Mon12" metric-size-x="1.21" metric-size-y="0.68" pixel-size-x="1920" pixel-size-y="1080" portref="M12" stereo="none" type="monitor">
+			<physical>
+				<upper-left>
+					<vector x="1.2175" y="-0.345" z="-2.0"/>
+				</upper-left>
+				<lower-left>
+					<vector x="1.2175" y="-1.025" z="-2.0"/>
+				</lower-left>
+				<lower-right>
+					<vector x="2.4275" y="-1.025" z="-2.0"/>
+				</lower-right>
+				<upper-right>
+					<vector x="2.4275" y="-0.345" z="-2.0"/>
+				</upper-right>
+			</physical>
+			<virtual>
+				<upper-left>
+					<vector x="5760" y="2160"/>
+				</upper-left>
+				<lower-left>
+					<vector x="5760" y="3240"/>
+				</lower-left>
+				<lower-right>
+					<vector x="7680" y="3240"/>
+				</lower-right>
+				<upper-right>
+					<vector x="7680" y="2160"/>
 				</upper-right>
 			</virtual>
 		</display>

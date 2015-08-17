@@ -1,0 +1,7 @@
+<set name="tile1-window" value="x0y0w1280h800nd"/>
+<set name="tile2-window" value="x1280y0w1920h1080nd"/>
+
+::tile1::TileView1::tile=-0.32;0.1;0.32;0.2
+::tile1::TileView1::virtSize=0.814;1050
+::tile2::TileView1::tile=0.03;0.1;0.464;0.26
+::tile2::TileView1::virtSize=0.814;0.26
